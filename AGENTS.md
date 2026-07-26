@@ -9,6 +9,8 @@ Deze repository bevat de zelfstandige statische LeerboxEditor. Lees
 - `script.js`: capturestate, API-client, canvas, validatie en simulatie-UI.
 - `style.css`: standalone en embedded layout.
 - `languages.js`: vertaalstrings.
+- `engine-adapter.js`: enige grens tussen statische editor en dynamische
+  LeerpretEngine-API.
 - `EDITOR-STRUCTUUR.md`: kaart van iframe, dashboardbuitenschil en canvas.
 
 De dashboardbuitenschil staat in de buurrepository

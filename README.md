@@ -33,15 +33,16 @@ LeerpretEngine vindt deze repository via `LEERBOX_EDITOR_DIR` of standaard als
 buurmap `../LeerboxEditor`. De bestaande dashboard-URL blijft:
 
 ```text
-http://127.0.0.1:8011/tools/architect-editor/
+http://127.0.0.1:47111/tools/architect-editor/
 ```
 
-De editor gebruikt standaard `/api` op dezelfde origin. Bij zelfstandig
-serveren kan een andere Engine-API via de queryparameter `?api=...` worden
-doorgegeven. Voorbeeld:
+`engine-adapter.js` vormt de grens tussen de statische editor en de dynamische
+Engine. Op localhost gebruikt de adapter standaard poort `47111`. Een andere
+Engine-API kan via de queryparameter `?api=...`, `window.LEERBOX_EDITOR_CONFIG`
+of `localStorage["leerbox-editor.apiBase"]` worden doorgegeven. Voorbeeld:
 
 ```text
-http://127.0.0.1:4174/?api=http://127.0.0.1:8011/api
+http://127.0.0.1:47114/?api=http://127.0.0.1:47111/api
 ```
 
 Er is geen Git-submodule of automatische broncodesynchronisatie. Wijzig
@@ -54,12 +55,12 @@ Zonder backendfuncties kan `index.html` rechtstreeks in de browser worden
 geopend. Voor een lokale HTTP-origin:
 
 ```powershell
-python -m http.server 4174
+python -m http.server 47114
 ```
 
-Voor volledige integratie start je LeerpretEngine op poort `8011` en open je
-de gemounte `/tools/architect-editor/`-URL. De Leerpret-frontend draait
-standaard op poort `8001`.
+Voor volledige integratie start je LeerpretEngine op poort `47111` en open je
+de Editor op zijn eigen origin. De Leerpret-frontend draait standaard op poort
+`47112` en zet de editor-URL rechtstreeks in een iframe.
 
 De taalopzet staat in `languages.js`. De standaardtaal is nu `nl`; extra talen kunnen later als extra key onder `messages` worden toegevoegd.
 

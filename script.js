@@ -11,7 +11,11 @@
   const parentOrigin = pageParameters.get("parent_origin") || "*";
   const storageKey = selectedLeerboxId ? `${baseStorageKey}:${selectedLeerboxId}` : baseStorageKey;
   const agentRole = pageParameters.get("role") || "architect";
-  const agentApiBase = (pageParameters.get("api") || `${window.location.origin}/api`).replace(/\/$/, "");
+  const engineAdapter = window.LeerboxEditorEngine || {
+    apiBase: pageParameters.get("api")?.replace(/\/$/, "") || "",
+    fetch: (input, init) => window.fetch(input, init)
+  };
+  const agentApiBase = engineAdapter.apiBase;
   const embeddedWorkbench = pageParameters.get("embedded") === "1";
   const unknown = "unknown";
   const languageConfig = window.LeerpretArchitectLanguages || { defaultLanguage: "nl", messages: { nl: {} } };
@@ -841,7 +845,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       return;
     }
     try {
-      const response = await fetch(`${agentApiBase}/leerbox/captures/${encodeURIComponent(selectedLeerboxId)}`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox/captures/${encodeURIComponent(selectedLeerboxId)}`, {
         credentials: "include"
       });
       if (!response.ok) {
@@ -1397,7 +1401,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     const separator = String(path).includes("?") ? "&" : "?";
     const requestPath = `${path}${separator}role=${encodeURIComponent(agentRole)}`;
     const headers = { "X-Leerpret-Role": agentRole, ...(options.headers || {}) };
-    const response = await fetch(`${agentApiBase}${requestPath}`, { credentials: "include", ...options, headers });
+    const response = await engineAdapter.fetch(`${agentApiBase}${requestPath}`, { credentials: "include", ...options, headers });
     const result = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(result.detail || `${response.status} ${response.statusText}`);
     return result;
@@ -1696,7 +1700,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       document.querySelector(".topbar .kicker").textContent = "Leerprettechnoloog";
     }
     try {
-      const response = await fetch(`${agentApiBase}/leerbox-agent/status?probe=true`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox-agent/status?probe=true`, {
         cache: "no-store",
         credentials: "include"
       });
@@ -2060,7 +2064,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       const selectedBucketSourceIds = useProjectBucket ? [...state.bucket_selected_source_ids] : [];
       elements.agentBucketConsent.checked = false;
       updateAgentBucketConsentUI();
-      const response = await fetch(`${agentApiBase}/leerbox-agent/chat`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox-agent/chat`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -2319,7 +2323,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     let callUsage = null;
     try {
       syncDerivedCapture(state.capture);
-      const response = await fetch(`${agentApiBase}/leerbox-agent/chat`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox-agent/chat`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -2418,7 +2422,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     let callUsage = null;
     try {
       syncDerivedCapture(state.capture);
-      const response = await fetch(`${agentApiBase}/leerbox-agent/chat`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox-agent/chat`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -2828,7 +2832,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     frame.hidden = true;
     status.textContent = "PDF wordt gegenereerd…";
     try {
-      const response = await fetch(`${agentApiBase}/leerbox/latex-pdf`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox/latex-pdf`, {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -4340,7 +4344,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       const paden = [...autosavePaden];
       autosavePaden = new Set();
       try {
-        const response = await fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/autosave`, {
+        const response = await engineAdapter.fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/autosave`, {
           method: "POST",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
@@ -4363,7 +4367,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     paneel.hidden = false;
     lijst.innerHTML = '<p class="empty-note">Geschiedenis wordt geladen…</p>';
     try {
-      const response = await fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/history?limit=50`, { credentials: "include" });
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/history?limit=50`, { credentials: "include" });
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const data = await response.json();
       const items = data.entries || [];
@@ -4386,7 +4390,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
 
   async function herstelVersie(index) {
     try {
-      const response = await fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/restore/${index}`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox/${encodeURIComponent(selectedLeerboxId)}/restore/${index}`, {
         method: "POST",
         credentials: "include"
       });
@@ -4445,7 +4449,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     previewBtn.textContent = "...";
 
     try {
-      const res = await fetch(`${agentApiBase}/developer/previews/generate`, {
+      const res = await engineAdapter.fetch(`${agentApiBase}/developer/previews/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -4660,7 +4664,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     try {
       const leerboxId = state.capture.metadata.leerbox_id || "";
       if (!leerboxId || leerboxId === unknown) throw new Error("Leerbox-ID ontbreekt");
-      const response = await fetch(`${agentApiBase}/leerbox-tests/${encodeURIComponent(leerboxId)}/data`, {
+      const response = await engineAdapter.fetch(`${agentApiBase}/leerbox-tests/${encodeURIComponent(leerboxId)}/data`, {
         credentials: "include",
         headers: authHeaders()
       });
@@ -4747,7 +4751,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
         parseAndStoreTestData(rawJson, `${selected.group_title} / ${selected.name}`);
         return;
       }
-      const response = await fetch(selected.data_url, {
+      const response = await engineAdapter.fetch(selected.data_url, {
         credentials: "include",
         headers: authHeaders()
       });

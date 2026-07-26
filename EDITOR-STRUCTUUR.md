@@ -6,9 +6,9 @@ plus het canvasmodel. URL-voorbeeld: `/editor/?role=technologist&id=<leerbox>&wo
 ## Overzicht: twee lagen
 
 De pagina bestaat uit een **buitenschil** (Astro, `frontend-astro/src/pages/editor.astro`) met daarin een
-**iframe** dat de eigenlijke editor laadt vanaf LeerpretEngine
-(`/tools/architect-editor/`, bronrepository `LeerboxEditor`: `index.html` +
-`script.js` + `style.css` + `languages.js`).
+**iframe** dat de eigenlijke editor rechtstreeks vanaf de zelfstandige
+`LEERBOX_EDITOR_URL` laadt (bronrepository `LeerboxEditor`: `index.html` +
+`script.js` + `style.css` + `languages.js` + `engine-adapter.js`).
 Het iframe draait in "embedded workbench"-modus (`body.is-workbench-embedded`).
 
 ## Buitenschil (editor.astro)
@@ -94,4 +94,4 @@ Berekend in `renderNetworkCanvas()` (script.js), toegepast via CSS-variabelen op
 | Editor-markup (iframe) | `LeerboxEditor/index.html` |
 | Canvasmodel, pannen, centreren, HUD-anker | `LeerboxEditor/script.js` |
 | Embedded layout + HUD-fixed regels (onderaan) | `LeerboxEditor/style.css` |
-| Serving | LeerpretEngine `app/main.py` → `/tools/architect-editor/` |
+| Serving | Eigen statische origin; dashboard gebruikt `embed_url` uit `/api/ui/surfaces` |
