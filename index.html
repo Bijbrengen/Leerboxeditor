@@ -7,7 +7,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=center-button-1">
+    <!-- Canonieke opmaak: de ENIGE bron is de engine (LeerpretSDK editor-shell).
+         style.css blijft alleen als offline-fallback en is identiek aan de bron. -->
+    <script src="runtime-config.js?v=standalone-1"></script>
+    <script>
+      (function () {
+        var cfg = window.LEERBOX_EDITOR_CONFIG || {};
+        var base = String(cfg.apiBase || "").replace(/\/+$/, "");
+        if (base && !/\/api$/.test(base)) base += "/api";
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.dataset.editorShellSource = base ? "engine" : "fallback";
+        link.href = base ? base + "/sdk/editor-shell/css" : "style.css?v=center-button-1";
+        link.onerror = function () {
+          var fallback = document.createElement("link");
+          fallback.rel = "stylesheet";
+          fallback.href = "style.css?v=center-button-1";
+          fallback.dataset.editorShellSource = "fallback";
+          document.head.appendChild(fallback);
+        };
+        document.head.appendChild(link);
+        if (base) {
+          var mount = document.createElement("script");
+          mount.src = base + "/sdk/editor-shell/mount.js";
+          mount.defer = true;
+          document.head.appendChild(mount);
+        }
+      })();
+    </script>
   </head>
   <body>
     <main class="app-shell">
@@ -823,9 +850,10 @@
       </form>
     </dialog>
 
-    <script src="runtime-config.js?v=standalone-1"></script>
+    <!-- runtime-config.js wordt al in <head> geladen (voor de opmaak-loader). -->
+    <script src="editor-auth.js?v=standalone-1"></script>
     <script src="languages.js?v=center-button-1"></script>
     <script src="engine-adapter.js?v=standalone-1"></script>
-    <script src="script.js?v=center-button-1"></script>
+    <script src="script.js?v=embedded-standalone-1"></script>
   </body>
 </html>
