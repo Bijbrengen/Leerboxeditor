@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leerpretarchitect Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=center-button-1">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="kicker" data-i18n="brand.kicker">Leerpretarchitect</p>
+          <h1 data-i18n="app.heading">Leerbox-editor</h1>
+        </div>
+        <div class="topbar-actions" aria-label="Bestandsacties" data-i18n-aria-label="aria.fileActions">
+          <label class="language-control" data-i18n-label="language.label">Taal
+            <select id="languageSelect">
+              <option value="nl" data-i18n="language.nl">Nederlands</option>
+            </select>
+          </label>
+          <button class="secondary-action" type="button" id="newCaptureButton" title="Nieuwe leerbox" data-i18n="actions.new">Nieuw</button>
+          <button class="secondary-action" type="button" id="uploadDescriptionButton" title="Beschrijving uploaden" data-i18n="actions.uploadDescription">Upload</button>
+          <button class="secondary-action" type="button" id="promptButton" title="AI-prompt maken" data-i18n-title="actions.prompt"><svg class="shared-advisor-face-icon" viewBox="0 0 80 94" aria-hidden="true"><path class="advisor-face" d="M21 43c0-15 8-24 19-24s19 9 19 24v12c0 13-8 22-19 22s-19-9-19-22V43Z"></path></svg><span data-i18n="actions.prompt">AI-prompt</span></button>
+          <button class="secondary-action" type="button" id="downloadPromptButton" title="AI-prompt downloaden" data-i18n="actions.downloadPrompt">Download prompt</button>
+          <button class="secondary-action" type="button" id="importButton" title="Leerbox-JSON importeren" data-i18n="actions.import">Importeer JSON</button>
+          <button class="secondary-action" type="button" id="previewWebappButton" title="Preview genereren" style="display: inline-flex; align-items: center; gap: 6px; vertical-align: middle;">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Preview</span>
+          </button>
+          <button class="primary-action" type="button" id="simulateButton" disabled data-i18n="actions.simulate">Simuleer Leerpret</button>
+          <button class="primary-action" type="button" id="exportButton" data-i18n="actions.export">Exporteer JSON</button>
+          <input id="rawDescriptionInput" type="file" accept=".txt,.md,text/plain,text/markdown" hidden>
+          <input id="importFileInput" type="file" accept="application/json,.json" hidden>
+        </div>
+      </header>
+
+      <div class="workbench-shell">
+        <aside class="workbench-sidebar" aria-label="Leerbox werkmenu">
+          <p class="workbench-sidebar-label">Werkmenu</p>
+          <nav class="workbench-menu" id="workbenchMenu" aria-label="Onderdelen van de Leerbox-editor">
+            <button class="workbench-menu-button is-active" type="button" data-workbench-view="description" aria-selected="true">
+              <span>1</span><strong>Beschrijving</strong><small>Start en werkwijze</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="agent" aria-selected="false">
+              <span>2</span><strong>AI-assistent</strong><small>Samen uitwerken</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="sources" aria-selected="false">
+              <span>3</span><strong>Importeer bronnen</strong><small>Documenten, web en code</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="intake" aria-selected="false">
+              <span>4</span><strong>Editorvelden</strong><small>Inhoud en ontwerp</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="build" aria-selected="false">
+              <span>5</span><strong>Bouwblokken</strong><small>Objecten en route</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="validation" aria-selected="false">
+              <span>6</span><strong>Controle</strong><small>Validatie en audit</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="simulation" aria-selected="false">
+              <span>7</span><strong>Simulatie</strong><small>Testdata en resultaat</small>
+            </button>
+            <button class="workbench-menu-button" type="button" data-workbench-view="json" aria-selected="false">
+              <span>8</span><strong>JSON-uitvoer</strong><small>Bekijken en kopiëren</small>
+            </button>
+          </nav>
+        </aside>
+
+        <div class="workbench-content">
+      <section class="workflow-panel" data-workbench-panel="description" aria-label="Vijf-stappen workflow">
+        <button class="panel-collapse-button" id="workflowPanelCloseButton" type="button" aria-label="Venster inklappen" title="Inklappen">−</button>
+        <header class="floating-panel-title"><span id="workflowPanelIcon" aria-hidden="true">🎯</span><strong id="workflowPanelTitle">Missie</strong></header>
+        <div class="workflow-steps">
+          <div><strong>1</strong><span>Beschrijving</span></div>
+          <div><strong>2</strong><span>Prompt</span></div>
+          <div><strong>3</strong><span>Views</span></div>
+          <div><strong>4</strong><span>Validatie</span></div>
+          <div><strong>5</strong><span>Simulatie</span></div>
+        </div>
+        <label class="raw-description-field" for="rawDescriptionText" title="Ruwe beschrijving"><span aria-hidden="true">📝</span><span class="sr-only">Ruwe beschrijving</span>
+          <textarea id="rawDescriptionText" rows="3" spellcheck="true" aria-label="Ruwe beschrijving"></textarea>
+        </label>
+        <div class="strategic-frame" aria-label="Strategisch kader (onderwijsarchitectuur als basis voor de leerarchitectuur)">
+          <div class="strategic-item" data-strategic="mission">
+            <label title="Wens van de leerattractie"><span aria-hidden="true">🏫</span><textarea id="strategicMission" rows="2" aria-label="Missie: wens van de leerattractie" placeholder="Waarom bestaat deze leerbox? (onderwijsarchitectuur)"></textarea></label>
+            <label title="Vertaling naar handelingen van de lerende"><span aria-hidden="true">🕹️</span><textarea id="strategicMissionActions" rows="2" aria-label="Missie: handelingen van de lerende" placeholder="Welke handelingen van de lerende maken dit waar?"></textarea></label>
+          </div>
+          <div class="strategic-item" data-strategic="vision">
+            <label title="Wens van de leerattractie"><span aria-hidden="true">🏫</span><textarea id="strategicVision" rows="2" aria-label="Visie: wens van de leerattractie" placeholder="Welke gewenste situatie streef je na?"></textarea></label>
+            <label title="Vertaling naar handelingen van de lerende"><span aria-hidden="true">🕹️</span><textarea id="strategicVisionActions" rows="2" aria-label="Visie: handelingen van de lerende" placeholder="Welk leerproces / welke handelingen horen daarbij?"></textarea></label>
+          </div>
+          <div class="strategic-item" data-strategic="strategy">
+            <label title="Wens van de leerattractie"><span aria-hidden="true">🏫</span><textarea id="strategicStrategy" rows="2" aria-label="Strategie: wens van de leerattractie" placeholder="Hoe bereik je dat (aanpak, spelkader)?"></textarea></label>
+            <label title="Vertaling naar handelingen van de lerende"><span aria-hidden="true">🕹️</span><textarea id="strategicStrategyActions" rows="2" aria-label="Strategie: handelingen van de lerende" placeholder="Welke actiereeksen van de lerende voeren de strategie uit?"></textarea></label>
+          </div>
+          <div class="strategic-item" data-strategic="goals">
+            <label title="Wens van de leerattractie"><span aria-hidden="true">🏫</span><textarea id="strategicGoals" rows="2" aria-label="Doelen: wens van de leerattractie" placeholder="Concrete doelen naast het leerdoel."></textarea></label>
+            <label title="Vertaling naar handelingen van de lerende"><span aria-hidden="true">🕹️</span><textarea id="strategicGoalsActions" rows="2" aria-label="Doelen: handelingen van de lerende" placeholder="Aan welke handelingen zie je dat de doelen gehaald worden?"></textarea></label>
+          </div>
+        </div>
+        <div id="strategyDesignSlot" hidden aria-label="Ontwerp (strategie)"></div>
+        <div class="strategic-extra" id="extraFieldSlot" hidden aria-label="Bijbehorend veld"></div>
+        <label class="discovery-field" id="discoveryField" hidden title="Ontdekking"><span aria-hidden="true">🔍</span><textarea id="discoveryInput" rows="3" aria-label="Centrale ontdekking" placeholder="Welke centrale ontdekking doet de lerende?"></textarea></label>
+      </section>
+
+      <section class="source-importer" id="sourceImporter" data-workbench-panel="sources" aria-labelledby="sourceImporterHeading" hidden>
+        <header class="source-importer-header">
+          <div>
+            <p class="kicker">Project Bucket</p>
+            <h2 id="sourceImporterHeading">Importeer bronnen</h2>
+          </div>
+          <div class="bucket-status" id="bucketStatus" data-state="idle" aria-live="polite">Nog niet geladen</div>
+        </header>
+        <div class="import-quick-actions" aria-label="Bron toevoegen">
+          <button class="import-action-button" id="importDocumentsButton" type="button" title="Document uploaden"><span aria-hidden="true">DOC</span><strong>Document</strong></button>
+          <button class="import-action-button" id="importZipButton" type="button" title="ZIP-archief uploaden"><span aria-hidden="true">ZIP</span><strong>ZIP</strong></button>
+          <button class="import-action-button" id="importRepositoryButton" type="button" title="GitHub-repository importeren"><span aria-hidden="true">GIT</span><strong>GitHub repo</strong></button>
+          <button class="import-action-button" id="importWebsiteButton" type="button" title="Website importeren"><span aria-hidden="true">WEB</span><strong>Website</strong></button>
+        </div>
+        <div class="import-method-grid import-legacy-controls">
+          <article class="import-card">
+            <span class="import-card-icon" aria-hidden="true">DOC</span>
+            <h3>Document upload</h3>
+            <p>PDF, DOCX, PPTX, XLSX, ODS, MD, CSV of TXT · maximaal 25 MB per bestand.</p>
+            <label class="file-picker" for="sourceDocumentInput">Kies documenten</label>
+            <input id="sourceDocumentInput" type="file" accept=".pdf,.docx,.pptx,.xlsx,.xlsm,.xltx,.ods,.md,.csv,.tsv,.txt,application/pdf,text/plain,text/markdown,text/csv" multiple hidden>
+          </article>
+          <article class="import-card">
+            <span class="import-card-icon" aria-hidden="true">GIT</span>
+            <h3>Repository clone</h3>
+            <p>Clone een publieke HTTPS-repository zonder geschiedenis.</p>
+            <form class="import-inline-form" id="repositoryImportForm">
+              <label for="repositoryUrl">Git-URL</label>
+              <div><input id="repositoryUrl" type="url" required placeholder="https://github.com/organisatie/project.git"><button type="submit" class="secondary-action">Clone</button></div>
+            </form>
+          </article>
+          <article class="import-card">
+            <span class="import-card-icon" aria-hidden="true">WEB</span>
+            <h3>Website scrape</h3>
+            <p>Lees maximaal 10 tekstpagina's binnen hetzelfde domein.</p>
+            <form class="import-inline-form" id="websiteImportForm">
+              <label for="websiteUrl">Website-URL</label>
+              <div><input id="websiteUrl" type="url" required placeholder="https://voorbeeld.nl/kennis"><button type="submit" class="secondary-action">Importeer</button></div>
+            </form>
+          </article>
+          <article class="import-card">
+            <span class="import-card-icon" aria-hidden="true">ZIP</span>
+            <h3>ZIP-archief</h3>
+            <p>Digital Twin-code of assets, veilig uitgepakt in code_repo.</p>
+            <label class="file-picker" for="sourceZipInput">Kies ZIP-bestand</label>
+            <input id="sourceZipInput" type="file" accept=".zip,application/zip" hidden>
+          </article>
+        </div>
+        <section class="bucket-contents" aria-label="Bronnen">
+          <div class="bucket-contents-header" hidden><h3 id="bucketContentsHeading">Bronnen in deze leerbox</h3><button class="secondary-action" id="refreshBucketButton" type="button">Vernieuw</button></div>
+          <div id="bucketSourceList" class="bucket-source-list"><p class="empty-note">Nog geen bronnen geïmporteerd.</p></div>
+        </section>
+      </section>
+
+      <section class="agent-panel" id="agentPanel" data-workbench-panel="agent" aria-labelledby="agentHeading" hidden>
+        <header class="agent-panel-header">
+          <div class="agent-header-main">
+            <h2 id="agentHeading"><span class="agent-status agent-status-inline" id="agentStatus" data-state="checking"><span class="agent-status-dot" aria-hidden="true"></span><strong id="agentStatusLabel" class="agent-status-text">Agent controleren…</strong></span>Agent</h2>
+            <div class="agent-header-buttons">
+              <button class="secondary-action" type="button" id="agentResetConversationButton" title="Nieuw gesprek">↻</button>
+              <button class="secondary-action" type="button" id="agentNewConversationButton" aria-expanded="false" aria-controls="agentBucketConsentPanel" title="Documenten meesturen">+</button>
+              <button class="agent-trace-toggle" type="button" id="agentTraceToggle" hidden aria-expanded="false" aria-controls="agentTracePanel" title="Azure API-call en response bekijken">⌁</button>
+              <button class="panel-collapse-button" id="agentPanelCloseButton" type="button" aria-label="Venster inklappen" title="Inklappen">−</button>
+            </div>
+          </div>
+        </header>
+        <div class="agent-mode-row">
+          <select id="agentMode" aria-label="Kies prompt">
+            <option value="">Kies prompt…</option>
+            <option value="start_description">Start vanuit beschrijving</option>
+            <option value="capture">Freell / leertaal maken</option>
+            <option value="testdata">Simulatiedata maken</option>
+          </select>
+        </div>
+        <p class="agent-intro" id="agentIntro">De handmatige promptworkflow blijft beschikbaar. Ingelogde architecten en technologen kunnen daarnaast de interne agent gebruiken.</p>
+        <section class="agent-bucket-consent" id="agentBucketConsentPanel" data-enabled="false" aria-labelledby="agentBucketConsentHeading">
+          <div class="agent-bucket-consent-header">
+            <div>
+              <h3 id="agentBucketConsentHeading">Project Bucket-context</h3>
+              <p id="agentBucketConsentIntro">Kies bronnen voor import of om met de agent mee te sturen.</p>
+            </div>
+            <button class="agent-document-close" type="button" id="agentDocumentCloseButton" aria-label="Documentvenster sluiten" title="Sluiten">−</button>
+            <label class="consent-switch" for="agentBucketConsent">
+              <input id="agentBucketConsent" type="checkbox" role="switch" aria-describedby="agentBucketConsentSummary">
+              <span aria-hidden="true"></span>
+              <strong>Deel bij volgende AI-call</strong>
+            </label>
+          </div>
+          <div class="bucket-agent-bar" id="bucketAgentBar" hidden>
+            <button class="bucket-agent-button" id="fillFromSourcesButton" type="button" title="Laat de Agent lege editorvelden invullen op basis van de geselecteerde bronnen (of alle bronnen als je niets aanvinkt). De Agent verzint niets en toont eerst de kosten.">
+              <span class="bucket-agent-icon" aria-hidden="true"><svg class="shared-advisor-face-icon" viewBox="0 0 80 94"><path class="advisor-face" d="M21 43c0-15 8-24 19-24s19 9 19 24v12c0 13-8 22-19 22s-19-9-19-22V43Z"></path></svg></span>
+              <span class="bucket-agent-label">Velden invullen uit bronnen</span>
+            </button>
+            <span class="bucket-agent-status" id="fillFromSourcesStatus" role="status" aria-live="polite"></span>
+          </div>
+          <div class="agent-bucket-source-list" id="agentBucketSources">
+            <p class="empty-note">Open eerst een leerbox met een geldig leerbox-id.</p>
+          </div>
+          <p class="bucket-section-note" id="agentBucketImportNote"><span aria-hidden="true">⬆</span>Importeer nieuwe bronnen voor deze leerbox: document, ZIP, GitHub-repo of website.</p>
+          <div class="import-quick-actions document-drawer-import-actions" aria-label="Bron toevoegen">
+            <button class="import-action-button" id="agentImportDocumentsButton" type="button" title="Document uploaden"><span aria-hidden="true">DOC</span><strong>Document</strong></button>
+            <button class="import-action-button" id="agentImportZipButton" type="button" title="ZIP-archief uploaden"><span aria-hidden="true">ZIP</span><strong>ZIP</strong></button>
+            <button class="import-action-button" id="agentImportRepositoryButton" type="button" title="GitHub-repository importeren"><span aria-hidden="true">GIT</span><strong>GitHub repo</strong></button>
+            <button class="import-action-button" id="agentImportWebsiteButton" type="button" title="Website importeren"><span aria-hidden="true">WEB</span><strong>Website</strong></button>
+          </div>
+          <p class="agent-bucket-consent-summary" id="agentBucketConsentSummary">Kies documenten die je met de volgende AI-call meestuurt.</p>
+        </section>
+        <div class="agent-template-fields" id="agentTemplateFields" hidden aria-label="Invulvelden van de gekozen prompt"></div>
+        <div class="agent-conversation" id="agentConversation" aria-live="polite">
+          <p class="empty-note">De agent wacht op je eerste bericht.</p>
+        </div>
+        <div class="agent-selected-sources" id="agentSelectedSources" hidden aria-label="Meegestuurde bronnen"></div>
+        <form class="agent-composer" id="agentForm">
+          <label for="agentInput">Bericht aan de agent
+            <textarea id="agentInput" rows="3" maxlength="120000" placeholder="Beschrijf je leerattractie of vraag wat nog ontbreekt."></textarea>
+          </label>
+          <div class="agent-composer-actions">
+            <small id="agentLimitText">Maximaal 12 berichten per gesprek.</small>
+            <button class="primary-action" type="submit" id="agentSendButton" disabled>Stuur naar agent</button>
+          </div>
+        </form>
+        <div class="agent-result-actions" id="agentResultActions" hidden>
+          <button class="secondary-action" type="button" id="agentApplyCaptureButton">Gebruik JSON in editor</button>
+          <button class="secondary-action" type="button" id="agentApplyTestDataButton">Gebruik als testdata</button>
+        </div>
+      </section>
+      <aside class="agent-trace" id="agentTracePanel" hidden aria-label="Azure API-call en response">
+        <header><span>Technoloog</span><strong>Azure API-call</strong><button type="button" id="agentTraceClose" aria-label="Sluiten">−</button></header>
+        <pre id="agentTraceOutput">Nog geen call uitgevoerd.</pre>
+      </aside>
+
+      <dialog class="agent-token-dialog" id="agentTokenDialog" aria-labelledby="agentTokenDialogTitle">
+        <form method="dialog">
+          <header>
+            <span>AI-call</span>
+            <strong id="agentTokenDialogTitle">Tokeninschatting</strong>
+          </header>
+          <p>Controleer de verwachte omvang voordat de agent tokens gebruikt.</p>
+          <dl>
+            <div><dt>Te versturen</dt><dd id="agentTokenInputEstimate">0 tokens</dd></div>
+            <div><dt>Verwachte output</dt><dd id="agentTokenOutputEstimate">0 tokens</dd></div>
+            <div><dt>Totaal</dt><dd id="agentTokenTotalEstimate">0 tokens</dd></div>
+            <div><dt>Sol-kostenindicatie</dt><dd id="agentTokenCostEstimate">$0.0000</dd></div>
+          </dl>
+          <menu>
+            <button class="secondary-action" value="cancel">Annuleer</button>
+            <button class="primary-action" value="confirm">Akkoord, verstuur</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <dialog class="agent-token-dialog agent-call-result-dialog" id="agentCallResultDialog" aria-labelledby="agentCallResultTitle">
+        <form method="dialog">
+          <header>
+            <span id="agentCallResultKicker">AI-call afgerond</span>
+            <strong id="agentCallResultTitle">Werkelijk tokengebruik</strong>
+          </header>
+          <p id="agentCallResultMessage">De Agent-call is voltooid.</p>
+          <dl>
+            <div><dt>Werkelijke input</dt><dd id="agentCallInputActual">Niet gemeld</dd></div>
+            <div><dt>Werkelijke output</dt><dd id="agentCallOutputActual">Niet gemeld</dd></div>
+            <div><dt>Werkelijk totaal</dt><dd id="agentCallTotalActual">Niet gemeld</dd></div>
+            <div><dt>Sol-kostenindicatie</dt><dd id="agentCallCostActual">Niet berekenbaar</dd></div>
+          </dl>
+          <p class="agent-call-cost-note">Het tokengebruik komt uit de providerrespons. Het dollarbedrag gebruikt het standaardtarief van GPT-5.6 Sol ($5/M input, $0.50/M cached input, $30/M output) en kan bij Priority, lange context of een ander model afwijken.</p>
+          <menu>
+            <button class="primary-action" value="close">Sluiten</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <dialog class="source-fill-dialog" id="sourceFillDialog" aria-labelledby="sourceFillDialogTitle">
+        <form method="dialog">
+          <header>
+            <span>Agent · velden uit bronnen</span>
+            <strong id="sourceFillDialogTitle">Resultaat broninvulling</strong>
+          </header>
+          <p class="source-fill-summary" id="sourceFillSummary"></p>
+          <p class="source-fill-intro" id="sourceFillIntro">Hieronder staan de automatisch doorgevoerde aanvullingen en eventuele wijzigingen die nog jouw goedkeuring vragen.</p>
+          <div class="source-fill-list" id="sourceFillList"></div>
+          <menu>
+            <button class="secondary-action" value="cancel" id="sourceFillCancelButton">Niets wijzigen</button>
+            <button class="secondary-action source-fill-continue" type="button" id="sourceFillContinueButton" hidden>Verder invullen</button>
+            <button class="primary-action" value="confirm" id="sourceFillApplyButton">Aangevinkte toepassen</button>
+          </menu>
+        </form>
+      </dialog>
+
+      <section class="editor-grid" id="editorGrid" data-active-view="intake" aria-label="Leerbox editor" data-i18n-aria-label="aria.editor" hidden>
+        <aside class="palette" aria-label="Intakevelden" data-i18n-aria-label="aria.intake">
+          <button class="panel-collapse-button" id="paletteCloseButton" type="button" aria-label="Venster inklappen" title="Inklappen">−</button>
+          <header class="floating-panel-title"><span id="paletteIcon" aria-hidden="true">ℹ️</span><strong id="paletteTitle">Infobox</strong></header>
+          <nav class="tab-list" aria-label="Editor onderdelen" data-i18n-aria-label="aria.tabs">
+            <button class="tab-button is-active" type="button" data-panel="overview" data-i18n="tabs.overview">Kern</button>
+            <button class="tab-button" type="button" data-panel="design" data-i18n="tabs.design">Ontwerp</button>
+            <button class="tab-button" type="button" data-panel="game" data-i18n="tabs.game">Game</button>
+            <button class="tab-button" type="button" data-panel="entry" data-i18n="tabs.entry">Start</button>
+            <button class="tab-button" type="button" data-panel="measurement" data-i18n="tabs.measurement">Meten</button>
+          </nav>
+
+          <form id="captureForm" class="form-stack">
+            <section class="panel is-active" data-panel="overview">
+              <label class="strategic-phase" title="Onderwijsarchitectuur-fase"><span aria-hidden="true">🏛️</span>
+                <select id="strategicPhase">
+                  <option value="">Kies fase…</option>
+                  <option value="assessment">Assessment</option>
+                  <option value="blueprint">Blueprint</option>
+                  <option value="offer">Offer</option>
+                  <option value="design">Design</option>
+                  <option value="accreditation">Accreditation</option>
+                  <option value="curriculum">Curriculum</option>
+                  <option value="implementation">Implementation</option>
+                  <option value="evaluation">Evaluation</option>
+                </select>
+              </label>
+              <label data-i18n-label="labels.name">Naam
+                <input name="metadata.work_name" autocomplete="off">
+              </label>
+              <label data-i18n-label="labels.leerboxId">Leerbox-id
+                <input name="metadata.leerbox_id" autocomplete="off" placeholder="wordt automatisch kebab-case" data-i18n-placeholder="placeholders.autoKebab">
+              </label>
+              <div class="field-row">
+                <label data-i18n-label="labels.mode">Modus
+                  <select name="capture_mode">
+                    <option value="unknown" data-i18n="enum.unknown">onbekend</option>
+                    <option value="existing" data-i18n="enum.existing">bestaand</option>
+                    <option value="desired" data-i18n="enum.desired">gewenst</option>
+                    <option value="mixed" data-i18n="enum.mixed">gemengd</option>
+                  </select>
+                </label>
+                <label data-i18n-label="labels.type">Type
+                  <select name="metadata.type">
+                    <option value="unknown" data-i18n="enum.unknown">onbekend</option>
+                    <option value="physical" data-i18n="enum.physical">fysiek</option>
+                    <option value="digital" data-i18n="enum.digital">digitaal</option>
+                    <option value="hybrid" data-i18n="enum.hybrid">hybride</option>
+                    <option value="role_simulation" data-i18n="enum.role_simulation">rollensimulatie</option>
+                  </select>
+                </label>
+              </div>
+              <div class="field-row">
+                <label data-i18n-label="labels.status">Status
+                  <select name="metadata.status">
+                    <option value="unknown" data-i18n="enum.unknown">onbekend</option>
+                    <option value="idea" data-i18n="enum.idea">idee</option>
+                    <option value="existing_practice" data-i18n="enum.existing_practice">bestaande praktijk</option>
+                    <option value="proto_leerbox" data-i18n="enum.proto_leerbox">proto-leerbox</option>
+                    <option value="pilot" data-i18n="enum.pilot">pilot</option>
+                    <option value="digital_twin" data-i18n="enum.digital_twin">digital twin</option>
+                    <option value="validated" data-i18n="enum.validated">gevalideerd</option>
+                  </select>
+                </label>
+                <label data-i18n-label="labels.socialSetting">Sociale setting
+                  <select name="participants.social_setting">
+                    <option value="unknown" data-i18n="enum.unknown">onbekend</option>
+                    <option value="individual" data-i18n="enum.individual">individueel</option>
+                    <option value="pair" data-i18n="enum.pair">tweetal</option>
+                    <option value="group" data-i18n="enum.group">groep</option>
+                    <option value="mixed" data-i18n="enum.mixed">gemengd</option>
+                  </select>
+                </label>
+              </div>
+              <label data-i18n-label="labels.domain">Domein
+                <input name="metadata.domain" autocomplete="off">
+              </label>
+              <label data-i18n-label="labels.summary">Samenvatting
+                <textarea name="metadata.summary" rows="4"></textarea>
+              </label>
+              <label data-i18n-label="labels.learningGoal">Leerdoel
+                <textarea name="pedagogical_core.central_learning_goal" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.successDefinition">Succesdefinitie
+                <textarea name="pedagogical_core.success_definition" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.targetGroup">Doelgroep
+                <textarea name="participants.primary_target_group" rows="2"></textarea>
+              </label>
+            </section>
+
+            <section class="panel" data-panel="design">
+              <label data-i18n-label="labels.attractionType">Type leerattractie
+                <select name="leerbox_design.attraction_type" multiple size="4">
+                  <option value="presenting" data-i18n="enum.presenting">presenterend</option>
+                  <option value="applying" data-i18n="enum.applying">toepassend</option>
+                  <option value="investigating" data-i18n="enum.investigating">onderzoekend</option>
+                  <option value="creating" data-i18n="enum.creating">creerend</option>
+                </select>
+              </label>
+              <label data-i18n-label="labels.learningModes">Leerwijzen
+                <select name="leerbox_design.learning_modes" multiple data-multi="learningMode"></select>
+              </label>
+              <label data-i18n-label="labels.leerboxPrinciples">Leerbox-principes
+                <select name="leerbox_design.leerbox_principles" multiple data-multi="leerboxPrinciple"></select>
+              </label>
+              <label data-i18n-label="labels.materialMix">Materiaalmix
+                <select name="leerbox_design.material_mix" multiple data-multi="materialCategory"></select>
+              </label>
+              <label data-i18n-label="labels.boxClimates">Boxklimaten
+                <select name="leerbox_design.box_climates" multiple data-multi="boxClimate"></select>
+              </label>
+              <label data-i18n-label="labels.goodPractices">Good practices
+                <select name="leerbox_design.good_practice_tags" multiple data-multi="goodPractice"></select>
+              </label>
+            </section>
+
+            <section class="panel" data-panel="game">
+              <label data-i18n-label="labels.gameGenres"><span class="field-icon" aria-hidden="true">🕹️</span>Gamegenres
+                <select name="game_design.game_genres" multiple data-multi="gameGenre"></select>
+              </label>
+              <label data-i18n-label="labels.playerGoal"><span class="field-icon" aria-hidden="true">🎯</span>Spelersdoel
+                <textarea name="game_design.player_goal" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.winState"><span class="field-icon" aria-hidden="true">🏆</span>Winconditie
+                <textarea name="game_design.win_state" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.failState"><span class="field-icon" aria-hidden="true">💀</span>Faalconditie
+                <textarea name="game_design.fail_state" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.rulesSummary"><span class="field-icon" aria-hidden="true">📜</span>Regels
+                <textarea name="game_design.rules_summary" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.gameMechanics"><span class="field-icon" aria-hidden="true">⚙️</span>Mechanics
+                <select name="game_design.mechanics" multiple data-multi="gameMechanic"></select>
+              </label>
+              <label data-i18n-label="labels.gameDynamics"><span class="field-icon" aria-hidden="true">🔄</span>Dynamics
+                <select name="game_design.dynamics" multiple data-multi="gameDynamic"></select>
+              </label>
+              <label data-i18n-label="labels.gameAesthetics"><span class="field-icon" aria-hidden="true">🎨</span>Aesthetics / speelervaring
+                <select name="game_design.aesthetics" multiple data-multi="gameAesthetic"></select>
+              </label>
+              <label data-i18n-label="labels.progression"><span class="field-icon" aria-hidden="true">📈</span>Progressie
+                <select name="game_design.levels_or_progression" multiple data-multi="progressionSystem"></select>
+              </label>
+              <label data-i18n-label="labels.coreLoops"><span class="field-icon" aria-hidden="true">♻️</span>Core loops
+                <textarea name="game_design.core_loops" rows="3" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.challengeCurve"><span class="field-icon" aria-hidden="true">⛰️</span>Challenge curve
+                <textarea name="game_design.challenge_curve" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.onboarding"><span class="field-icon" aria-hidden="true">🚪</span>Onboarding
+                <textarea name="game_design.onboarding" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.playForm"><span class="field-icon" aria-hidden="true">🎭</span>Herkenbare spelvorm
+                <input name="play_characteristics.recognizable_play_form" autocomplete="off">
+              </label>
+              <label data-i18n-label="labels.theme"><span class="field-icon" aria-hidden="true">📖</span>Thema of verhaal
+                <textarea name="play_characteristics.play_theme_or_story" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.coreMechanics"><span class="field-icon" aria-hidden="true">🔧</span>Kernmechanieken
+                <textarea name="play_characteristics.core_mechanics" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.rules"><span class="field-icon" aria-hidden="true">🚧</span>Regels of beperkingen
+                <textarea name="play_characteristics.rules_or_constraints" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.freedomDegrees"><span class="field-icon" aria-hidden="true">🕊</span>Vrijheidsgraden
+                <textarea name="play_characteristics.freedom_degrees" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.feedbackLoop"><span class="field-icon" aria-hidden="true">💬</span>Directe feedbacklus
+                <textarea name="play_characteristics.direct_feedback_loop" rows="3"></textarea>
+              </label>
+            </section>
+
+            <section class="panel" data-panel="entry">
+              <label data-i18n-label="labels.firstVisibleAction">Eerste zichtbare actie
+                <textarea name="entry_and_orientation.first_visible_action" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.minimalStartInstruction">Minimale startinstructie
+                <textarea name="entry_and_orientation.minimal_start_instruction" rows="2"></textarea>
+              </label>
+              <label data-i18n-label="labels.selfStartingSignal">Self-starting signaal
+                <textarea name="entry_and_orientation.self_starting_signal" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.selfExplainingCues">Self-explaining cues
+                <textarea name="entry_and_orientation.self_explaining_cues" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.proactiveInvitation">Proactieve uitnodiging
+                <textarea name="entry_and_orientation.proactive_invitation" rows="3"></textarea>
+              </label>
+            </section>
+
+            <section class="panel" data-panel="measurement">
+              <div class="measurement-dashboard" id="measurementDashboard" aria-label="Meetdashboard"></div>
+              <label data-i18n-label="labels.actionTypes">Action types
+                <textarea name="measurement.event_contract.example_action_types" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.resultValues">Result values
+                <textarea name="measurement.event_contract.result_values" rows="3" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.notVisibleToEngine">Niet zichtbaar voor engine
+                <textarea name="simulation_definition.not_visible_to_engine" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.realismNotes">Realismenotities contactgeneratie
+                <textarea name="simulation_definition.realism_notes_for_contact_generation" rows="4"></textarea>
+              </label>
+              <label data-i18n-label="labels.privacy">Privacy
+                <textarea name="measurement.privacy_notes" rows="3"></textarea>
+              </label>
+            </section>
+          </form>
+        </aside>
+
+        <section class="workspace" aria-label="Visuele programmeerwerkplaats" data-i18n-aria-label="aria.workspace">
+          <div class="workspace-toolbar">
+            <div>
+              <p class="kicker" data-i18n="workspace.kicker">Visuele bouwblokken</p>
+              <h2 id="workspaceTitle">Nieuwe leerbox</h2>
+            </div>
+            <div class="workspace-actions" aria-label="Snelle bouwcommando's">
+              <button class="secondary-action" type="button" id="addObjectButton" title="Nieuw object" aria-label="Nieuw object"><span aria-hidden="true">⬡</span><small>Object</small></button>
+              <button class="secondary-action" type="button" id="addStepButton" title="Nieuwe routestap" aria-label="Nieuwe routestap"><span aria-hidden="true">➜</span><small>Stap</small></button>
+              <button class="secondary-action" type="button" id="addDependencyButton" title="Nieuwe conditionele afhankelijkheid" aria-label="Nieuwe conditionele afhankelijkheid"><span aria-hidden="true">▣</span><small>Voorwaarde</small></button>
+            </div>
+          </div>
+
+          <nav class="workspace-view-tabs" aria-label="Synchrone views">
+            <button class="workspace-view-button" type="button" data-workspace-view="latex" title="LaTeX-plan"><span aria-hidden="true">▤</span><small>Plan</small></button>
+            <button class="workspace-view-button" type="button" data-workspace-view="architecture" title="Leerarchitectuur"><span aria-hidden="true">⌘</span><small>Structuur</small></button>
+            <button class="workspace-view-button is-active" type="button" data-workspace-view="vat" title="Gevatte leerbox"><span aria-hidden="true">⌬</span><small>Kaart</small></button>
+            <button class="workspace-view-button" type="button" data-workspace-view="statements" title="Computertaal-statements"><span aria-hidden="true">{ }</span><small>Code</small></button>
+          </nav>
+
+          <section class="workspace-view" data-workspace-view="latex">
+            <header class="workspace-floating-header"><div><span aria-hidden="true">▤</span><strong>Plan</strong></div><button type="button" data-workspace-close aria-label="Plan inklappen" title="Inklappen">−</button></header>
+            <div class="latex-toolbar">
+              <div class="plan-view-switch" role="group" aria-label="Weergave van het ontwerpplan">
+                <button type="button" class="plan-view-button is-active" data-plan-view="source">TeX</button>
+                <button type="button" class="plan-view-button" data-plan-view="pdf">PDF</button>
+                <button type="button" class="plan-view-button" data-plan-view="json">JSON</button>
+              </div>
+              <button class="secondary-action" type="button" id="downloadLatexButton">Download .tex</button>
+            </div>
+            <div id="latexPreview" class="latex-preview"></div>
+            <pre id="latexJsonView" class="latex-json-view" hidden></pre>
+            <div id="latexPdfView" class="latex-pdf-view" hidden>
+              <p class="empty-note" id="latexPdfStatus">PDF wordt gegenereerd…</p>
+              <iframe id="latexPdfFrame" title="PDF-weergave van het ontwerpplan" hidden></iframe>
+            </div>
+          </section>
+
+          <section class="workspace-view" data-workspace-view="architecture">
+            <header class="workspace-floating-header"><div><span aria-hidden="true">⌘</span><strong>Structuur</strong></div><button type="button" data-workspace-close aria-label="Structuur inklappen" title="Inklappen">−</button></header>
+            <div id="architectureDiagram" class="architecture-diagram"></div>
+            <!-- Route en volgorde is opgenomen in Structuur: eerst de architectuur, daaronder de route. -->
+            <div class="architecture-route-fields" id="architectureRouteFields">
+              <h3 data-i18n="tabs.sequence">Route en volgorde</h3>
+              <label data-i18n-label="labels.routeModel">Routemodel
+                <select name="freedom_and_sequence.route_model">
+                  <option value="unknown" data-i18n="enum.unknown">onbekend</option>
+                  <option value="free" data-i18n="enum.free">vrij</option>
+                  <option value="preferred_sequence" data-i18n="enum.preferred_sequence">voorkeursvolgorde</option>
+                  <option value="partly_locked" data-i18n="enum.partly_locked">deels vergrendeld</option>
+                  <option value="fixed_sequence" data-i18n="enum.fixed_sequence">vaste volgorde</option>
+                </select>
+              </label>
+              <label data-i18n-label="labels.freedomPrinciple">Vrijheidsprincipe
+                <textarea name="freedom_and_sequence.freedom_principle" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.preferredRoute">Voorkeursroute
+                <textarea name="freedom_and_sequence.preferred_sequence" rows="4" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.freeChoiceZones">Vrije keuzezones
+                <textarea name="freedom_and_sequence.free_choice_zones" rows="3" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.forcedPathRisk">Risico op gedwongen pad
+                <textarea name="freedom_and_sequence.forced_path_risk" rows="3"></textarea>
+              </label>
+              <label data-i18n-label="labels.variationOpportunities">Variatiekansen
+                <textarea name="freedom_and_sequence.variation_opportunities" rows="3" data-list></textarea>
+              </label>
+              <label data-i18n-label="labels.mainBarrier">Hoofdbarriere
+                <textarea name="barriers_and_recovery.main_barrier" rows="3"></textarea>
+              </label>
+            </div>
+          </section>
+
+          <section class="workspace-view is-active" data-workspace-view="vat">
+            <div class="strategy-canvas-layout">
+              <aside class="object-toolbox" aria-label="Bouwstenen">
+                <header><span class="panel-code">BUILD</span><h3>Bouwstenen</h3><small id="inventoryLevel" title="Vrijgespeeld inventarisniveau">L0</small><button id="toolboxToggle" type="button" aria-label="Bouwmenu uitklappen" aria-expanded="false" title="Bouwmenu in- of uitklappen">›</button></header>
+                <p>Sleep naar de kaart</p>
+                <button type="button" draggable="true" data-unlock-level="0" data-object-preset="entry" title="Startobject: begin van iedere actiereeks"><span>⚑</span><strong>Start</strong></button>
+                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="success" title="Succesobject: zichtbaar resultaat"><span>★</span><strong>Succes</strong></button>
+                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="resistance" title="Weerstandsobject: uitdaging of blokkade"><span>▲</span><strong>Weerstand</strong></button>
+                <button type="button" draggable="true" data-unlock-level="2" data-object-preset="normal" title="Normaal leerobject"><span>⚙</span><strong>Normaal</strong></button>
+                <div class="path-legend" aria-label="Padlegenda">
+                  <span><i class="free"></i>Vrij</span>
+                  <span><i class="strict"></i>Sequentie</span>
+                  <span><i class="conditional"></i>Voorwaarde</span>
+                </div>
+              </aside>
+
+              <div class="network-stage" id="networkCanvas" tabindex="0" aria-label="Leerbox-netwerkcanvas; sleep bouwstenen hierheen">
+                <div class="canvas-hud"><span>ARCHITECTUURKAART</span><small>Sleep objecten · klik om te inspecteren</small></div>
+                <div class="autosave-indicator"><span id="autosaveStatus" data-state="">Automatisch bewaren actief</span><button type="button" id="historyButton" title="Herstelpunten bekijken">⟲</button><button type="button" id="centerCanvasButton" title="Kaart centreren op de leerobjecten" aria-label="Kaart centreren op de leerobjecten">&#9678;</button></div>
+                <aside class="history-panel" id="historyPanel" hidden aria-label="Herstelpunten">
+                  <header><strong>Herstelpunten</strong><button type="button" id="historyCloseButton" aria-label="Sluiten" title="Sluiten">−</button></header>
+                  <div id="historyList"></div>
+                </aside>
+                <div class="canvas-resource-bar" aria-label="Kaartstatistieken">
+                  <span class="hud-freedom" id="hudFreedom" title="Vrijheid van de leerbox"><i aria-hidden="true">🕊</i><span class="freedom-meter" aria-hidden="true"><i class="freedom-fill"></i></span><b id="hudFreedomValue">–</b></span>
+                  <span title="Leerobjecten"><i>⬡</i><b id="hudObjectCount">0</b></span>
+                  <span title="Routestappen"><i>➜</i><b id="hudStepCount">0</b></span>
+                  <span title="Voorwaarden"><i>▣</i><b id="hudDependencyCount">0</b></span>
+                </div>
+                <button class="canvas-report-toggle" id="canvasReportToggle" type="button" aria-expanded="false" title="Gevatte leerbox als rapport openen">▦</button>
+                <aside class="canvas-report-drawer" id="canvasReportDrawer" hidden aria-label="Rapport Gevatte leerbox">
+                  <header><div><span>WERELDRAPPORT</span><strong>Gevatte leerbox</strong></div><button id="canvasReportClose" type="button" aria-label="Rapport sluiten">_</button></header>
+                  <div id="canvasReportContent"></div>
+                </aside>
+                <aside class="advisor-panel is-collapsed" id="advisorPanel" data-severity="info" aria-live="polite">
+                  <button class="advisor-toggle" id="advisorToggle" type="button" aria-expanded="false" title="Adviseur openen"><span class="advisor-portrait" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path class="advisor-cap" d="m4 14 20-9 20 9-20 9-20-9Z"/><path class="advisor-cap-line" d="M12 18v8c6 5 18 5 24 0v-8M43 15v10"/><circle class="advisor-face" cx="24" cy="27" r="10"/><path class="advisor-features" d="M20 26h.1M28 26h.1M20 31c2.7 2 5.3 2 8 0M13 43c2-6 6-9 11-9s9 3 11 9"/></svg></span><b>Adviseur</b><i>+</i></button>
+                  <div class="advisor-body" id="advisorBody" hidden>
+                    <span class="advisor-signal" id="advisorSignal">INFRASTRUCTUURSCAN</span>
+                    <label class="advisor-ai-switch"><input id="advisorAiEnabled" type="checkbox"><span>AI-advies</span><small>uit</small></label>
+                    <p id="advisorMessage">De adviseur analyseert de leerbox.</p>
+                    <button id="openAdvisorAgent" type="button"><svg class="shared-advisor-face-icon" viewBox="0 0 80 94" aria-hidden="true"><path class="advisor-face" d="M21 43c0-15 8-24 19-24s19 9 19 24v12c0 13-8 22-19 22s-19-9-19-22V43Z"></path></svg><span>Bespreek met adviseur</span></button>
+                  </div>
+                </aside>
+                <svg id="networkEdges" aria-hidden="true"></svg>
+                <div id="networkNodes" class="network-nodes"></div>
+                <div id="canvasEmptyState" class="canvas-empty-state"><strong>Lege spelwereld</strong><span>Sleep links een startobject naar de kaart.</span></div>
+              </div>
+
+              <aside class="canvas-inspector" aria-label="Eigenschappenvenster">
+                <header><span class="panel-code">SCAN</span><h3>Inspector</h3></header>
+                <section class="block-lane inspector-lane">
+                  <div class="lane-header"><h3 data-i18n="lanes.objects">Objecten</h3><span id="objectCount">0</span></div>
+                  <div id="objectBlocks" class="block-list"></div>
+                </section>
+                <details class="inspector-drawer">
+                  <summary><span data-i18n="lanes.route">Interactieroute</span><b id="stepCount">0</b></summary>
+                  <div id="stepBlocks" class="block-list route-list"></div>
+                </details>
+                <details class="inspector-drawer">
+                  <summary><span data-i18n="lanes.dependencies">Afhankelijkheden</span><b id="dependencyCount">0</b></summary>
+                  <div id="dependencyBlocks" class="block-list"></div>
+                </details>
+              </aside>
+            </div>
+          </section>
+
+          <section class="workspace-view" data-workspace-view="statements">
+            <header class="workspace-floating-header"><div><span aria-hidden="true">&lt;/&gt;</span><strong>Code</strong></div><button type="button" data-workspace-close aria-label="Code inklappen" title="Inklappen">−</button></header>
+            <div class="statement-grid">
+              <label>Volledige set
+                <textarea id="fullStatementsOutput" spellcheck="false"></textarea>
+              </label>
+              <label>Gevatte leerbox
+                <textarea id="vatStatementsOutput" spellcheck="false"></textarea>
+              </label>
+            </div>
+          </section>
+
+          <div class="control-window" id="controlWindow">
+            <header class="workspace-floating-header"><div><span aria-hidden="true">&#10003;</span><strong>Controle</strong></div><button type="button" data-workbench-close="build" aria-label="Controle inklappen" title="Inklappen">&minus;</button></header>
+            <section id="validationPanel" class="validation-panel">
+              <div>
+                <strong id="validationStatus">Incompleet</strong>
+                <span id="validationSummary">Controle loopt.</span>
+              </div>
+              <ul id="validationList"></ul>
+            </section>
+
+            <section class="audit-strip" aria-label="Capture-audit" data-i18n-aria-label="aria.audit">
+              <div>
+                <strong id="auditScore">0/0</strong>
+                <span data-i18n="audit.requiredComplete">verplichte velden compleet</span>
+              </div>
+              <ul id="auditList"></ul>
+            </section>
+          </div>
+
+          <section id="simulationPanel" class="simulation-panel" aria-live="polite">
+            <div class="simulation-panel-head">
+              <div>
+                <strong>Handmatige simulatietrap</strong>
+                <span>Plak of upload de JSON-actiestroom uit je eigen AI-omgeving.</span>
+              </div>
+              <div class="simulation-actions">
+                <button class="secondary-action" type="button" id="uploadTestDataButton">Upload testdata</button>
+                <button class="primary-action" type="button" id="runTestButton" disabled>Run Test</button>
+                <input id="testDataFileInput" type="file" accept="application/json,.json" hidden>
+              </div>
+            </div>
+            <section class="simulation-profile-panel" aria-label="Simulatieprofiel">
+              <header><div><strong>Spelerprofiel</strong><span>Stuurt de simulatieprompt; bestaande testdata blijven beschikbaar.</span></div><div class="profile-mode-switch" role="group" aria-label="Simulatiemodus"><button type="button" class="is-active" data-profile-mode="individual">♙ Individu</button><button type="button" data-profile-mode="group">♟ Groep</button></div></header>
+              <div class="archetype-sliders" id="archetypeSliders">
+                <label>Veroveraar <input type="range" min="0" max="100" value="20" data-archetype="Veroveraar"><output>20%</output></label>
+                <label>Verwerver <input type="range" min="0" max="100" value="20" data-archetype="Verwerver"><output>20%</output></label>
+                <label>Verkenner <input type="range" min="0" max="100" value="20" data-archetype="Verkenner"><output>20%</output></label>
+                <label>Volger <input type="range" min="0" max="100" value="20" data-archetype="Volger"><output>20%</output></label>
+                <label>Verlater <input type="range" min="0" max="100" value="20" data-archetype="Verlater"><output>20%</output></label>
+              </div>
+            </section>
+            <div class="existing-data-panel">
+              <div>
+                <strong>Gebruik eerdere data</strong>
+                <span>Bestaande data kunnen handig zijn, maar zijn mogelijk niet meer representatief als de leerbox, objecten of afhankelijkheden zijn aangepast.</span>
+              </div>
+              <div class="existing-data-actions">
+                <select id="existingDataSelect">
+                  <option value="">Nog geen eerdere data geladen</option>
+                </select>
+                <button class="secondary-action" type="button" id="refreshExistingDataButton">Zoek eerdere data</button>
+                <button class="secondary-action" type="button" id="useExistingDataButton" disabled>Gebruik eerdere data</button>
+              </div>
+            </div>
+            <textarea id="testDataInput" rows="6" spellcheck="false" placeholder='[{"timestamp":"2026-07-06T09:00:00.000Z","user_id":"u1","learning_object_id":"start"}]'></textarea>
+            <div id="testDataStatus" class="testdata-status">Nog geen testdata geladen.</div>
+            <div id="simulationOutput">Nog geen test uitgevoerd.</div>
+          </section>
+
+        </section>
+
+        <aside class="json-panel" aria-label="JSON export" data-i18n-aria-label="aria.jsonExport">
+          <div class="json-header">
+            <div>
+              <p class="kicker" data-i18n="json.kicker">Capture JSON</p>
+              <h2 data-i18n="json.heading">Live uitvoer</h2>
+            </div>
+            <div class="json-export-actions"><button class="secondary-action" type="button" id="downloadLatexDataButton">▤ Blauwdruk .tex</button><button class="secondary-action" type="button" id="copyButton" data-i18n="actions.copy">Kopieer</button></div>
+          </div>
+          <textarea id="jsonOutput" spellcheck="false" aria-label="JSON uitvoer" data-i18n-aria-label="aria.jsonOutput"></textarea>
+        </aside>
+      </section>
+        </div>
+      </div>
+    </main>
+
+    <dialog id="blockDialog">
+      <form method="dialog" id="blockForm">
+        <header class="dialog-header">
+          <h2 id="dialogTitle">Blok</h2>
+          <button class="icon-action" type="button" id="closeDialogButton" aria-label="Sluiten" data-i18n-aria-label="aria.close">x</button>
+        </header>
+        <div id="dialogFields" class="dialog-fields"></div>
+        <footer class="dialog-actions">
+          <button class="danger-action" type="button" id="deleteBlockButton" data-i18n="actions.delete">Verwijder</button>
+          <span></span>
+          <button class="secondary-action" type="button" id="cancelDialogButton" data-i18n="actions.cancel">Annuleer</button>
+          <button class="primary-action" type="submit" data-i18n="actions.save">Bewaar</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="simulationParametersDialog" class="wide-dialog">
+      <form method="dialog" id="simulationParametersForm">
+        <header class="dialog-header">
+          <h2>Simulatie instellen</h2>
+          <button class="icon-action" type="button" id="closeSimulationParametersButton" aria-label="Sluiten">x</button>
+        </header>
+        <div class="dialog-fields">
+          <div class="field-row">
+            <label for="simulationSigma">Betrouwbaarheid
+              <select id="simulationSigma">
+                <option value="1 sigma - exploratief">1 sigma - exploratief</option>
+                <option value="2 sigma - gebalanceerd" selected>2 sigma - gebalanceerd</option>
+                <option value="3 sigma - strak profiel">3 sigma - strak profiel</option>
+              </select>
+            </label>
+            <label for="simulationRunCount">Omvang
+              <input id="simulationRunCount" type="number" min="1" max="10000" step="1" value="100">
+            </label>
+          </div>
+          <p class="dialog-help">Let op: een grotere omvang of hogere betrouwbaarheid kost meer tokens in je eigen AI-omgeving.</p>
+        </div>
+        <footer class="dialog-actions">
+          <span></span>
+          <span></span>
+          <button class="secondary-action" type="button" id="cancelSimulationParametersButton">Annuleer</button>
+          <button class="primary-action" type="submit">Maak prompt</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="simulationPromptDialog" class="wide-dialog">
+      <form method="dialog" id="simulationPromptForm">
+        <header class="dialog-header">
+          <h2>Simulatieprompt</h2>
+          <button class="icon-action" type="button" id="closeSimulationPromptButton" aria-label="Sluiten">x</button>
+        </header>
+        <div class="dialog-fields">
+          <p class="dialog-help">Kopieer deze vaste prompt naar je eigen AI-omgeving. Plak de JSON-array die je terugkrijgt daarna in Testdata.</p>
+          <textarea id="simulationPromptOutput" rows="18" spellcheck="false" aria-label="Simulatieprompt"></textarea>
+        </div>
+        <footer class="dialog-actions">
+          <span></span>
+          <span></span>
+          <button class="secondary-action" type="button" id="copySimulationPromptButton">Kopieer prompt</button>
+          <button class="primary-action" type="button" id="doneSimulationPromptButton">Sluiten</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <dialog id="promptDialog" class="wide-dialog">
+      <form method="dialog" id="promptForm">
+        <header class="dialog-header">
+          <h2 data-i18n="prompt.title">Start vanuit beschrijving</h2>
+          <button class="icon-action" type="button" id="closePromptButton" aria-label="Sluiten" data-i18n-aria-label="aria.close">x</button>
+        </header>
+        <div class="dialog-fields">
+          <p class="dialog-help" data-i18n="prompt.help">Kopieer deze prompt naar een LLM, plak daaronder je menselijke beschrijving en importeer daarna de JSON die eruit komt.</p>
+          <textarea id="promptOutput" rows="18" spellcheck="false" aria-label="AI-prompt"></textarea>
+        </div>
+        <footer class="dialog-actions">
+          <span></span>
+          <span></span>
+          <button class="secondary-action" type="button" id="copyPromptButton" data-i18n="prompt.copy">Kopieer prompt</button>
+          <button class="primary-action" type="button" id="donePromptButton" data-i18n="actions.close">Sluiten</button>
+        </footer>
+      </form>
+    </dialog>
+
+    <script src="languages.js?v=center-button-1"></script>
+    <script src="script.js?v=center-button-1"></script>
+  </body>
+</html>
