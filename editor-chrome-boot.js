@@ -7,15 +7,20 @@
 (function () {
   "use strict";
 
+  // Injecteer de gedeelde chrome altijd: standalone én in het dashboard-iframe.
+  // Het dashboard levert de chrome niet meer zelf (één bron uit de engine).
   const cfg = window.LEERBOX_EDITOR_CONFIG || {};
   let base = String(cfg.apiBase || "").replace(/\/+$/, "");
   if (!base) return;
   if (!/\/api$/.test(base)) base += "/api";
 
+  // Cache-buster tijdens ontwikkeling (SDK-assets krijgen max-age=3600).
+  const cb = "?v=" + Date.now();
+
   // 1. Exacte dashboard-CSS uit de engine.
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = base + "/sdk/editor-chrome/css";
+  link.href = base + "/sdk/editor-chrome/css" + cb;
   document.head.appendChild(link);
 
   // 2. Markup injecteren, daarna de wiring laden.
@@ -31,7 +36,7 @@
       // position:fixed werkt alleen t.o.v. de viewport als er geen voorouder met
       // transform is. Verplaats de zwevende HUD-onderdelen naar een directe
       // body-child zodat ze betrouwbaar rechtsonder/links vastzitten.
-      node.querySelectorAll(".simulation-clock, .editor-tool-flyout").forEach(el => document.body.appendChild(el));
+      node.querySelectorAll(".simulation-clock").forEach(el => document.body.appendChild(el));
 
       const overrides = document.createElement("style");
       overrides.textContent =
@@ -40,7 +45,7 @@
       document.head.appendChild(overrides);
 
       const script = document.createElement("script");
-      script.src = base + "/sdk/editor-chrome/chrome.js";
+      script.src = base + "/sdk/editor-chrome/chrome.js" + cb;
       document.body.appendChild(script);
     })
     .catch(() => {

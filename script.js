@@ -16,7 +16,10 @@
     fetch: (input, init) => window.fetch(input, init)
   };
   const agentApiBase = engineAdapter.apiBase;
-  const embeddedWorkbench = pageParameters.get("embedded") === "1";
+  // Standalone (top-level venster) draait automatisch embedded: de eigen topbar
+  // en pill-sidebar verdwijnen en de gedeelde editor-chrome neemt de navigatie
+  // over. In het dashboard-iframe bepaalt ?embedded=1 het gedrag.
+  const embeddedWorkbench = pageParameters.get("embedded") === "1" || window.parent === window;
   const unknown = "unknown";
   const languageConfig = window.LeerpretArchitectLanguages || { defaultLanguage: "nl", messages: { nl: {} } };
   const promptFilename = "leerbox-basisprompt.txt";
@@ -955,7 +958,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
 
   function bindEvents() {
     window.addEventListener("message", (event) => {
-      if (event.source !== window.parent) return;
+      // Accepteer besturing van de ouder (dashboard-iframe) én van hetzelfde
+      // venster (de ingebouwde gedeelde editor-chrome die self-post gebruikt).
+      if (event.source !== window.parent && event.source !== window) return;
       if (event.data?.type === "leerpret-editor-view") {
         activateWorkbenchView(event.data.view);
         if (event.data.panel) activatePanel(event.data.panel);
