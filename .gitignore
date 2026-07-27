@@ -4,3 +4,5 @@ runtime-config.local.js
 .vscode/
 node_modules/
 *.log
+__pycache__/
+*.py[cod]
