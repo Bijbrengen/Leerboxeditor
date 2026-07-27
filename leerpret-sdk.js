@@ -1,8 +1,14 @@
 (function () {
   "use strict";
-  var nativeFetch = window.fetch.bind(window);
+  var rawFetch = window.fetch.bind(window);
+  var nativeFetch = function(input, options) {
+    var opts = options || {};
+    var headers = Object.assign({ "bypass-tunnel-reminder": "true" }, opts.headers || {});
+    return rawFetch(input, Object.assign({}, opts, { headers: headers }));
+  };
   var apiBase = String(window.LEERBOX_EDITOR_CONFIG.apiBase || "").replace(/\/+$/, "");
-  var ready = nativeFetch(apiBase + "/sdk/manifest.json", { credentials: "include" })
+  var sep = apiBase.indexOf("?") === -1 ? "?" : "&";
+  var ready = nativeFetch(apiBase + "/sdk/manifest.json" + sep + "bypass-tunnel-reminder=true", { credentials: "include" })
     .then(function (response) {
       if (!response.ok) throw new Error("LeerpretSDK-manifest niet beschikbaar");
       return response.json();
@@ -11,7 +17,7 @@
       var component = manifest.components["api-client"];
       return new Promise(function (resolve, reject) {
         var script = document.createElement("script");
-        script.src = apiBase + "/sdk/api-client/client.js?v=" + encodeURIComponent(manifest.version);
+        script.src = apiBase + "/sdk/api-client/client.js?v=" + encodeURIComponent(manifest.version) + "&bypass-tunnel-reminder=true";
         script.integrity = component.integrity["client.js"];
         script.crossOrigin = "anonymous";
         script.onload = resolve;

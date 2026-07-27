@@ -19,7 +19,7 @@
         var link = document.createElement("link");
         link.rel = "stylesheet";
         link.dataset.editorShellSource = base ? "engine" : "fallback";
-        link.href = base ? base + "/sdk/editor-shell/css" : "style.css?v=center-button-1";
+        link.href = base ? base + "/sdk/editor-shell/css?bypass-tunnel-reminder=true" : "style.css?v=center-button-1";
         link.onerror = function () {
           var fallback = document.createElement("link");
           fallback.rel = "stylesheet";
@@ -30,7 +30,7 @@
         document.head.appendChild(link);
         if (base) {
           var mount = document.createElement("script");
-          mount.src = base + "/sdk/editor-shell/mount.js";
+          mount.src = base + "/sdk/editor-shell/mount.js?bypass-tunnel-reminder=true";
           mount.defer = true;
           document.head.appendChild(mount);
         }
