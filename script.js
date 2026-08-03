@@ -3985,7 +3985,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       sources,
       enrichments,
       impactSummary: `${coveredMarkers.length}/5 Leerpret-markers zijn momenteel inhoudelijk onderbouwd. ${impactDirection}`,
-      measurementCaveat: "De pijlen beschrijven een verwachte richting, geen gegarandeerde numerieke stijging. De werkelijke Leerpret-waarde ontstaat pas uit gemeten actiereeksen en kan na een simulatie of praktijktest worden vergeleken."
+      measurementCaveat: "De pijlen beschrijven een verwachte richting, geen gegarandeerde numerieke stijging. De werkelijke Leerpret-waarde ontstaat pas uit gemeten actiereeksen en kan na een simulatietest worden vergeleken."
     };
   }
 
