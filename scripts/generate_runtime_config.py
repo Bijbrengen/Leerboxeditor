@@ -31,16 +31,30 @@ def setting(name: str, defaults: dict[str, str], local: dict[str, str]) -> str:
 defaults = dotenv(ROOT / ".env.example")
 local = dotenv(ROOT / ".env")
 config = {
-    "apiBase": setting("LEERPRET_API_URL", defaults, local),
-    "editorUrl": setting("LEERBOX_EDITOR_URL", defaults, local),
-    "dashboardUrl": setting("LEERPRET_DASHBOARD_URL", defaults, local),
-    "learngameOmUrl": setting("LEARNGAME_OM_URL", defaults, local),
+    "localApiBase": setting("LEERPRET_API_URL", defaults, local),
+    "localEditorUrl": setting("LEERBOX_EDITOR_URL", defaults, local),
+    "localDashboardUrl": setting("LEERPRET_DASHBOARD_URL", defaults, local),
+    "localLearngameOmUrl": setting("LEARNGAME_OM_URL", defaults, local),
+    "productionApiBase": setting("LEERPRET_PRODUCTION_API_URL", defaults, local),
+    "productionEditorUrl": setting("LEERBOX_EDITOR_PRODUCTION_URL", defaults, local),
+    "productionDashboardUrl": setting("LEERPRET_DASHBOARD_PRODUCTION_URL", defaults, local),
+    "productionLearngameOmUrl": setting("LEARNGAME_OM_PRODUCTION_URL", defaults, local),
 }
-payload = (
-    "window.LEERBOX_EDITOR_CONFIG = Object.freeze("
-    + json.dumps(config, ensure_ascii=False, indent=2)
-    + ");\n"
-)
+serialized = json.dumps(config, ensure_ascii=False, indent=2).replace("\n", "\n  ")
+payload = f"""(function() {{
+  var endpoints = Object.freeze({serialized});
+  var isLocal = typeof window !== "undefined" && (
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "localhost"
+  );
+  window.LEERBOX_EDITOR_CONFIG = Object.freeze({{
+    apiBase: isLocal ? endpoints.localApiBase : endpoints.productionApiBase,
+    editorUrl: isLocal ? endpoints.localEditorUrl : endpoints.productionEditorUrl,
+    dashboardUrl: isLocal ? endpoints.localDashboardUrl : endpoints.productionDashboardUrl,
+    learngameOmUrl: isLocal ? endpoints.localLearngameOmUrl : endpoints.productionLearngameOmUrl
+  }});
+}})();
+"""
 target = ROOT / "runtime-config.js"
 target.write_text(payload, encoding="utf-8")
 print(f"Runtimeconfiguratie geschreven: {target}")
