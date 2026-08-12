@@ -5,8 +5,7 @@
  * (LeerpretSDK component "auth-client"). Dit bestand laadt die client en vraagt
  * of de huidige gebruiker editor-toegang heeft:
  *   - ingebed in het dashboard (?embedded=1): ouder regelt auth -> niets doen;
- *   - niet ingelogd: de client stuurt naar de bestaande dashboard-login en keert
- *     daarna terug;
+ *   - niet ingelogd: de SDK mount de Google-login rechtstreeks in de editor;
  *   - ingelogd zonder architect/technoloog-rol: toon een nette "geen toegang";
  *   - ingelogd met de juiste rol: doorgaan.
  *
@@ -39,24 +38,52 @@
       "</main>";
   }
 
-  const client = document.createElement("script");
-  client.src = base + "/sdk/auth-client/client.js";
-  client.onload = function () {
+  function loadScript(url) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = url;
+      script.onload = resolve;
+      script.onerror = () => reject(new Error("SDK-asset kon niet worden geladen: " + url));
+      document.head.appendChild(script);
+    });
+  }
+
+  fetch(base + "/sdk/manifest.json", { cache: "no-store" })
+    .then(response => {
+      if (!response.ok) throw new Error("LeerpretSDK-manifest is niet bereikbaar");
+      return response.json();
+    })
+    .then(manifest => {
+      const version = "?v=" + encodeURIComponent(manifest.version);
+      return loadScript(base + "/sdk/api-client/client.js" + version)
+        .then(() => loadScript(base + "/sdk/auth-client/client.js" + version));
+    })
+    .then(function () {
     const login = window.LeerpretLogin;
     if (!login) return;
-    login
-      .ensureEditorAccess({
+    const sdkClient = window.LeerpretSDK.create({ apiBase: base, clientId: "leerbox-editor" });
+    return sdkClient.bootstrap()
+      .then(() => login.completeGoogleLogin({ apiBase: base, sdkClient }))
+      .then(() => login.ensureEditorAccess({
         apiBase: base,
-        dashboardUrl: cfg.dashboardUrl,
         embedded,
         alreadyChecked,
-        redirect: true
-      })
+        redirect: false,
+        sdkClient
+      }))
       .then(decision => {
         if (decision.action === "denied") showDenied(decision.roles);
-        // "allow": niets doen; "login": redirect is al ingezet; "error": de
-        // editor toont zelf de offline-status.
+        if (decision.action === "login") login.mountLogin(document.body, {
+          apiBase: base,
+          sdkClient,
+          title: "Inloggen bij de LeerboxEditor",
+          message: "Meld je hier met Google aan. De Engine controleert daarna je editorrol."
+        });
+        // "allow": niets doen; "error": de editor toont zelf de offline-status.
       });
-  };
-  document.head.appendChild(client);
+  })
+  .catch(error => {
+    document.body.dataset.auth = "unavailable";
+    console.error("LeerpretSDK-login niet beschikbaar", error);
+  });
 })();

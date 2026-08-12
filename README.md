@@ -45,6 +45,11 @@ of `localStorage["leerbox-editor.apiBase"]` worden doorgegeven. Voorbeeld:
 http://127.0.0.1:47114/?api=http://127.0.0.1:47111/api
 ```
 
+Als nog geen sessie bestaat, mount `editor-auth.js` de Google-login rechtstreeks
+uit de publieke LeerpretSDK in deze editor. LeerpretEngine verzorgt de
+code-uitwisseling en rolcontrole; LeerpretDashboard hoeft hiervoor niet te
+draaien. De editor bevat zelf geen authenticatielogica of secrets.
+
 Er is geen Git-submodule of automatische broncodesynchronisatie. Wijzig
 editorcode hier; wijzig backendgedrag via een publieke route in
 LeerpretEngine; wijzig de dashboardbuitenschil in Leerpret.
