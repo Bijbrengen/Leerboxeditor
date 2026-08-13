@@ -7,23 +7,22 @@
     return rawFetch(input, Object.assign({}, opts, { headers: headers }));
   };
   var apiBase = String(window.LEERBOX_EDITOR_CONFIG.apiBase || "").replace(/\/+$/, "");
-  var sep = apiBase.indexOf("?") === -1 ? "?" : "&";
-  var ready = nativeFetch(apiBase + "/sdk/manifest.json" + sep + "bypass-tunnel-reminder=true", { credentials: "include" })
-    .then(function (response) {
-      if (!response.ok) throw new Error("LeerpretSDK-manifest niet beschikbaar");
-      return response.json();
-    })
-    .then(function (manifest) {
-      var component = manifest.components["api-client"];
-      return new Promise(function (resolve, reject) {
-        var script = document.createElement("script");
-        script.src = apiBase + "/sdk/api-client/client.js?v=" + encodeURIComponent(manifest.version) + "&bypass-tunnel-reminder=true";
-        script.integrity = component.integrity["client.js"];
-        script.crossOrigin = "anonymous";
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-      });
+  function loadSdkLoader() {
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement("script");
+      script.src = apiBase + "/sdk/sdk-loader/loader.js?bypass-tunnel-reminder=true";
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+  var ready = loadSdkLoader()
+    .then(function () {
+      return window.LeerpretSDK.Loader.create({
+        base: apiBase,
+        fetch: nativeFetch,
+        query: { "bypass-tunnel-reminder": "true" }
+      }).load("api-client");
     })
     .then(function () {
       var client = window.LeerpretSDK.create({
