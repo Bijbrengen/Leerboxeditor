@@ -10,30 +10,33 @@
     <!-- Canonieke opmaak: de ENIGE bron is de engine (LeerpretSDK editor-shell).
          style.css blijft alleen als offline-fallback en is identiek aan de bron. -->
     <script src="runtime-config.js?v=standalone-2"></script>
-    <script src="leerpret-sdk.js?v=2"></script>
+    <script src="leerpret-sdk.js?v=3"></script>
     <script>
       (function () {
         var cfg = window.LEERBOX_EDITOR_CONFIG || {};
         var base = String(cfg.apiBase || "").replace(/\/+$/, "");
         if (base && !/\/api$/.test(base)) base += "/api";
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.dataset.editorShellSource = base ? "engine" : "fallback";
-        link.href = base ? base + "/sdk/editor-shell/css?bypass-tunnel-reminder=true" : "style.css?v=center-button-1";
-        link.onerror = function () {
+        function loadFallback() {
+          if (document.querySelector('link[data-editor-shell-source="fallback"]')) return;
           var fallback = document.createElement("link");
           fallback.rel = "stylesheet";
           fallback.href = "style.css?v=center-button-1";
           fallback.dataset.editorShellSource = "fallback";
           document.head.appendChild(fallback);
-        };
-        document.head.appendChild(link);
-        if (base) {
-          var mount = document.createElement("script");
-          mount.src = base + "/sdk/editor-shell/mount.js?bypass-tunnel-reminder=true";
-          mount.defer = true;
-          document.head.appendChild(mount);
         }
+        if (base) {
+          var shellStyles = document.createElement("link");
+          shellStyles.rel = "stylesheet";
+          shellStyles.href = base + "/sdk/editor-shell/css?bypass-tunnel-reminder=true";
+          shellStyles.dataset.editorShellSource = "engine";
+          shellStyles.onerror = loadFallback;
+          document.head.appendChild(shellStyles);
+          window.LeerpretSDKLoaderReady
+            .then(function (loader) {
+              return loader.load("editor-shell");
+            })
+            .catch(loadFallback);
+        } else loadFallback();
       })();
     </script>
   </head>
@@ -852,10 +855,10 @@
     </dialog>
 
     <!-- runtime-config.js wordt al in <head> geladen (voor de opmaak-loader). -->
-    <script src="editor-auth.js?v=standalone-1"></script>
+    <script src="editor-auth.js?v=dynamic-loader-1"></script>
     <script src="languages.js?v=center-button-1"></script>
     <script src="engine-adapter.js?v=standalone-1"></script>
     <script src="script.js?v=embedded-standalone-1"></script>
-    <script src="editor-chrome-boot.js?v=3"></script>
+    <script src="editor-chrome-boot.js?v=dynamic-loader-1"></script>
   </body>
 </html>

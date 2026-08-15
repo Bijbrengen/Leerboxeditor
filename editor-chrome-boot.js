@@ -14,16 +14,14 @@
   if (!base) return;
   if (!/\/api$/.test(base)) base += "/api";
 
-  // Cache-buster tijdens ontwikkeling (SDK-assets krijgen max-age=3600).
+  // De loader verwerkt uitvoerbare assets en afhankelijkheden; templates en
+  // de stabiele CSS-alias blijven gewone HTTP-assets.
   const cb = "?v=" + Date.now();
-
-  // 1. Exacte dashboard-CSS uit de engine.
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = base + "/sdk/editor-chrome/css" + cb;
   document.head.appendChild(link);
 
-  // 2. Markup injecteren, daarna de wiring laden.
   fetch(base + "/sdk/editor-chrome/template.html", { cache: "no-store" })
     .then(response => response.text())
     .then(html => {
@@ -44,9 +42,7 @@
         ".editor-page-menu{position:fixed!important;left:14px!important;top:14px!important;bottom:14px!important;z-index:55;overflow:auto}";
       document.head.appendChild(overrides);
 
-      const script = document.createElement("script");
-      script.src = base + "/sdk/editor-chrome/chrome.js" + cb;
-      document.body.appendChild(script);
+      return window.LeerpretSDKLoaderReady.then(loader => loader.load("editor-chrome"));
     })
     .catch(() => {
       /* chrome optioneel: editor blijft werken zonder */

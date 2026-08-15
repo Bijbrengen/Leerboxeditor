@@ -38,25 +38,9 @@
       "</main>";
   }
 
-  function loadScript(url) {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = url;
-      script.onload = resolve;
-      script.onerror = () => reject(new Error("SDK-asset kon niet worden geladen: " + url));
-      document.head.appendChild(script);
-    });
-  }
-
-  fetch(base + "/sdk/manifest.json", { cache: "no-store" })
-    .then(response => {
-      if (!response.ok) throw new Error("LeerpretSDK-manifest is niet bereikbaar");
-      return response.json();
-    })
-    .then(manifest => {
-      const version = "?v=" + encodeURIComponent(manifest.version);
-      return loadScript(base + "/sdk/api-client/client.js" + version)
-        .then(() => loadScript(base + "/sdk/auth-client/client.js" + version));
+  window.LeerpretSDKLoaderReady
+    .then(loader => {
+      return loader.load(["api-client", "auth-client"]);
     })
     .then(function () {
     const login = window.LeerpretLogin;

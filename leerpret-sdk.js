@@ -16,13 +16,18 @@
       document.head.appendChild(script);
     });
   }
-  var ready = loadSdkLoader()
-    .then(function () {
-      return window.LeerpretSDK.Loader.create({
-        base: apiBase,
-        fetch: nativeFetch,
-        query: { "bypass-tunnel-reminder": "true" }
-      }).load("api-client");
+  var loaderReady = loadSdkLoader().then(function () {
+    return window.LeerpretSDK.Loader.create({
+      base: apiBase,
+      fetch: nativeFetch,
+      query: { "bypass-tunnel-reminder": "true" }
+    });
+  });
+  window.LeerpretSDKLoaderReady = loaderReady;
+
+  var ready = loaderReady
+    .then(function (loader) {
+      return loader.load("api-client");
     })
     .then(function () {
       var client = window.LeerpretSDK.create({
