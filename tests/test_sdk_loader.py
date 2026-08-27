@@ -42,5 +42,15 @@ class SdkLoaderWiringTests(unittest.TestCase):
         self.assertNotIn('<span>▲</span>', index)
 
 
+    def test_library_selection_is_stored_but_classified_by_the_sdk(self) -> None:
+        script = (ROOT / "script.js").read_text(encoding="utf-8")
+
+        self.assertIn('"leerpret-editor-add-library-item"', script)
+        self.assertIn("library_id: libraryId", script)
+        self.assertIn("libraryId: object.library_id", script)
+        self.assertNotIn("leerobject.self-starting", script)
+        self.assertNotIn("minifig.veroveraar", script)
+
+
 if __name__ == "__main__":
     unittest.main()

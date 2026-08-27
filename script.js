@@ -985,6 +985,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
   }
 
   function bindEvents() {
+    window.addEventListener("leerpret-sdk-library-ready", () => renderNetworkCanvas(state.capture));
     window.addEventListener("message", (event) => {
       // Accepteer besturing van de ouder (dashboard-iframe) én van hetzelfde
       // venster (de ingebouwde gedeelde editor-chrome die self-post gebruikt).
@@ -1012,6 +1013,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
       if (event.data?.type === "leerpret-editor-add-object-preset") {
         const preset = String(event.data.preset || "");
         if (["entry", "success", "resistance", "normal"].includes(preset)) addPresetObject(preset);
+      }
+      if (event.data?.type === "leerpret-editor-add-library-item") {
+        addLibraryObject(event.data.item);
       }
       if (event.data?.type === "leerpret-editor-start-cable") {
         connectionMode = "route";
@@ -3309,6 +3313,35 @@ HIER IS DE STRUCTUUR (SYNTAX):
     centerObjectInCanvas(item.object_id);
   }
 
+  function addLibraryObject(declaration, x, y) {
+    const libraryId = String(declaration?.libraryId || "").trim();
+    const allowedKinds = new Set(["element", "logistics-object", "leerobject", "leerbox-bouwsteen", "minifig"]);
+    const libraryKind = String(declaration?.libraryKind || "").trim();
+    if (!libraryId || !allowedKinds.has(libraryKind)) return;
+    const role = ["entry", "success", "resistance", "practice"].includes(declaration?.role) ? declaration.role : "practice";
+    const label = String(declaration?.label || libraryId).trim().slice(0, 160) || libraryId;
+    const item = {
+      ...newBlock("object"),
+      label,
+      role,
+      object_type: "sdk_blok",
+      affordance: "choose",
+      visible_cues: label,
+      library_id: libraryId,
+      library_kind: libraryKind
+    };
+    const baseId = slugify(label).replaceAll("-", "_") || "bibliotheekblok";
+    const ids = new Set(state.capture.objects.map((object) => object.object_id));
+    let suffix = 1;
+    item.object_id = baseId;
+    while (ids.has(item.object_id)) item.object_id = `${baseId}_${++suffix}`;
+    const center = visibleCanvasCenter();
+    item.editor_position = { x: Math.round(x ?? center.x), y: Math.round(y ?? center.y) };
+    state.capture.objects.push(item);
+    persistAndRender();
+    centerObjectInCanvas(item.object_id);
+  }
+
   /* Middelpunt van wat de gebruiker nu ziet, uitgedrukt in objectcoördinaten.
      Een nieuw object hoort daar te verschijnen, niet in het midden van de hele wereld. */
   function visibleCanvasCenter() {
@@ -3477,6 +3510,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
         id: object.object_id,
         label: object.label || object.object_id,
         role: object.role,
+        libraryId: object.library_id,
+        libraryKind: object.library_kind,
         x: object.editor_position.x,
         y: object.editor_position.y
       })),
