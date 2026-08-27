@@ -625,6 +625,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
     bucket_drawer_mode: "manage"
   };
   let networkCanvasCenteredSignature = "";
+  let legoFlowMap = null;
+  let legoFlowMapError = "";
   /* Verbinden op de kaart: het gekozen beginpunt. Deze toestand hoort bovenaan te
      staan, want renderNetworkCanvas leest hem en kan al tijdens het opstarten draaien
      - een const verderop in het bestand bestaat op dat moment nog niet. */
@@ -817,10 +819,33 @@ HIER IS DE STRUCTUUR (SYNTAX):
   populateOptionControls();
   applyLanguage();
   hydrateForm();
+  initializeLegoFlowMap();
   render();
   initializeAgent();
   initializeSelectedCapture();
   publishCaptureUpdate();
+
+  function initializeLegoFlowMap() {
+    if (!window.LeerpretSDKLoaderReady) {
+      legoFlowMapError = "De LeerpretSDK-loader is niet beschikbaar.";
+      return;
+    }
+    window.LeerpretSDKLoaderReady
+      .then((loader) => loader.load("lego-flow-map"))
+      .then(([component]) => {
+        if (!component?.renderScene) throw new Error("lego-flow-map heeft geen scene-renderer");
+        legoFlowMap = component;
+        document.querySelectorAll("[data-object-preset]").forEach((button) => {
+          const preview = button.querySelector(".lego-flow-tool-preview");
+          if (preview) preview.innerHTML = legoFlowMap.toolboxPreviewMarkup(button.dataset.objectPreset);
+        });
+        render();
+      })
+      .catch((error) => {
+        legoFlowMapError = error?.message || "De LEGO-SDK kon niet laden.";
+        renderNetworkCanvas(state.capture);
+      });
+  }
 
   function statusEvidenceMap(keys) {
     return Object.fromEntries(keys.map((key) => [key, { status: "unknown", evidence: "unknown" }]));
@@ -3386,15 +3411,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
       placed.push({ x: object.editor_position.x, y: object.editor_position.y });
     });
     const byId = new Map(objects.map((object) => [object.object_id, object]));
-    const icon = (role) => ["entry", "start"].includes(role) ? "⚑" : role === "success" ? "★" : ["resistance", "barrier"].includes(role) ? "▲" : role === "exit" ? "◆" : "⚙";
-    const kind = (role) => ["entry", "start"].includes(role) ? "entry" : role === "success" ? "success" : ["resistance", "barrier"].includes(role) ? "resistance" : "normal";
-    elements.networkNodes.innerHTML = objects.map((object, index) => `
-      <button class="network-node node-${kind(object.role)}" type="button" data-object-index="${index}" style="left:${object.editor_position.x}px;top:${object.editor_position.y}px" title="${escapeText(object.label || object.object_id)} · klik om te verbinden · dubbelklik om te openen · sleep om te verplaatsen">
-        <span aria-hidden="true">${icon(object.role)}</span><strong>${escapeText(object.label || object.object_id)}</strong><small title="${escapeText(enumLabel(object.role || unknown))}">${escapeText(enumLabel(object.role || unknown))}</small>
-      </button>`).join("");
-    elements.canvasEmptyState.hidden = objects.length > 0;
 
-    /* Elke lijn onthoudt bij welk blok hij hoort, met de index in de oorspronkelijke
+    /* Elke kabel onthoudt bij welk blok hij hoort, met de index in de oorspronkelijke
        lijst - niet in de gefilterde - zodat een klik het juiste blok opent. */
     const routeSteps = (capture.interaction_route || [])
       .map((step, index) => ({ objectId: step.object_id, stepIndex: index }))
@@ -3421,34 +3439,31 @@ HIER IS DE STRUCTUUR (SYNTAX):
       ? objects.slice(1).map((object, index) => ({ from: objects[index].object_id, to: object.object_id, type: "free" }))
       : [];
     const edges = [...freeEdges, ...strictEdges, ...conditionalEdges];
-    // Relatielaag volgt de werkelijke tekenhoogte, zodat lijnen blijven aansluiten
+    // Relatielaag volgt de werkelijke tekenhoogte, zodat kabels blijven aansluiten
     // op nodes die door het ontstapelen lager staan dan de canvashoogte.
     const drawnHeight = Math.max(height, ...objects.map((object) => object.editor_position.y + 55));
     elements.networkEdges.setAttribute("viewBox", `0 0 ${width} ${drawnHeight}`);
-    elements.networkEdges.innerHTML = `<defs><marker id="routeArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z"/></marker></defs>` + edges.map((edge) => {
-      const from = byId.get(edge.from).editor_position;
-      const to = byId.get(edge.to).editor_position;
-      const bend = edge.type === "free" ? 42 : edge.type === "conditional" ? -28 : 0;
-      const midX = (from.x + to.x) / 2;
-      const midY = (from.y + to.y) / 2 + bend;
-      // Punt halverwege de kromme: daar komt de markering te staan.
-      const markX = (from.x + 2 * midX + to.x) / 4;
-      const markY = (from.y + 2 * midY + to.y) / 4;
-      const routeAttribute = edge.routeIndex === undefined ? "" : ` data-route-index="${edge.routeIndex}"`;
-      const blockAttribute = edge.blockType ? ` data-block-type="${edge.blockType}" data-block-index="${edge.blockIndex}"` : "";
-      // Het slotje van een voorwaarde is zelf ook aanklikbaar.
-      const lock = edge.type === "conditional"
-        ? `<g class="edge-mark edge-mark-condition"${blockAttribute}><title>Voorwaarde openen</title><circle cx="${markX}" cy="${markY}" r="11"/><text x="${markX}" y="${markY + 5}">&#9635;</text></g>`
-        : "";
-      // Een routestap draagt zijn volgnummer, zodat je in de tekening ziet welke stap dit is.
-      const stepMark = edge.type === "strict"
-        ? `<g class="edge-mark edge-mark-step"${blockAttribute}><title>Routestap openen</title><circle cx="${markX}" cy="${markY}" r="11"/><text x="${markX}" y="${markY + 5}">${edge.routeIndex}</text></g>`
-        : "";
-      const path = `M ${from.x} ${from.y} Q ${midX} ${midY} ${to.x} ${to.y}`;
-      // Onzichtbare dikke lijn eroverheen: een 2 pixel dunne lijn is niet aan te klikken.
-      const hitArea = edge.blockType ? `<path class="network-edge-hit"${blockAttribute} d="${path}"/>` : "";
-      return `<path class="network-edge edge-${edge.type}"${routeAttribute}${blockAttribute} d="${path}"/>${hitArea}${lock}${stepMark}`;
-    }).join("");
+    if (!legoFlowMap) {
+      elements.networkEdges.innerHTML = "";
+      elements.networkNodes.innerHTML = `<div class="lego-flow-sdk-status">${escapeText(legoFlowMapError || "Isometrische LEGO-kaart laden…")}</div>`;
+      elements.canvasEmptyState.hidden = true;
+      return;
+    }
+    const scene = legoFlowMap.renderScene({
+      width,
+      height: drawnHeight,
+      objects: objects.map((object) => ({
+        id: object.object_id,
+        label: object.label || object.object_id,
+        role: object.role,
+        x: object.editor_position.x,
+        y: object.editor_position.y
+      })),
+      edges
+    });
+    elements.networkNodes.innerHTML = scene.nodesMarkup;
+    elements.networkEdges.innerHTML = scene.edgesMarkup;
+    elements.canvasEmptyState.hidden = objects.length > 0;
 
     elements.networkNodes.querySelectorAll(".network-node").forEach((node) => {
       // Eén klik verbindt, twee klikken openen. Zie handleNodeClick.
@@ -3542,7 +3557,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
       const layerRect = elements.networkNodes.getBoundingClientRect();
       const x = moveEvent.clientX - layerRect.left;
       const y = moveEvent.clientY - layerRect.top;
-      band.setAttribute("d", `M ${source.editor_position.x} ${source.editor_position.y} L ${x} ${y}`);
+      band.setAttribute("d", legoFlowMap
+        ? legoFlowMap.previewCablePath([source.editor_position.x, source.editor_position.y - 27], [x, y])
+        : "");
     };
     linking.move = move;
     document.addEventListener("pointermove", move);

@@ -57,8 +57,8 @@ Communicatie buitenschil ↔ iframe: `postMessage` (types: `leerpret-editor-view
         │   ├── [ .canvas-resource-bar: HUD fixed rechtsboven — tellers objecten/route/voorwaarden ]
         │   ├── [ .canvas-report-toggle + .canvas-report-drawer: HUD fixed rechts — wereldrapport ]
         │   ├── [ .advisor-panel: HUD fixed rechts — adviseur ]
-        │   ├── svg #networkEdges: relatielijnen (route/voorwaarden), zelfde offset+maat als nodes
-        │   ├── div #networkNodes: de leerobjecten (.network-node, absolute op editor_position x/y)
+        │   ├── svg #networkEdges: SDK-isometrisch raster en LEGO-kabels (route/voorwaarden)
+        │   ├── div #networkNodes: SDK-LEGO-blokken (.network-node, absolute op editor_position x/y)
         │   └── [ #canvasEmptyState: fixed gecentreerd — "Lege spelwereld" ]
         └── [ aside .canvas-inspector: HUD fixed rechts — eigenschappenvenster (alleen .is-open) ]
 ```
@@ -78,6 +78,11 @@ Berekend in `renderNetworkCanvas()` (script.js), toegepast via CSS-variabelen op
   `#networkNodes` en `#networkEdges`): behoudt de opgeslagen coördinaten en wordt zó geplaatst dat
   het bbox-midden exact op het canvasmidden ligt. Gevolg: **sliders in het midden = midden van de
   tekening in beeld** — er is geen aparte "zoek het centrum"-berekening nodig.
+- **LEGO-weergave**: `script.js` levert objecten, rollen, labels, posities en
+  relaties aan de publieke LeerpretSDK-component `lego-flow-map`. Raster,
+  blokgeometrie, noppen, kwalificatiekleuren, tekstprojectie, paint-order en
+  kabelmarkup blijven volledig in LeerpretEngine; de dashboardbuitenschil
+  bevat geen renderintelligentie.
 - **Reset**: bij leerboxwissel of paginarefresh (signature = `metadata.leerbox_id`,
   `networkCanvasCenteredSignature`) worden de sliders naar het midden van hun bereik gezet:
   `scrollLeft = (scrollWidth − clientWidth) / 2` (idem verticaal).

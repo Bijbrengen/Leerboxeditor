@@ -24,7 +24,10 @@
   if (!base) return;
   if (!/\/api$/.test(base)) base += "/api";
 
-  if (embedded) return; // Dashboard (ouder) heeft de sessie al.
+  if (embedded) {
+    window.LeerboxEditorAuthReady = Promise.resolve({ action: "allow", reason: "embedded" });
+    return;
+  }
 
   function showDenied(roles) {
     document.body.innerHTML =
@@ -38,16 +41,25 @@
       "</main>";
   }
 
-  window.LeerpretSDKLoaderReady
-    .then(loader => {
-      return loader.load(["api-client", "auth-client"]);
-    })
-    .then(function () {
-    const login = window.LeerpretLogin;
-    if (!login) return;
-    const sdkClient = window.LeerpretSDK.create({ apiBase: base, clientId: "leerbox-editor" });
-    return sdkClient.bootstrap()
-      .then(() => login.completeGoogleLogin({ apiBase: base, sdkClient }))
+  function loadAuthClient() {
+    if (window.LeerpretLogin) return Promise.resolve(window.LeerpretLogin);
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = base + "/sdk/auth-client/client.js?v=" + Date.now();
+      script.crossOrigin = "anonymous";
+      script.onload = () => window.LeerpretLogin
+        ? resolve(window.LeerpretLogin)
+        : reject(new Error("LeerpretSDK auth-client is niet beschikbaar."));
+      script.onerror = () => reject(new Error("LeerpretSDK auth-client kon niet worden geladen."));
+      document.head.appendChild(script);
+    });
+  }
+
+  let centralSdkClient = null;
+  window.LeerboxEditorAuthReady = Promise.all([window.LeerpretSDKReady, loadAuthClient()])
+    .then(function ([sdkClient, login]) {
+    centralSdkClient = sdkClient;
+    return login.completeGoogleLogin({ apiBase: base, sdkClient, shareProfile: true })
       .then(() => login.ensureEditorAccess({
         apiBase: base,
         embedded,
@@ -57,17 +69,33 @@
       }))
       .then(decision => {
         if (decision.action === "denied") showDenied(decision.roles);
-        if (decision.action === "login") login.mountLogin(document.body, {
+        if (decision.action === "login" || decision.action === "denied") login.mountLogin(document.body, {
           apiBase: base,
           sdkClient,
+          shareProfile: true,
           title: "Inloggen bij de LeerboxEditor",
-          message: "Meld je hier met Google aan. De Engine controleert daarna je editorrol."
+          message: "Meld je aan en deel naam en e-mailadres zodat de Engine je bestaande tester- en editorrol kan controleren."
         });
-        // "allow": niets doen; "error": de editor toont zelf de offline-status.
+        return decision;
       });
   })
   .catch(error => {
     document.body.dataset.auth = "unavailable";
     console.error("LeerpretSDK-login niet beschikbaar", error);
+    const login = window.LeerpretLogin;
+    if (login && typeof login.mountLogin === "function") {
+      login.mountLogin(document.body, {
+        apiBase: base,
+        sdkClient: centralSdkClient,
+        shareProfile: true,
+        title: "Inloggen bij de LeerboxEditor",
+        message: "De vorige Google-aanmelding is niet afgerond. Meld je opnieuw aan."
+      });
+      const status = document.querySelector("[data-sdk-login-status]");
+      if (status) status.textContent = typeof login.errorDetailMessage === "function"
+        ? login.errorDetailMessage(error && error.message || error, "Aanmelden is niet gelukt.")
+        : String(error && error.message || "Aanmelden is niet gelukt.");
+    }
+    return { action: "error", reason: "authentication_failed" };
   });
 })();

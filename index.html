@@ -10,7 +10,7 @@
     <!-- Canonieke opmaak: de ENIGE bron is de engine (LeerpretSDK editor-shell).
          style.css blijft alleen als offline-fallback en is identiek aan de bron. -->
     <script src="runtime-config.js?v=standalone-2"></script>
-    <script src="leerpret-sdk.js?v=3"></script>
+    <script src="leerpret-sdk.js?v=4"></script>
     <script>
       (function () {
         var cfg = window.LEERBOX_EDITOR_CONFIG || {};
@@ -621,10 +621,10 @@
               <aside class="object-toolbox" aria-label="Bouwstenen">
                 <header><span class="panel-code">BUILD</span><h3>Bouwstenen</h3><small id="inventoryLevel" title="Vrijgespeeld inventarisniveau">L0</small><button id="toolboxToggle" type="button" aria-label="Bouwmenu uitklappen" aria-expanded="false" title="Bouwmenu in- of uitklappen">›</button></header>
                 <p>Sleep naar de kaart</p>
-                <button type="button" draggable="true" data-unlock-level="0" data-object-preset="entry" title="Startobject: begin van iedere actiereeks"><span>⚑</span><strong>Start</strong></button>
-                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="success" title="Succesobject: zichtbaar resultaat"><span>★</span><strong>Succes</strong></button>
-                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="resistance" title="Weerstandsobject: uitdaging of blokkade"><span>▲</span><strong>Weerstand</strong></button>
-                <button type="button" draggable="true" data-unlock-level="2" data-object-preset="normal" title="Normaal leerobject"><span>⚙</span><strong>Normaal</strong></button>
+                <button type="button" draggable="true" data-unlock-level="0" data-object-preset="entry" title="Startobject: begin van iedere actiereeks"><span class="lego-flow-tool-preview" aria-hidden="true"></span><strong>Start</strong></button>
+                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="success" title="Succesobject: zichtbaar resultaat"><span class="lego-flow-tool-preview" aria-hidden="true"></span><strong>Succes</strong></button>
+                <button type="button" draggable="true" data-unlock-level="1" data-object-preset="resistance" title="Weerstandsobject: uitdaging of blokkade"><span class="lego-flow-tool-preview" aria-hidden="true"></span><strong>Weerstand</strong></button>
+                <button type="button" draggable="true" data-unlock-level="2" data-object-preset="normal" title="Normaal leerobject"><span class="lego-flow-tool-preview" aria-hidden="true"></span><strong>Normaal</strong></button>
                 <div class="path-legend" aria-label="Padlegenda">
                   <span><i class="free"></i>Vrij</span>
                   <span><i class="strict"></i>Sequentie</span>
@@ -855,10 +855,10 @@
     </dialog>
 
     <!-- runtime-config.js wordt al in <head> geladen (voor de opmaak-loader). -->
-    <script src="editor-auth.js?v=dynamic-loader-1"></script>
+    <script src="editor-auth.js?v=profile-optin-5"></script>
     <script src="languages.js?v=center-button-1"></script>
     <script src="engine-adapter.js?v=standalone-1"></script>
     <script src="script.js?v=embedded-standalone-1"></script>
-    <script src="editor-chrome-boot.js?v=dynamic-loader-1"></script>
+    <script src="editor-chrome-boot.js?v=auth-gate-4"></script>
   </body>
 </html>

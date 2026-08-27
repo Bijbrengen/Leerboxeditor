@@ -14,20 +14,23 @@
   if (!base) return;
   if (!/\/api$/.test(base)) base += "/api";
 
-  // De loader verwerkt uitvoerbare assets en afhankelijkheden; templates en
-  // de stabiele CSS-alias blijven gewone HTTP-assets.
+  function mountChrome() {
+    let mountedChromeNode = null;
+
+  // Alle chrome-assets komen rechtstreeks uit de publieke Engine-SDK.
   const cb = "?v=" + Date.now();
   const link = document.createElement("link");
   link.rel = "stylesheet";
   link.href = base + "/sdk/editor-chrome/css" + cb;
   document.head.appendChild(link);
 
-  fetch(base + "/sdk/editor-chrome/template.html", { cache: "no-store" })
+    return fetch(base + "/sdk/editor-chrome/template.html", { cache: "no-store" })
     .then(response => response.text())
     .then(html => {
       const holder = document.createElement("div");
       holder.innerHTML = html;
       const node = holder.firstElementChild || holder;
+      mountedChromeNode = node;
       document.body.appendChild(node);
       document.body.classList.add("has-editor-chrome");
 
@@ -42,9 +45,41 @@
         ".editor-page-menu{position:fixed!important;left:14px!important;top:14px!important;bottom:14px!important;z-index:55;overflow:auto}";
       document.head.appendChild(overrides);
 
-      return window.LeerpretSDKLoaderReady.then(loader => loader.load("editor-chrome"));
+      const loaded = window.LeerpretSDK?.components?.["editor-chrome"];
+      if (loaded && typeof loaded.wire === "function") {
+        loaded.wire(node);
+        return;
+      }
+      return new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = base + "/sdk/editor-chrome/chrome.js" + cb;
+        script.crossOrigin = "anonymous";
+        script.onload = () => {
+          const chrome = window.LeerpretSDK?.components?.["editor-chrome"];
+          if (!chrome || typeof chrome.wire !== "function") {
+            reject(new Error("LeerpretSDK editor-chrome is niet beschikbaar."));
+            return;
+          }
+          chrome.wire(node);
+          resolve();
+        };
+        script.onerror = () => reject(new Error("LeerpretSDK editor-chrome kon niet worden geladen."));
+        document.head.appendChild(script);
+      });
     })
-    .catch(() => {
-      /* chrome optioneel: editor blijft werken zonder */
+    .catch(error => {
+      const chrome = window.LeerpretSDK?.components?.["editor-chrome"];
+      if (mountedChromeNode && chrome && typeof chrome.wire === "function") {
+        chrome.wire(mountedChromeNode);
+        return;
+      }
+      console.error("LeerpretSDK editor-chrome kon niet worden gekoppeld.", error);
+    });
+  }
+
+  Promise.resolve(window.LeerboxEditorAuthReady)
+    .then(decision => {
+      if (!decision || decision.action !== "allow") return;
+      return mountChrome();
     });
 })();

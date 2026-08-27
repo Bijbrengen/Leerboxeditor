@@ -3,7 +3,8 @@
   var rawFetch = window.fetch.bind(window);
   var nativeFetch = function(input, options) {
     var opts = options || {};
-    var headers = Object.assign({ "bypass-tunnel-reminder": "true" }, opts.headers || {});
+    var headers = new Headers(opts.headers || {});
+    headers.set("bypass-tunnel-reminder", "true");
     return rawFetch(input, Object.assign({}, opts, { headers: headers }));
   };
   var apiBase = String(window.LEERBOX_EDITOR_CONFIG.apiBase || "").replace(/\/+$/, "");
