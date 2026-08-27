@@ -627,6 +627,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
   let networkCanvasCenteredSignature = "";
   let legoFlowMap = null;
   let legoFlowMapError = "";
+  let cableController = null;
+  let cableModeRequested = false;
+  let connectionMode = "route";
   /* Verbinden op de kaart: het gekozen beginpunt. Deze toestand hoort bovenaan te
      staan, want renderNetworkCanvas leest hem en kan al tijdens het opstarten draaien
      - een const verderop in het bestand bestaat op dat moment nog niet. */
@@ -833,7 +836,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     window.LeerpretSDKLoaderReady
       .then((loader) => loader.load("lego-flow-map"))
       .then(([component]) => {
-        if (!component?.renderScene) throw new Error("lego-flow-map heeft geen scene-renderer");
+        if (!component?.renderScene || !component?.updateDragFrame) throw new Error("lego-flow-map mist de live drag-renderer");
         legoFlowMap = component;
         document.querySelectorAll("[data-object-preset]").forEach((button) => {
           const preview = button.querySelector(".lego-flow-tool-preview");
@@ -1009,6 +1012,20 @@ HIER IS DE STRUCTUUR (SYNTAX):
       if (event.data?.type === "leerpret-editor-add-object-preset") {
         const preset = String(event.data.preset || "");
         if (["entry", "success", "resistance", "normal"].includes(preset)) addPresetObject(preset);
+      }
+      if (event.data?.type === "leerpret-editor-start-cable") {
+        connectionMode = "route";
+        cableModeRequested = true;
+        cancelLinking();
+        activateWorkspaceView("vat");
+        window.requestAnimationFrame(() => cableController?.setMode(connectionMode).activate());
+      }
+      if (event.data?.type === "leerpret-editor-connection-mode") {
+        connectionMode = event.data.mode === "conditional" ? "conditional" : "route";
+        cableModeRequested = true;
+        cancelLinking();
+        activateWorkspaceView("vat");
+        window.requestAnimationFrame(() => cableController?.setMode(connectionMode).activate());
       }
       if (event.data?.type === "leerpret-editor-generate-preview") generateWebappPreview();
       if (event.data?.type === "leerpret-editor-simulation-control") handleSimulationControl(event.data);
@@ -3415,12 +3432,14 @@ HIER IS DE STRUCTUUR (SYNTAX):
     /* Elke kabel onthoudt bij welk blok hij hoort, met de index in de oorspronkelijke
        lijst - niet in de gefilterde - zodat een klik het juiste blok opent. */
     const routeSteps = (capture.interaction_route || [])
-      .map((step, index) => ({ objectId: step.object_id, stepIndex: index }))
+      .map((step, index) => ({ objectId: step.object_id, stepIndex: index, editorCable: step.editor_cable }))
       .filter((step) => byId.has(step.objectId));
     const strictEdges = routeSteps.slice(1).map((step, index) => ({
       from: routeSteps[index].objectId,
       to: step.objectId,
       type: "strict",
+      fromStud: step.editorCable?.from_stud,
+      toStud: step.editorCable?.to_stud,
       routeIndex: index + 1,
       blockType: "step",
       blockIndex: step.stepIndex
@@ -3431,6 +3450,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
       .map(({ dependency, index }) => ({
         from: dependency.from_object_id,
         to: dependency.to_object_id,
+        fromStud: dependency.editor_cable?.from_stud,
+        toStud: dependency.editor_cable?.to_stud,
         type: "conditional",
         blockType: "dependency",
         blockIndex: index
@@ -3478,6 +3499,16 @@ HIER IS DE STRUCTUUR (SYNTAX):
       });
       node.addEventListener("pointerdown", startNodeDrag);
     });
+
+    cableController = legoFlowMap.wireStudConnections({
+      nodesRoot: elements.networkNodes,
+      edgesRoot: elements.networkEdges,
+      connectionMode,
+      onConnect: ({ fromObjectId, fromStud, toObjectId, toStud, edgeType }) => {
+        createConnection(fromObjectId, toObjectId, edgeType, { from_stud: fromStud, to_stud: toStud });
+      }
+    });
+    if (cableModeRequested) cableController?.activate();
 
     // Klikken op een lijn opent de routestap of de voorwaarde die erachter zit.
     elements.networkEdges.querySelectorAll("[data-block-type]").forEach((edge) => {
@@ -3531,7 +3562,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       return;
     }
 
-    createDependency(linking.sourceId, objectId);
+    createConnection(linking.sourceId, objectId, connectionMode === "conditional" ? "conditional" : "strict");
     cancelLinking();
   }
 
@@ -3575,7 +3606,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     markLinkingSource();
   }
 
-  function createDependency(fromObjectId, toObjectId) {
+  function createDependency(fromObjectId, toObjectId, cable = null) {
     const dependencies = state.capture.freedom_and_sequence.hard_dependencies;
     const bestaat = dependencies.some((dependency) =>
       dependency.from_object_id === fromObjectId && dependency.to_object_id === toObjectId);
@@ -3583,13 +3614,50 @@ HIER IS DE STRUCTUUR (SYNTAX):
     dependencies.push({
       ...newBlock("dependency"),
       from_object_id: fromObjectId,
-      to_object_id: toObjectId
+      to_object_id: toObjectId,
+      ...(cable ? { editor_cable: cable } : {})
     });
     persistAndRender();
   }
 
+  function createRouteConnection(fromObjectId, toObjectId, cable = null) {
+    const route = state.capture.interaction_route;
+    let fromIndex = route.findIndex((step) => step.object_id === fromObjectId);
+    let toIndex = route.findIndex((step) => step.object_id === toObjectId);
+
+    if (fromIndex < 0) {
+      route.push({ ...newBlock("step"), object_id: fromObjectId });
+      fromIndex = route.length - 1;
+    }
+
+    if (toIndex === fromIndex + 1) {
+      if (cable) route[toIndex].editor_cable = cable;
+      persistAndRender();
+      return;
+    }
+
+    let targetStep;
+    if (toIndex >= 0) {
+      [targetStep] = route.splice(toIndex, 1);
+      if (toIndex < fromIndex) fromIndex -= 1;
+    } else {
+      targetStep = { ...newBlock("step"), object_id: toObjectId };
+    }
+    targetStep.object_id = toObjectId;
+    if (cable) targetStep.editor_cable = cable;
+    route.splice(fromIndex + 1, 0, targetStep);
+    renumberSteps();
+    persistAndRender();
+  }
+
+  function createConnection(fromObjectId, toObjectId, edgeType, cable = null) {
+    if (edgeType === "conditional") createDependency(fromObjectId, toObjectId, cable);
+    else createRouteConnection(fromObjectId, toObjectId, cable);
+  }
+
   function startNodeDrag(event) {
     if (event.button !== 0) return;
+    if (event.target.closest?.("[data-flow-stud]")) return;
     const node = event.currentTarget;
     const index = Number(node.dataset.objectIndex);
     const object = state.capture.objects[index];
@@ -3603,8 +3671,14 @@ HIER IS DE STRUCTUUR (SYNTAX):
       if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
       object.editor_position.x = Math.max(62, Math.min(canvasBounds.width - 62, start.left + dx));
       object.editor_position.y = Math.max(85, Math.min(canvasBounds.height - 55, start.top + dy));
-      node.style.left = `${object.editor_position.x}px`;
-      node.style.top = `${object.editor_position.y}px`;
+      legoFlowMap.updateDragFrame({
+        node,
+        nodesRoot: elements.networkNodes,
+        edgesRoot: elements.networkEdges,
+        objectId: object.object_id,
+        x: object.editor_position.x,
+        y: object.editor_position.y
+      });
     };
     const up = () => {
       node.removeEventListener("pointermove", move);
