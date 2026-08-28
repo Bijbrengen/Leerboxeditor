@@ -4149,11 +4149,8 @@ body.is-workbench-embedded .workspace-floating-header button {
 
 /* Autosave-indicator en herstelpunten, zwevend linksboven de kaart. */
 body.is-workbench-embedded .autosave-indicator { position:fixed; z-index:11; top:calc(var(--hud-top,118px) + 8px); left:220px; display:flex; align-items:center; gap:6px; padding:3px 8px; border:1px solid #315a62; border-radius:4px 14px 4px 4px; background:rgba(5,23,28,.92); }
-.autosave-indicator span { color:#7da4a8; font:700 .58rem "Share Tech Mono",monospace; letter-spacing:.04em; }
-.autosave-indicator span[data-state="bezig"] { color:#e6ad43; }
-.autosave-indicator span[data-state="ok"] { color:#4bc7bf; }
-.autosave-indicator span[data-state="fout"] { color:#ff9679; }
 .autosave-indicator button { width:22px!important; height:20px!important; min-height:20px!important; padding:0!important; border:1px solid #315a62!important; border-radius:999px!important; background:#0b242b!important; color:#e6ad43!important; font-size:.75rem!important; }
+.autosave-indicator button:disabled { border-color:#263f45!important; background:#091b20!important; color:#526b6f!important; cursor:not-allowed; opacity:.7; }
 body.is-workbench-embedded .history-panel { position:fixed; z-index:14; top:calc(var(--hud-top,118px) + 40px); left:220px; width:min(420px, calc(100vw - 260px)); max-height:calc(100vh - var(--hud-top,118px) - 70px); overflow:auto; padding:12px; border:1px solid #5573b3; border-radius:16px 4px 16px 4px; background:rgba(6,24,31,.98); box-shadow:0 22px 55px rgba(0,0,0,.72); }
 .history-panel[hidden] { display:none!important; }
 .history-panel > header { display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 0 8px; padding:0 0 8px; border-bottom:1px solid #24454d; }

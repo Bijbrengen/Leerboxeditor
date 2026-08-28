@@ -634,7 +634,7 @@
 
               <div class="network-stage" id="networkCanvas" tabindex="0" aria-label="Leerbox-netwerkcanvas; sleep bouwstenen hierheen">
                 <div class="canvas-hud"><span>ARCHITECTUURKAART</span><small>Sleep objecten · klik om te inspecteren</small></div>
-                <div class="autosave-indicator"><span id="autosaveStatus" data-state="">Automatisch bewaren actief</span><button type="button" id="historyButton" title="Herstelpunten bekijken">⟲</button><button type="button" id="centerCanvasButton" title="Kaart centreren op de leerobjecten" aria-label="Kaart centreren op de leerobjecten">&#9678;</button></div>
+                <div class="autosave-indicator"><button type="button" id="historyButton" title="Selecteer eerst een leerbox" aria-label="Selecteer eerst een leerbox" disabled>⟲</button><button type="button" id="centerCanvasButton" title="Kaart centreren op de leerobjecten" aria-label="Kaart centreren op de leerobjecten">&#9678;</button></div>
                 <aside class="history-panel" id="historyPanel" hidden aria-label="Herstelpunten">
                   <header><strong>Herstelpunten</strong><button type="button" id="historyCloseButton" aria-label="Sluiten" title="Sluiten">−</button></header>
                   <div id="historyList"></div>
@@ -858,7 +858,7 @@
     <script src="editor-auth.js?v=profile-optin-5"></script>
     <script src="languages.js?v=center-button-1"></script>
     <script src="engine-adapter.js?v=standalone-1"></script>
-    <script src="script.js?v=embedded-standalone-1"></script>
+    <script src="script.js?v=leerbox-history-context-1"></script>
     <script src="editor-chrome-boot.js?v=auth-gate-4"></script>
   </body>
 </html>

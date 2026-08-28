@@ -815,6 +815,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
   elements.canvasEmptyState = document.getElementById("canvasEmptyState");
 
   bindEvents();
+  initializePersistenceControls();
   initializeWorkbench();
   initializeGameDocks();
   initializeFloatingDocumentDrawer();
@@ -4459,18 +4460,10 @@ HIER IS DE STRUCTUUR (SYNTAX):
   let autosaveTimer = null;
   let autosavePaden = new Set();
 
-  function setAutosaveStatus(tekst, staat = "") {
-    const label = document.getElementById("autosaveStatus");
-    if (!label) return;
-    label.textContent = tekst;
-    label.dataset.state = staat;
-  }
-
   function autosaveNaarBackend(gewijzigdPad) {
     if (!selectedLeerboxId) return;
     if (gewijzigdPad) autosavePaden.add(gewijzigdPad);
     window.clearTimeout(autosaveTimer);
-    setAutosaveStatus("Wijziging wordt bewaard…", "bezig");
     autosaveTimer = window.setTimeout(async () => {
       const paden = [...autosavePaden];
       autosavePaden = new Set();
@@ -4482,19 +4475,30 @@ HIER IS DE STRUCTUUR (SYNTAX):
           body: JSON.stringify({ capture: state.capture, paths: paden })
         });
         if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-        const resultaat = await response.json();
-        const tijd = new Date(resultaat.saved_at || Date.now()).toLocaleTimeString("nl-NL");
-        setAutosaveStatus(`Bewaard om ${tijd}`, "ok");
       } catch (fout) {
-        setAutosaveStatus(`Niet bewaard: ${fout.message}`, "fout");
+        console.warn("Leerbox kon niet automatisch worden bewaard.", fout);
       }
     }, 1500);
+  }
+
+  function initializePersistenceControls() {
+    const historyButton = document.getElementById("historyButton");
+    if (!historyButton) return;
+    const hasSelectedLeerbox = Boolean(selectedLeerboxId);
+    historyButton.disabled = !hasSelectedLeerbox;
+    const label = hasSelectedLeerbox ? "Herstelpunten bekijken" : "Selecteer eerst een leerbox";
+    historyButton.title = label;
+    historyButton.setAttribute("aria-label", label);
   }
 
   async function openHerstelvenster() {
     const paneel = document.getElementById("historyPanel");
     const lijst = document.getElementById("historyList");
     if (!paneel || !lijst) return;
+    if (!selectedLeerboxId) {
+      paneel.hidden = true;
+      return;
+    }
     paneel.hidden = false;
     lijst.innerHTML = '<p class="empty-note">Geschiedenis wordt geladen…</p>';
     try {
@@ -4532,11 +4536,10 @@ HIER IS DE STRUCTUUR (SYNTAX):
       hydrateForm();
       render();
       publishCaptureUpdate();
-      setAutosaveStatus("Herstel uitgevoerd", "ok");
       const paneel = document.getElementById("historyPanel");
       if (paneel) paneel.hidden = true;
     } catch (fout) {
-      setAutosaveStatus(`Herstel mislukt: ${fout.message}`, "fout");
+      console.warn("Herstelpunt kon niet worden teruggezet.", fout);
     }
   }
 
