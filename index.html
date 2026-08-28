@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Leerpretarchitect Editor</title>
+    <title>Leereditor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <!-- Canonieke opmaak: de ENIGE bron is de engine (LeerpretSDK editor-shell).
          style.css blijft alleen als offline-fallback en is identiek aan de bron. -->
     <script src="runtime-config.js?v=standalone-2"></script>
+    <link rel="icon" type="image/svg+xml" data-leerpret-sdk-favicon>
+    <link rel="shortcut icon" data-leerpret-sdk-favicon>
+    <script>
+      (function () {
+        var apiBase = String(window.LEERBOX_EDITOR_CONFIG?.apiBase || "").replace(/\/+$/, "");
+        if (!apiBase) return;
+        var faviconUrl = apiBase + "/sdk/brand/favicon.svg";
+        document.querySelectorAll("[data-leerpret-sdk-favicon]").forEach(function (link) {
+          link.href = faviconUrl;
+        });
+      })();
+    </script>
     <script src="leerpret-sdk.js?v=4"></script>
     <script>
       (function () {
@@ -714,6 +726,7 @@
           </div>
 
           <section id="simulationPanel" class="simulation-panel" aria-live="polite">
+            <button class="panel-collapse-button" id="simulationPanelCloseButton" type="button" data-workbench-close="build" aria-label="Simulatie inklappen" title="Inklappen">−</button>
             <div class="simulation-panel-head">
               <div>
                 <strong>Handmatige simulatietrap</strong>
