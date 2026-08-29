@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   acceptance:
-    name: LeerboxEditor regressie- en pixeltests
+    name: LeerboxEditor regressie- en Playwright-smoketests
     runs-on: windows-latest
     timeout-minutes: 90
 
@@ -69,8 +69,16 @@ jobs:
       - name: Chromium installeren
         run: npx playwright install chromium
 
-      - name: Volledige testset uitvoeren
-        run: npm test
+      - name: Node- en Pythonregressies uitvoeren
+        run: |
+          npm run test:node
+          npm run test:python
+
+      - name: Playwright-integratie met Engine uitvoeren
+        # Pixelgoldens blijven een expliciete lokale goedkeuringspoort. CI toetst
+        # hier het stabiele contract: de Editor laadt het vastgelegde Engine-
+        # manifest en verifieert de integriteit van de componentassets.
+        run: npx playwright test tests/visual/editor-screen-parity.spec.mjs --grep "de huidige Editor resolveert componentassets"
 
       - name: Playwright-resultaten bewaren
         if: always()
