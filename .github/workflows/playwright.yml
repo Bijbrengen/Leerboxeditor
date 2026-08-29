@@ -1,0 +1,79 @@
+name: Playwright acceptatietests
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: playwright-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  acceptance:
+    name: LeerboxEditor regressie- en pixeltests
+    runs-on: windows-latest
+    timeout-minutes: 90
+
+    env:
+      CI: "true"
+      LEERPRET_ENGINE_ROOT: ${{ github.workspace }}\LeerpretEngine
+      LEERBOX_EDITOR_URL: http://127.0.0.1:47114/
+      LEERPRET_API_URL: http://127.0.0.1:47111/api
+
+    defaults:
+      run:
+        working-directory: LeerboxEditor
+
+    steps:
+      - name: LeerboxEditor ophalen
+        uses: actions/checkout@v7
+        with:
+          path: LeerboxEditor
+          fetch-depth: 0
+
+      - name: LeerpretEngine ophalen
+        uses: actions/checkout@v7
+        with:
+          repository: Bijbrengen/LeerpretEngine
+          ref: master
+          path: LeerpretEngine
+
+      - name: Node.js instellen
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: LeerboxEditor/package-lock.json
+
+      - name: Python instellen
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: LeerpretEngine/requirements.txt
+
+      - name: Editor-afhankelijkheden installeren
+        run: npm ci
+
+      - name: Engine-afhankelijkheden installeren
+        working-directory: LeerpretEngine
+        run: python -m pip install -r requirements.txt
+
+      - name: Chromium installeren
+        run: npx playwright install chromium
+
+      - name: Volledige testset uitvoeren
+        run: npm test
+
+      - name: Playwright-resultaten bewaren
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: leerboxeditor-playwright-${{ github.run_attempt }}
+          path: |
+            LeerboxEditor/playwright-report/
+            LeerboxEditor/test-results/
+          if-no-files-found: warn
+          retention-days: 14
