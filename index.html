@@ -10,7 +10,19 @@
     <!-- Canonieke opmaak: de ENIGE bron is de engine (LeerpretSDK editor-shell).
          style.css blijft alleen als offline-fallback en is identiek aan de bron. -->
     <script src="runtime-config.js?v=standalone-2"></script>
-    <script src="leerpret-sdk.js?v=4"></script>
+    <link rel="icon" type="image/svg+xml" data-leerpret-sdk-favicon>
+    <link rel="shortcut icon" data-leerpret-sdk-favicon>
+    <script>
+      (function () {
+        var apiBase = String(window.LEERBOX_EDITOR_CONFIG?.apiBase || "").replace(/\/+$/, "");
+        if (!apiBase) return;
+        var faviconUrl = apiBase + "/sdk/brand/favicon.svg";
+        document.querySelectorAll("[data-leerpret-sdk-favicon]").forEach(function (link) {
+          link.href = faviconUrl;
+        });
+      })();
+    </script>
+    <script src="leerpret-sdk.js?v=5"></script>
     <script>
       (function () {
         function loadFallback() {
