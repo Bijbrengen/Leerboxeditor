@@ -7,7 +7,17 @@
     headers.set("bypass-tunnel-reminder", "true");
     return rawFetch(input, Object.assign({}, opts, { headers: headers }));
   };
-  var apiBase = String(window.LEERBOX_EDITOR_CONFIG.apiBase || "").replace(/\/+$/, "");
+  var parameters = new URLSearchParams(window.location.search);
+  var configuredApiBase = String(
+    parameters.get("api")
+      || (window.LEERBOX_EDITOR_CONFIG || {}).apiBase
+      || localStorage.getItem("leerbox-editor.apiBase")
+      || ""
+  ).trim();
+  if (!configuredApiBase) throw new Error("LEERPRET_API_URL ontbreekt in runtime-config.js.");
+  var apiBase = configuredApiBase.replace(/\/+$/, "");
+  if (!/\/api$/.test(apiBase)) apiBase += "/api";
+  window.LeerpretSDKApiBase = apiBase;
   function loadSdkLoader() {
     return new Promise(function (resolve, reject) {
       var script = document.createElement("script");

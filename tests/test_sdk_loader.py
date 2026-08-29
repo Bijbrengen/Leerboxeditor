@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -15,19 +16,32 @@ class SdkLoaderWiringTests(unittest.TestCase):
         }
 
         self.assertIn('loader.load("editor-shell")', sources["index.html"])
+        self.assertIn('src="script.js?v=sdk-spatial-flow-2"', sources["index.html"])
         self.assertIn('loader.load(["api-client", "auth-client"])', sources["editor-auth.js"])
         self.assertIn('loader.load("editor-chrome")', sources["editor-chrome-boot.js"])
-        self.assertIn('loader.load("lego-flow-map")', sources["script.js"])
+        self.assertIn('loader.load(["lego-flow-map", "lego-spatial"])', sources["script.js"])
         self.assertIn("window.LeerpretSDKLoaderReady = loaderReady", sources["leerpret-sdk.js"])
 
         combined = "\n".join(sources.values())
         for hardcoded_asset in (
             "/sdk/editor-shell/mount.js",
+            "/sdk/editor-shell/css",
             "/sdk/api-client/client.js",
             "/sdk/auth-client/client.js",
             "/sdk/editor-chrome/chrome.js",
+            "/sdk/editor-chrome/template.html",
         ):
             self.assertNotIn(hardcoded_asset, combined)
+
+        self.assertIn('loader.fetchAsset("editor-chrome", "template.html")', sources["editor-chrome-boot.js"])
+        self.assertNotIn("shellStyles", sources["index.html"])
+
+    def test_offline_stylesheet_is_exact_engine_output_golden(self) -> None:
+        stylesheet = (ROOT / "style.css").read_bytes()
+        self.assertEqual(
+            hashlib.sha256(stylesheet).hexdigest(),
+            "f231223d85be766eb63ee5726a43cd0d6c6943dd031f77e75bf3e067a22b2867",
+        )
 
     def test_lego_flow_visuals_stay_in_the_sdk_component(self) -> None:
         script = (ROOT / "script.js").read_text(encoding="utf-8")
@@ -36,6 +50,18 @@ class SdkLoaderWiringTests(unittest.TestCase):
         self.assertIn("legoFlowMap.renderScene", script)
         self.assertIn("legoFlowMap.toolboxPreviewMarkup", script)
         self.assertIn("legoFlowMap.previewCablePath", script)
+        self.assertIn("legoFlowMap.layoutScreenSceneV1", script)
+        self.assertNotIn("legoFlowMap.clampScreenPositionV1({", script)
+        self.assertIn("legoFlowMap.studConnectionPoint", script)
+        self.assertIn("legoFlowMap.visibleLayerCenterV1", script)
+        self.assertIn("legoFlowMap.centerDeltaV1", script)
+        self.assertIn("legoFlowMap.centeredScrollOffsetV1", script)
+        self.assertIn("legoFlowMap.clientPointToLayerV1", script)
+        self.assertIn("legoFlowMap.panScrollOffsetV1", script)
+        self.assertIn("legoFlowMap.dragScreenPositionV1", script)
+        self.assertIn("legoSpatial.radarSeriesPoints", script)
+        self.assertNotIn("Math.cos(angle) * radius", script)
+        self.assertNotIn("source.editor_position.y - 27", script)
         self.assertNotIn('marker id="routeArrow"', script)
         self.assertNotIn('<span>⚑</span>', index)
         self.assertNotIn('<span>★</span>', index)

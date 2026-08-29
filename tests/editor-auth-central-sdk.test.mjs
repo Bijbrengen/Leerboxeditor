@@ -7,12 +7,13 @@ const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf
 
 test("Editor-auth gebruikt uitsluitend de centrale SDK-client", () => {
   assert.match(authSource, /window\.LeerpretSDKReady/);
+  assert.match(authSource, /const base = window\.LeerpretSDKApiBase/);
   assert.doesNotMatch(authSource, /LeerpretSDK\.create/);
   assert.match(authSource, /completeGoogleLogin\(\{ apiBase: base, sdkClient, shareProfile: true \}\)/);
 });
 
 test("Editor laadt de actuele centrale authbootstrap", () => {
-  assert.match(indexSource, /editor-auth\.js\?v=profile-optin-5/);
+  assert.match(indexSource, /editor-auth\.js\?v=manifest-loader-7/);
 });
 
 test("Editor vraagt via de SDK expliciet profielverificatie voor de tester-allowlist", () => {
@@ -23,7 +24,8 @@ test("Editor vraagt via de SDK expliciet profielverificatie voor de tester-allow
 
 test("authbootstrap publiceert de SDK-toegangspoort voor consumers", () => {
   assert.match(authSource, /window\.LeerboxEditorAuthReady = Promise\.all/);
-  assert.match(authSource, /\/sdk\/auth-client\/client\.js/);
+  assert.match(authSource, /loader\.load\(\["api-client", "auth-client"\]\)/);
+  assert.doesNotMatch(authSource, /\/sdk\/auth-client\/client\.js/);
   assert.match(authSource, /return decision/);
 });
 

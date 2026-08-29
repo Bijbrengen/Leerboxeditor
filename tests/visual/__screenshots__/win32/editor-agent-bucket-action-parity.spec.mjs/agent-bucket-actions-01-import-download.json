@@ -1,0 +1,637 @@
+[
+  {
+    "actionId": "bucket-agent-view-loaded",
+    "control": "[data-workbench-view=\"agent\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 0,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "e61b64d33af40bf1d15ec07703527c2073b865e35f5a34b3d15e512ffce0eeae",
+          "type": "leerpret-source-count"
+        },
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "previewUrl": "",
+            "type": "leerpret-editor-workspace-view",
+            "workspaceView": "vat"
+          },
+          "sha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+          "type": "leerpret-editor-workspace-view"
+        },
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "captureSha256": "09d741368edbfa2bfdd917446d4c646097b107f72eead515ab2b9744b4d5483a",
+            "previewUrl": "",
+            "type": "leerpret-editor-capture-updated"
+          },
+          "sha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+          "type": "leerpret-editor-capture-updated"
+        },
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "captureSha256": "2f7bc263712ffff4e51bb209f8e0ce58c0f6ba6ad379ae581376dcf22f4dd232",
+            "previewUrl": "",
+            "type": "leerpret-editor-capture-updated"
+          },
+          "sha256": "4013172ec436bfdd5f570d3ef31d8ff988e3016e517b2aa452930d5c838b6f4d",
+          "type": "leerpret-editor-capture-updated"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox-agent/status",
+          "query": {
+            "probe": "true"
+          },
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox/captures/e2e-fixture",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/simulator/datasets",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "1d07ac4b44c22768130b650fb9aeec507d0db5ec70ec1e1653aa0296ec5bf6f2",
+    "output": {
+      "assets": "1d7e03df3cad41066251e839402cf281bf4df66e279007f7423efeb962ee2e37",
+      "css": "065c6a4e883c046caf8c5b946ffa91ffb17daa88ad601137b972c13390a9da69",
+      "dom": "a90032441db31dba6118a4de0ce5cf472a3cab9582e96818dfc7856ba35ffd72",
+      "geometry": "30b450f6efae7b786c3eacbfc8a3457df513edc361da0d9094859de2c1c03314",
+      "state": "8c61590a34fe996812839895e7793acb4190d089c3396f3a1ceb66f0b7a196a4",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-drawer-open",
+    "control": "#agentNewConversationButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "9d10ac83a926f9a71b60c7d5a40de2f2a208cbd89db1ede59f2cd70576561b4f",
+    "output": {
+      "assets": "81d374f696913c8e3e676882808c0e4fe9e663e35f9c3a49c977a4033a1a8bf4",
+      "css": "38826a44e2dea59fee90f666641e392f97277eb7f669f5299a7bc49a2b752e28",
+      "dom": "c921998dd69e1cea73ed7bf093ec3cea286c03d1496b47dc73cd275df5ebf8e3",
+      "geometry": "c8712a4a3fa2b81e228dc7676bbd7e23b8c394740867ca21ca47b01720a0c650",
+      "state": "bee8fb18954aa280b36e09d8ee3714ea5fd78e2805561dbeef3b6597076514af",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-source-checkbox-unchecked",
+    "control": "#agentBucketSources [data-bucket-source-id]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "32be25fbf337b9f0234561b012db453f6531eeb7073a056930f40b1634a9eb44",
+    "output": {
+      "assets": "5856a8bfee3ca2b946c6ec65fe5b645628d2ffa7b11e056b4258212b33867c3d",
+      "css": "ce01637b676a263ac23ec3923844e8a7c927648eeb03da042f7bbc1b32126098",
+      "dom": "4a2f325dca8f67b455d1d056005af6cb682bda33b259d27f3fb3523486e14991",
+      "geometry": "0218ecfc5a42066605e3c25fc09e979a4f09af114edab280033fc4aac140544d",
+      "state": "ab474b8c258edf97249f073152a33eaf6065494b39498dfc45a05204b6433420",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-source-checkbox-checked",
+    "control": "#agentBucketSources [data-bucket-source-id]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "53d16e9608289fdb49e19be5697a42d8e66974cd6664920f70264e2053f889e1",
+    "output": {
+      "assets": "5856a8bfee3ca2b946c6ec65fe5b645628d2ffa7b11e056b4258212b33867c3d",
+      "css": "ebca685fae7fd3e2b245d37cd27056aab50e640578a2caeb24c458395fd8729d",
+      "dom": "540057bbdacd5f64cb06f9bfbd13b4ed75594ff29fec4de842911c274679f1a2",
+      "geometry": "c8712a4a3fa2b81e228dc7676bbd7e23b8c394740867ca21ca47b01720a0c650",
+      "state": "f9714cf1317745c6658b5f86d55dc563aa8652292c45ede29d3f7e0cfe90113c",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-source-download",
+    "control": ".bucket-source-download-link",
+    "effects": {
+      "clipboard": [],
+      "downloads": [
+        {
+          "filename": "",
+          "href": "/api/project-buckets/e2e-fixture/sources/bron-een/download?role=architect",
+          "size": 0,
+          "type": ""
+        },
+        {
+          "sha256": "16c80f9e5d6afbe1477ad4e28fe7515ea6ffa6e658952bd9a98f6aaaa3c884b1",
+          "size": 29,
+          "suggestedFilename": "bron-een.txt"
+        }
+      ],
+      "errors": [
+        "requestfailed: GET http://127.0.0.1:47111/api/project-buckets/e2e-fixture/sources/bron-een/download?role=architect (net::ERR_ABORTED)"
+      ],
+      "messages": [],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture/sources/bron-een/download",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "d72ab4341881ac76cddca4cb6b08d53546007f56a09ecb5f014b4bef2a6c4695",
+    "output": {
+      "assets": "8d0f6be35ab62d466a0facbec33c403e4bb93675cd60694e0567550a1543a9d2",
+      "css": "524a244902a3a1b55c7cfe09fafd58878ace8b35b6a96586bcf0f27f77dde174",
+      "dom": "2555f0ed84dd6874b77116f0444c71825af52e5eb00f2f7df47e26143d6b099e",
+      "geometry": "c8712a4a3fa2b81e228dc7676bbd7e23b8c394740867ca21ca47b01720a0c650",
+      "state": "524b243cb0557c73b7075f76ca5ae9a3eebe2a9e3c888593ebd64fef87ae7ecb",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-document-filechooser-import",
+    "control": "#agentImportDocumentsButton -> #sourceDocumentInput",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "evidence": {
+        "file": {
+          "name": "architectuur-notities.txt",
+          "sha256": "f0bcf2bd3fac6dc95310b04e1e32bec42704282f8e52683e0adc3c1b503db737",
+          "size": 39
+        }
+      },
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 2,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "01bdc3d386a40f5077f1baaa6be59d02d3a0093d4a56c7c2aca5d4a7502aa83e",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "b8505d8745015c599852332e7abe53833f50d9859aa4ecac6d3839d48bc5cdca",
+            "summary": {
+              "configSha256": "acc9d9bff41cd8e5940a369c906c4a56ae9378e82a0d82cf539208eb47da9b30"
+            }
+          },
+          "method": "PUT",
+          "pathname": "/api/project-buckets/e2e-fixture/config",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": {
+            "byteLength": 238,
+            "fieldNames": [
+              "file",
+              "architectuur-notities.txt"
+            ],
+            "fileNames": [
+              "architectuur-notities.txt"
+            ],
+            "kind": "multipart"
+          },
+          "method": "POST",
+          "pathname": "/api/project-buckets/e2e-fixture/documents",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "27511a32593ec8ef54b2cd9ba5c4bfb8148139acd8b5071ec002adec3254b29b",
+    "output": {
+      "assets": "bc4825833b7efe82311c64d7afb86ac86ca58e8a59ab2fb382fd1cb88b488c2d",
+      "css": "b55e2d5f42c18eaf03690bf8eb94ec07a32fc6a734997fc387a56278f708d860",
+      "dom": "5a54e47fc29925b53a7b1bbe427cf3892d79a708fb4fb3d1f3cddba7b970ccde",
+      "geometry": "5c22ab711e7c45a6da944126d21e13b60bc3dba16be8abe2e5732bc17a846214",
+      "state": "4d8bb44de12c897031a95724181dc736b9e9135b823672ab9882088a24aef2c4",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-zip-filechooser-import",
+    "control": "#agentImportZipButton -> #sourceZipInput",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "evidence": {
+        "file": {
+          "name": "leerbox-bronnen.zip",
+          "sha256": "239f5cd4044fc1d6882c4df733fea5a2975010b510ac0320ed8dc814e6548a6c",
+          "size": 10
+        }
+      },
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 3,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "1b8ed9bec30068454c04c6a5948c0a9157ec0a271b3849481e639616afd135e0",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "9355aa709b7d0b7a7d510baaf515f909ad44d80d82239423269c03c82ab905bc",
+            "summary": {
+              "configSha256": "e39cabbe20ba48aa12d5ee8f8f9e1312d37fd24c41f52a9c06750737c8d6e1fc"
+            }
+          },
+          "method": "PUT",
+          "pathname": "/api/project-buckets/e2e-fixture/config",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": {
+            "byteLength": 208,
+            "fieldNames": [
+              "file",
+              "leerbox-bronnen.zip"
+            ],
+            "fileNames": [
+              "leerbox-bronnen.zip"
+            ],
+            "kind": "multipart"
+          },
+          "method": "POST",
+          "pathname": "/api/project-buckets/e2e-fixture/zip",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "45c11497414baa40b662610bbee383155a86cb8b33b56f3176551281d2c3afb3",
+    "output": {
+      "assets": "0b7449f37ba2f985881224962b3ec20181d0fcef777c8219895e7edc26aa84cd",
+      "css": "fd502b862cc61d8e6aba471ba8acc1c96b923c364eb17dbcc9c6f7761c1508d5",
+      "dom": "c40cfb71042fadd51623446f9d2aa0b36eee96457ead5f66fe16d4681b544390",
+      "geometry": "c9c005c2dea6686f60f169e7f1c9971bdd1e3676e8f87558d8057b9732b5075b",
+      "state": "0de635f123aa8c1c9658de94aa5bf6aea9cec8d54dd2926990e56c2f4e6e27c2",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-repository-prompt-import",
+    "control": "#agentImportRepositoryButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "evidence": {
+        "dialog": {
+          "acceptedValue": "https://github.com/leerpret/e2e-bronnen.git",
+          "message": "GitHub repository-URL",
+          "type": "prompt"
+        }
+      },
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 4,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "2c2b15174b215dcb60498776f40d8f71ae308aac356df308cc2933fdff664034",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "3461510d3a539fcfa83f91aed2174d98f71a9bc4a55016fd183b9def05941351",
+            "summary": {
+              "configSha256": "c43563538c3e008c15ad918c0ef29012171f49aabad7329dd00d418be055c908"
+            }
+          },
+          "method": "PUT",
+          "pathname": "/api/project-buckets/e2e-fixture/config",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "1e85f4ada26b640691140a5de22e1615346a36c77d415efc0370668f23a14c4a",
+            "summary": {
+              "url": "https://github.com/leerpret/e2e-bronnen.git"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/project-buckets/e2e-fixture/repository",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "dcbf274814f69d7feae69dcf28129a41b9e3cd0403cb8eed41be447bd810c974",
+    "output": {
+      "assets": "515a157dfaaea9ade021de09f26b560daf7597b2cb2da35dad147149c45051e5",
+      "css": "99d14f9ab599c1b2d0c858b4358c61e31928567260775e58c53bae3275bc7a46",
+      "dom": "69281cd9631403637826329b6913406930ae9e39e0c423694d9db7f82316a766",
+      "geometry": "ef8d3f4b816e02f10124af5c0cace94def65f4ef661ecdb434deafbda7797064",
+      "state": "61f2d8ffd730af5996fdc91a2bdb5a04ca926d72451f6d262b879c47489f6912",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-website-prompt-import",
+    "control": "#agentImportWebsiteButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "evidence": {
+        "dialog": {
+          "acceptedValue": "https://voorbeeld.nl/leerarchitectuur",
+          "message": "Website-URL",
+          "type": "prompt"
+        }
+      },
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 5,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "ea7ab7009a81541ed5841c0ae2b2fb7cb28cb366c3b159a733cfeedec3391139",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "b7efd918a420830dfdd0fb68c81fad8a25885315b29a73e7e4bd241fe05d8488",
+            "summary": {
+              "configSha256": "22603a00775878397f2dfb8efe6bfb9f53a91256695af10c4c6ef2f974170d97"
+            }
+          },
+          "method": "PUT",
+          "pathname": "/api/project-buckets/e2e-fixture/config",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "503df0877005210bab5e417b9faf511482c210171c59218a661dca84a16eeb08",
+            "summary": {
+              "url": "https://voorbeeld.nl/leerarchitectuur"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/project-buckets/e2e-fixture/website",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "6bb4ba3d000666e440cf202b39deefd372bf3a082bff4eb61d7cbe619a3cc154",
+    "output": {
+      "assets": "b5a6b50b5c418d97de058a999102959cdd9a619ceeee55b8acd870bd0627e5f5",
+      "css": "49f017d7353fb1bbc44a994b3b331d802c5c37962c9605957ca7cbad716facf3",
+      "dom": "d0effa707a155d1db22979a4502354754f0576693a44c73e184cd86476f1bb3f",
+      "geometry": "06e29f21bb8caf3bbbf9584752d4e4f1df4d18bf2d674745fcfdd8be2cf850dc",
+      "state": "93dfdce9691f68e06f2fbbf4747d47be12ff1ecabb19370f937d93761d6601d7",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-drawer-close",
+    "control": "#agentDocumentCloseButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "6948f18b5b9df27b3f3b1f7822fa3e66d8711269314fcb48b0709010ee6482b4",
+    "output": {
+      "assets": "ca06bb44aa0973e05a67b1a2686204ae0eb7253cef60c9849454ea3e38f59e07",
+      "css": "9fafec7a0cf0fd27ebf12c0abf96ca02c76de9a723bd700698c20c0a59a17b03",
+      "dom": "867bb1e368e2ade678a5a71d0eb38d4a0f60f4ff8ed216cc93894bd3d3bba7a2",
+      "geometry": "537186429734be2b829703e272828c340f38d95a77ec8eb9696312350dc0be72",
+      "state": "98424827595f17d16bf5e6de31d75314a36985f4ec6157e3b641b7bb53a359fe",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-panel-close",
+    "control": "#agentPanelCloseButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "previewUrl": "",
+            "type": "leerpret-editor-panel-closed"
+          },
+          "sha256": "dc2a03db77089d630c50ca8c270ba76d15edf74ccd16e0efa8b62283bad65426",
+          "type": "leerpret-editor-panel-closed"
+        }
+      ],
+      "requests": []
+    },
+    "fingerprintSha256": "d4c0dc8d801058e7a7119f16f48136beb25dd31af22c92eddd9ab6b1a5f77364",
+    "output": {
+      "assets": "ca06bb44aa0973e05a67b1a2686204ae0eb7253cef60c9849454ea3e38f59e07",
+      "css": "8df018a7701ffc2b9d2e0d68ebe4ebc572ccc64d3573a46e1cc576c4fef19809",
+      "dom": "6017629d158d825b66af26387b5b16f9baca67f1ca1dbb36dcd2b20ff139bffc",
+      "geometry": "9d67bdabdb53254d06c3bb4693b3450df62ad92a2801d7f411c4245c28839e2f",
+      "state": "a134dbd41d439d079d000f04d2daee8189a62826752ff8b50b24425ad9f4eba4",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  },
+  {
+    "actionId": "bucket-legacy-source-controls-unreachable",
+    "control": "#sourceImporter[hidden]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "evidence": {
+        "baselineCommit": "bcc4b886dac2b804c225bc3b1208e5d9e89f9ecb",
+        "reason": "activateWorkbenchView() zet #sourceImporter in de historische en huidige Editor voor iedere view op hidden; er bestaat geen zichtbare gebruikerstrigger naar deze legacy-controls. De zichtbare documentlade gebruikt #agentImport* en ververst na iedere import automatisch.",
+        "selectors": [
+          "#importDocumentsButton",
+          "#importZipButton",
+          "#importRepositoryButton",
+          "#importWebsiteButton",
+          "#repositoryUrl",
+          "#repositoryImportForm button[type=\"submit\"]",
+          "#websiteUrl",
+          "#websiteImportForm button[type=\"submit\"]",
+          "#refreshBucketButton"
+        ]
+      },
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "9934911daa6f8755db086a46cd607ceed7a22ad818a5db96d4a0da7bac9b644f",
+    "output": {
+      "assets": "ca06bb44aa0973e05a67b1a2686204ae0eb7253cef60c9849454ea3e38f59e07",
+      "css": "8df018a7701ffc2b9d2e0d68ebe4ebc572ccc64d3573a46e1cc576c4fef19809",
+      "dom": "6017629d158d825b66af26387b5b16f9baca67f1ca1dbb36dcd2b20ff139bffc",
+      "geometry": "9d67bdabdb53254d06c3bb4693b3450df62ad92a2801d7f411c4245c28839e2f",
+      "state": "a134dbd41d439d079d000f04d2daee8189a62826752ff8b50b24425ad9f4eba4",
+      "svg": "51fa5b769cdbc3675d456226ba20d326d1acd3fd6906b68cc8a50081c1ca0692"
+    }
+  }
+]

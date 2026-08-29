@@ -1,0 +1,521 @@
+[
+  {
+    "action": "file-import-description-markdown",
+    "cssSha256": "92c43370a5e88a375ad23cbd23e8cc0284f0cc91469ad2caa249e3f23264f654",
+    "domSha256": "f5decbc4cc12dacd8f607420bf8d6a3e5655988e4c585c2fffdfa25d06fc09bb",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "7593e6f4c45ab4f251cd1ff4d9e2cb5c3e8f2886e5024ca0478bfee7c6172896",
+    "messages": [],
+    "network": [],
+    "stateSha256": "85409eee3de73cda87eeeb596854f9a08a5e0e7d5d726c7f120b3345db5c988f",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "file-import-capture-direct",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "3f8bda265607f224969539b26ed811469d131663f1a329c43223bd96249bdaf7",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "file-import-capture-capture-wrapper",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "3f8bda265607f224969539b26ed811469d131663f1a329c43223bd96249bdaf7",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "file-import-capture-leerbox-capture-wrapper",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "3f8bda265607f224969539b26ed811469d131663f1a329c43223bd96249bdaf7",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "file-import-invalid-alert-dit-json-bestand-kon-niet-als-leerbox-capture-worden-gelezen",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "9531a64cc81b60443d836d728e078879e13f93c7fa0335f9af748fe05736cb7d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "download-export-json",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "9531a64cc81b60443d836d728e078879e13f93c7fa0335f9af748fe05736cb7d",
+    "downloads": [
+      {
+        "sha256": "59239b39c539971481b19bd7c79c021819a5a6f10333903c66921e0ad9375608",
+        "size": 15140,
+        "suggestedFilename": "geimporteerde-leerbox.json"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "download-ai-prompt",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "9531a64cc81b60443d836d728e078879e13f93c7fa0335f9af748fe05736cb7d",
+    "downloads": [
+      {
+        "sha256": "c2bd4f8f63e2ffd2302f080414ffb9c2a8fa21f2377ac304068c7ce9500505c4",
+        "size": 17464,
+        "suggestedFilename": "leerbox-basisprompt.txt"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f103b572f10e6dfe56e05782f6f2f5851bef647080a076e66af8b00e37958e14",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "prompt-dialog-open",
+    "cssSha256": "b8d88d70a0608f802b95cda8c832c0a01b7c41644533bb61789e02d685412886",
+    "domSha256": "ea94281cb8833316c427b666a060c52db0ffc9483337ffe874bc6b2edbcf40f3",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "fd859869c1ee5bfea26c455ddbc9c191f50e7582ef2c93fdb2bb161e4cc62545",
+    "messages": [],
+    "network": [],
+    "stateSha256": "c6ad71cde2a8aed0ceba9b877b58f61bf2faffdcdfe4dfad604706ef275cfa61",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "prompt-dialog-copy",
+    "cssSha256": "7591b6959a02eaea76b2428abd39f288970cd12ff8a61ad0e1746f9880351dea",
+    "domSha256": "6be2774364e8d2fdb30180884a76ae12732bdf34a34cbcf943d8591c78dc9aac",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "b067fdfb15508c126355b7b9cdc163ffc14bfc6672207066c42990b7dfdde79e",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4a66ca533a3b2f9a0423eeefdc006d43280d0350bb5c077a7610a8aea67860ba",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "prompt-dialog-done-close",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "9531a64cc81b60443d836d728e078879e13f93c7fa0335f9af748fe05736cb7d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "95827a87647d1e53e02a99ce9e899592fbd3e75bf4f0f69ba54ee08925b7a569",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "prompt-dialog-icon-close",
+    "cssSha256": "de584ab5788ea7aa3867cf0489418edfed77026f465ffb59fdc545c4819b16f4",
+    "domSha256": "9531a64cc81b60443d836d728e078879e13f93c7fa0335f9af748fe05736cb7d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "51dd048c3c386aefbaf2c4a3c1852ce9bb8af13d469180d7f1a431b128882ee2",
+    "messages": [],
+    "network": [],
+    "stateSha256": "95827a87647d1e53e02a99ce9e899592fbd3e75bf4f0f69ba54ee08925b7a569",
+    "svgDrawablesSha256": "512d3eb334cd5755e46c499df7667a6c10302335a516e8e4cb48878ec4205c7b"
+  },
+  {
+    "action": "plan-view-source",
+    "cssSha256": "063e667c7bb28e6ec68b2cd87e97cd9f6b3748771bb1c381f1abe9156e9b1aca",
+    "domSha256": "1bdf73a489463050c4703c416d46718525db87eb77c8adb6f63d5ed1faca7f0b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "bad1ef635b79ca26aafd6ccfd77eda6ac0c0d9dadf142bcc274e5c9182f45d0d",
+    "messages": [],
+    "network": [],
+    "stateSha256": "ee15ddd159b90f11e2c7605b3edc52a2968c613100cfc2315469a2b1f3ebbc69",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "plan-download-source",
+    "cssSha256": "ea8d5fb361f1796b59d48ae59335d5c0244aab6ea487f678be30c2539b44f252",
+    "domSha256": "1bdf73a489463050c4703c416d46718525db87eb77c8adb6f63d5ed1faca7f0b",
+    "downloads": [
+      {
+        "sha256": "39e81cddafee8d5f0f567fbd46859bea171d6a509d0797b2f332cc97b54f6d27",
+        "size": 4205,
+        "suggestedFilename": "geimporteerde-leerbox-verrijkingsplan.tex"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "bad1ef635b79ca26aafd6ccfd77eda6ac0c0d9dadf142bcc274e5c9182f45d0d",
+    "messages": [],
+    "network": [],
+    "stateSha256": "b00ae57fb4a2e4a228c43af8a8b6f9673981d14492d9bf951b77bb8cb65cc6c5",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "plan-view-json",
+    "cssSha256": "7b8728a64a2557dab008362e67ba65de8c86742df18e0c02b31c9a3145e06019",
+    "domSha256": "df37806f121e4fe537cb7fbc84b5afd705e5cd1fcbf312c515a8ae4a2db0c81d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "af6990909714a82510d72b9c3f2dc09d30d2a14fe08daa147112a4e4c4c37f15",
+    "messages": [],
+    "network": [],
+    "stateSha256": "51b0942e5f247803fbe9fbc809775231dc287958ebe6106f78b62a32234b0c95",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "plan-download-json",
+    "cssSha256": "8237e84ed61788128582675bede44fe0765acb6c5e2b7a644c4eb6b523f431c1",
+    "domSha256": "df37806f121e4fe537cb7fbc84b5afd705e5cd1fcbf312c515a8ae4a2db0c81d",
+    "downloads": [
+      {
+        "sha256": "59239b39c539971481b19bd7c79c021819a5a6f10333903c66921e0ad9375608",
+        "size": 15140,
+        "suggestedFilename": "geimporteerde-leerbox.json"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "af6990909714a82510d72b9c3f2dc09d30d2a14fe08daa147112a4e4c4c37f15",
+    "messages": [],
+    "network": [],
+    "stateSha256": "0823d2beffd0ee91a1ae95b124ae11292a57a98e37c3e6345917c727d80589a7",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "plan-view-pdf",
+    "cssSha256": "f2e3f9618b1a608de1526a17f54a80a0a6f8c204d38781441f2666bb00bd8215",
+    "domSha256": "9df9330b9d9b7045ed9af4c24aa392434d7fe744d854cac264e715db99b519e1",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "86543a2140d63f349e57ffdb9782a65b50a2d548e3477c61b90716a50d43b81e",
+    "messages": [],
+    "network": [],
+    "stateSha256": "7288e57b19d251718f083b096fab2393c04077a47067dfe4ae7d9ec9728b7c33",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "plan-download-pdf",
+    "cssSha256": "b41de44896271801f7420d72079cc85b9b87901826dfa5805632d552aaa34368",
+    "domSha256": "9df9330b9d9b7045ed9af4c24aa392434d7fe744d854cac264e715db99b519e1",
+    "downloads": [
+      {
+        "sha256": "034360b8929e7273d543cf892ed752d6f6add7cf407ab271cbdd5a6d290fe5a0",
+        "size": 125,
+        "suggestedFilename": "geimporteerde-leerbox-verrijkingsplan.pdf"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "86543a2140d63f349e57ffdb9782a65b50a2d548e3477c61b90716a50d43b81e",
+    "messages": [],
+    "network": [],
+    "stateSha256": "b0e40eb5c70fbd8e2e6e59f3a314ccbaf004ef89f534b60c70eb6426126021fa",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "json-output-copy",
+    "cssSha256": "a84c0f668c7af99bc760844d685f0fbcaf01c044355a14a9e08471029d7bc9db",
+    "domSha256": "f63e23ba83f8682ff800107019d76c819cb167a4028542ed21390bb12f12a0d5",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "42dbdea8c25ed4f9d6db1508e8fa6333e2f9af5d1087a5f8b1d1e2402a0eaa46",
+    "messages": [
+      "Je bent geen mede-ontwerper en geen adviseur. Je bent een intake-analist en registratie-assistent voor leerarchitectuur.\n\nDoel: maak van mijn menselijke beschrijving een uniform leerbox_capture_v5 JSON-bestand dat ik kan importeren in de Leerpretarchitect editor.\n\nBelangrijke grenzen:\n1. Doe geen ontwerpsuggesties.\n2. Doe geen verbetervoorstellen.\n3. Geef geen simulatiescores, leerpretscores of marktpotentie.\n4. Vul ontbrekende inhoud niet creatief in.\n5. Als iets onbekend blijft, noteer exact \"unknown\".\n6. Gebruik lege lijsten [] als er geen items bekend zijn.\n7. Gebruik voor statusvelden alleen \"present\", \"partial\", \"absent\" of \"unknown\".\n8. Behoud alle JSON-sleutels en enumwaarden in het Engels.\n9. Normaliseer leerbox_id naar kebab-case en object_id naar snake_case.\n10. Gebruik alleen de termen computertaal-statements of syntaxis voor de formele statements.\n\nOnderbouwing syntaxis: Deze specifieke trefwoorden en syntaxisdefinities zijn gekozen op basis van eerdere praktijkvalidatie, omdat ze patronen van vrije actieregulatie consistent vangen in leermetadata.\n\nRegistreer expliciet: self-starting, self-explaining, proactieve uitnodiging, speelkader, regels, vrijheid, volgorde, afhankelijkheden, herhaling, feedback, objecten, minimale contactberichten, rijke simulatorcontext, archetypeverwachtingen en game design inclusief spelersdoel, win state, fail state, mechanics, dynamics, aesthetics, resources, progressie, core loops, onboarding en balancing.\n\nMaak daarnaast twee extra representaties in hetzelfde JSON-object:\n- fallback_latex_description: een professioneel aangescherpte beschrijving in LaTeX, in de stijl en woordkeuze van de gebruiker.\n- computertaal_statements: full_architecture en captured_learning_box, waarbij captured_learning_box alleen de objecten, typen, afhankelijkheden en minimale engine-relevante velden bevat.\n\nLaagscheiding: de simulator en ontwerpaudit mogen rijke context gebruiken; de leerpret-engine krijgt later alleen minimale informatiearme contactberichten en mag de rijke leerboxdefinitie niet als voorkennis gebruiken.\n\nGeef alleen geldig JSON terug. Gebruik geen markdown code fences en geen uitleg voor of na het JSON-object.\n\nGebruik deze JSON-structuur als uitgangspunt:\n{\n  \"schema_version\": \"leerbox_capture_v5\",\n  \"capture_mode\": \"unknown\",\n  \"raw_user_description\": \"\",\n  \"fallback_latex_description\": {\n    \"format\": \"latex\",\n    \"source_style\": \"user_fallback\",\n    \"body\": \"\\\\documentclass{article}\\n\\n\\\\usepackage[dutch]{babel}\\n\\n\\\\usepackage[utf8]{inputenc}\\n\\n\\\\usepackage[T1]{fontenc}\\n\\n\\\\usepackage[margin=2.4cm]{geometry}\\n\\n\\\\usepackage{xcolor}\\n\\n\\\\definecolor{leerpret}{HTML}{167C72}\\n\\n\\\\begin{document}\\n\\n\\\\section*{Van Geimporteerde leerbox naar een gevatte leerbox}\\n\\n\\\\textbf{Verrijkingsplan voor een bestaande leerattractie}\\n\\nWe willen de bestaande leerattractie vatten in een leerbox. Dat betekent dat we de aanwezige onderwijsarchitectuur eerst herkenbaar vastleggen en haar daarna doelgericht verrijken met handelingsmogelijkheden, feedback, vrijheid, herstel en observeerbaar succes.\\n\\n\\\\subsection*{Werkwijze en rol van de Leerpretarchitect}\\n\\nDe Leerpretarchitect bewaakt de bedoeling van de bestaande praktijk, controleert of de herkenning klopt, kiest welke verrijkingen passend zijn en voorkomt dat techniek of spelvorm het leerdoel overneemt. De architect accordeert dus zowel de vertaling als de verwachte bijdrage aan Leerpret.\\n\\n\\\\subsubsection*{Van onderwijsarchitectuur naar leerbox}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Herkennen: beschrijven wat al aanwezig is in bedoeling, doelgroep, start, route, weerstand en succes.\\n\\n\\\\item Herleiden: verbinden van bronuitspraken aan velden in de onderwijsarchitectuur.\\n\\n\\\\item Vatten: vertalen naar leerobjecten, acties, routes, afhankelijkheden en meetbare succesmomenten.\\n\\n\\\\item Verrijken: toevoegen wat nog ontbreekt voor tijd, activiteit, variatie, veerkracht en succes.\\n\\n\\\\item Toetsen: observeren van echte actiereeksen en vergelijken van de gemeten Leerpret met de verwachting.\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Herkende onderwijsarchitectuur}\\n\\nDit is wat in de huidige leerattractie en de beschikbare bronnen is herkend.\\n\\n\\\\subsubsection*{Identiteit en context}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Naam: Geimporteerde leerbox\\n\\n\\\\item Type leerbox: leerroute\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Pedagogische kern}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Centraal leerdoel: De deelnemer doorloopt de vaste route.\\n\\n\\\\item Succesdefinitie: De deelnemer bereikt aantoonbaar de uitgang.\\n\\n\\\\item Doelgroep: Testdeelnemers\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Ervaring, start en route}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Spelvorm: Routepuzzel\\n\\n\\\\item Eerste zichtbare actie: Open het startobject.\\n\\n\\\\item Routemodel: vertakkend\\n\\n\\\\item Hoofdbarrière: Een bewuste weerstandsstap.\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Gevatte structuur}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Leerobjecten: 4\\n\\n\\\\item Routestappen: 3\\n\\n\\\\item Afhankelijkheden: 0\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Bronvermelding}\\n\\nVoor dit plan beschikbare en in de capture geregistreerde bronnen:\\n\\n\\\\begin{itemize}\\n\\n\\\\item leerbox.nl\\n\\n\\\\item articles/Leerpret gevat.tex\\n\\n\\\\item wikibooks/collections/leerpret-bronnen\\n\\n\\\\item wikibooks/books\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Voorgestelde verrijkingen}\\n\\nDeze onderdelen zijn nog niet aanwezig. De Leerpretarchitect beoordeelt, concretiseert en accordeert iedere verrijking.\\n\\n\\\\subsubsection*{1. Directe feedbacklus toevoegen}\\n\\nMaak na iedere betekenisvolle actie zichtbaar wat veranderde en welke mogelijkheden nu ontstaan.\\n\\n\\\\textbf{Verwachte invloed: A, R, S.} Acties worden begrijpelijker, herstelbaarder en succes wordt zichtbaarder.\\n\\n\\\\subsubsection*{2. Keuzevrijheid expliciteren}\\n\\nBepaal waar de deelnemer route, tempo, rol of aanpak werkelijk zelf kan kiezen.\\n\\n\\\\textbf{Verwachte invloed: V, R.} Meer routevariatie en ruimte om na frictie anders verder te gaan.\\n\\n\\\\subsubsection*{3. Herstelmogelijkheden aanbieden}\\n\\nOntwerp meerdere veilige manieren om na een mislukking opnieuw of anders verder te gaan.\\n\\n\\\\textbf{Verwachte invloed: R, V.} Sterkere veerkracht en meer variatie na tegenslag.\\n\\n\\\\subsubsection*{4. Meetbare acties vastleggen}\\n\\nVertaal de kernhandelingen naar een klein vocabulaire van observeerbare actietypen.\\n\\n\\\\textbf{Verwachte invloed: T, A, V, R, S.} De verwachte Leerpret-impact wordt toetsbaar met echte actiereeksen.\\n\\n\\\\subsection*{Verwacht effect op Leerpret}\\n\\n0/5 Leerpret-markers zijn momenteel inhoudelijk onderbouwd. De voorgestelde verrijkingen richten zich vooral op A, R, S, V, T.\\n\\n\\\\textit{De pijlen beschrijven een verwachte richting, geen gegarandeerde numerieke stijging. De werkelijke Leerpret-waarde ontstaat pas uit gemeten actiereeksen en kan na een simulatietest worden vergeleken.}\\n\\n\\\\end{document}\"\n  },\n  \"computertaal_statements\": {\n    \"rationale\": \"Deze specifieke trefwoorden en syntaxisdefinities zijn gekozen op basis van eerdere praktijkvalidatie, omdat ze patronen van vrije actieregulatie consistent vangen in leermetadata.\",\n    \"full_architecture\": [\n      \"ARCHITECTURE geimporteerde-leerbox HAS_NAME \\\"Geimporteerde leerbox\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox HAS_GOAL \\\"De deelnemer doorloopt de vaste route.\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox FOR_TARGET_GROUP \\\"Testdeelnemers\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox USES_PLAY_FORM \\\"Routepuzzel\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox HAS_ROUTE_MODEL \\\"vertakkend\\\"\",\n      \"OBJECT startobject ROLE \\\"entry; TYPE start; AFFORDANCE undefined\\\"\",\n      \"OBJECT weerstandsobject ROLE \\\"resistance; TYPE challenge; AFFORDANCE undefined\\\"\",\n      \"OBJECT succesobject ROLE \\\"success; TYPE reward; AFFORDANCE undefined\\\"\",\n      \"OBJECT eindobject ROLE \\\"exit; TYPE exit; AFFORDANCE undefined\\\"\",\n      \"ROUTE_STEP 1 USES \\\"undefined; ACTION open; FEEDBACK undefined\\\"\",\n      \"ROUTE_STEP 2 USES \\\"undefined; ACTION answer; FEEDBACK undefined\\\"\",\n      \"ROUTE_STEP 3 USES \\\"undefined; ACTION continue; FEEDBACK undefined\\\"\"\n    ],\n    \"captured_learning_box\": [\n      \"VAT geimporteerde-leerbox ENTRY_OBJECT \\\"startobject\\\"\",\n      \"VAT geimporteerde-leerbox RESISTANCE_OBJECTS \\\"weerstandsobject\\\"\",\n      \"VAT geimporteerde-leerbox SUCCESS_OBJECTS \\\"succesobject\\\"\",\n      \"VAT geimporteerde-leerbox EXIT_OBJECT \\\"eindobject\\\"\",\n      \"VAT_OBJECT startobject TYPE \\\"start; ROLE entry\\\"\",\n      \"VAT_OBJECT weerstandsobject TYPE \\\"challenge; ROLE resistance\\\"\",\n      \"VAT_OBJECT succesobject TYPE \\\"reward; ROLE success\\\"\",\n      \"VAT_OBJECT eindobject TYPE \\\"exit; ROLE exit\\\"\"\n    ]\n  },\n  \"completeness\": {\n    \"required_fields_complete\": true,\n    \"unknown_fields\": [],\n    \"open_questions\": []\n  },\n  \"metadata\": {\n    \"work_name\": \"Geimporteerde leerbox\",\n    \"leerbox_id\": \"geimporteerde-leerbox\",\n    \"type\": \"leerroute\",\n    \"status\": \"concept\",\n    \"domain\": \"unknown\",\n    \"summary\": \"unknown\"\n  },\n  \"pedagogical_core\": {\n    \"central_learning_goal\": \"De deelnemer doorloopt de vaste route.\",\n    \"central_discovery\": \"unknown\",\n    \"success_definition\": \"De deelnemer bereikt aantoonbaar de uitgang.\",\n    \"why_it_matters_for_participant\": \"unknown\"\n  },\n  \"participants\": {\n    \"primary_target_group\": \"Testdeelnemers\",\n    \"secondary_target_groups\": [],\n    \"prior_knowledge\": \"unknown\",\n    \"known_barriers_or_support_needs\": \"unknown\",\n    \"social_setting\": \"unknown\"\n  },\n  \"leerbox_design\": {\n    \"attraction_type\": [],\n    \"learning_modes\": [],\n    \"leerbox_principles\": [],\n    \"material_mix\": [],\n    \"box_climates\": [],\n    \"good_practice_tags\": [],\n    \"path_role_requirements\": {\n      \"entry_object_id\": \"startobject\",\n      \"resistance_object_ids\": [\n        \"weerstandsobject\"\n      ],\n      \"success_object_ids\": [\n        \"succesobject\"\n      ],\n      \"exit_object_id\": \"eindobject\",\n      \"exit_must_be_distinct_from_success\": true,\n      \"exit_must_be_distinct_from_resistance\": true\n    },\n    \"source_basis\": [\n      \"leerbox.nl\",\n      \"articles/Leerpret gevat.tex\",\n      \"wikibooks/collections/leerpret-bronnen\",\n      \"wikibooks/books\"\n    ]\n  },\n  \"game_design\": {\n    \"game_required\": true,\n    \"game_genres\": [],\n    \"player_goal\": \"unknown\",\n    \"win_state\": \"unknown\",\n    \"fail_state\": \"unknown\",\n    \"rules_summary\": \"unknown\",\n    \"mechanics\": [],\n    \"dynamics\": [],\n    \"aesthetics\": [],\n    \"players_and_roles\": [],\n    \"resources\": [],\n    \"levels_or_progression\": [],\n    \"core_loops\": [],\n    \"challenge_curve\": \"unknown\",\n    \"onboarding\": \"unknown\",\n    \"balancing_notes\": \"unknown\",\n    \"narrative_frame\": \"unknown\",\n    \"game_feedback\": [],\n    \"telemetry_for_gameplay\": []\n  },\n  \"entry_and_orientation\": {\n    \"first_visible_action\": \"Open het startobject.\",\n    \"minimal_start_instruction\": \"unknown\",\n    \"self_starting_signal\": \"De startknop licht op.\",\n    \"self_explaining_cues\": [],\n    \"proactive_invitation\": \"Kies de eerste stap.\"\n  },\n  \"play_characteristics\": {\n    \"recognizable_play_form\": \"Routepuzzel\",\n    \"play_theme_or_story\": \"unknown\",\n    \"core_mechanics\": [],\n    \"rules_or_constraints\": [],\n    \"freedom_degrees\": \"Keuze tussen oefenen en doorgaan.\",\n    \"known_game_or_familiar_hook\": \"unknown\",\n    \"roles_or_multiplayer_structure\": \"unknown\",\n    \"direct_feedback_loop\": \"unknown\"\n  },\n  \"freedom_and_sequence\": {\n    \"route_model\": \"vertakkend\",\n    \"freedom_principle\": \"unknown\",\n    \"preferred_sequence\": [],\n    \"hard_dependencies\": [],\n    \"soft_dependencies\": [],\n    \"free_choice_zones\": [],\n    \"forced_path_risk\": \"unknown\",\n    \"variation_opportunities\": [],\n    \"repetition_logic\": {\n      \"expected_repetition\": \"unknown\",\n      \"repetition_as_goal_or_effect\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"objects\": [\n    {\n      \"object_id\": \"startobject\",\n      \"name\": \"Start\",\n      \"role\": \"entry\",\n      \"object_type\": \"start\",\n      \"editor_position\": {\n        \"x\": 90,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"weerstandsobject\",\n      \"name\": \"Weerstand\",\n      \"role\": \"resistance\",\n      \"object_type\": \"challenge\",\n      \"editor_position\": {\n        \"x\": 540,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"succesobject\",\n      \"name\": \"Succes\",\n      \"role\": \"success\",\n      \"object_type\": \"reward\",\n      \"editor_position\": {\n        \"x\": 990,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"eindobject\",\n      \"name\": \"Einde\",\n      \"role\": \"exit\",\n      \"object_type\": \"exit\",\n      \"editor_position\": {\n        \"x\": 90,\n        \"y\": 265\n      }\n    }\n  ],\n  \"interaction_route\": [\n    {\n      \"step\": 1,\n      \"from_object_id\": \"startobject\",\n      \"to_object_id\": \"weerstandsobject\",\n      \"action_type\": \"open\"\n    },\n    {\n      \"step\": 2,\n      \"from_object_id\": \"weerstandsobject\",\n      \"to_object_id\": \"succesobject\",\n      \"action_type\": \"answer\"\n    },\n    {\n      \"step\": 3,\n      \"from_object_id\": \"succesobject\",\n      \"to_object_id\": \"eindobject\",\n      \"action_type\": \"continue\"\n    }\n  ],\n  \"barriers_and_recovery\": {\n    \"main_barrier\": \"Een bewuste weerstandsstap.\",\n    \"why_productive\": \"unknown\",\n    \"recovery_options\": [],\n    \"too_hard_when\": \"unknown\"\n  },\n  \"didactic_functions\": {\n    \"goal_clarity\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"motivation\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"prior_knowledge_connection\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"orientation\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"practice_opportunity\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"process_support\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"feedback\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"assessment_or_success_evidence\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"evaluation_or_reflection\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"playful_learning_requirements\": {\n    \"recognizable_play_frame\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"familiar_or_fast_entry\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"rules_explicit_or_discoverable\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"freedom_to_choose_or_shape_play\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"creativity_and_self_thinking\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"direct_feedback_loop\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"safe_try_retry_space\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"role_or_multiplayer_interaction\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"proactive_initiative_invited\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"learning_style_and_adaptivity\": {\n    \"playful_entry\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"reproductive_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"application_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"meaning_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"productive_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"adaptivity_in_tempo_or_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"individual_and_social_options\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"measurement\": {\n    \"marker_mapping\": {\n      \"T\": \"unknown\",\n      \"A\": \"unknown\",\n      \"V\": \"unknown\",\n      \"R\": \"unknown\",\n      \"S\": \"unknown\"\n    },\n    \"event_contract\": {\n      \"required_fields\": [\n        \"personID\",\n        \"sessionID\",\n        \"learningBoxID\",\n        \"leerbox_id\",\n        \"learningObjectID\",\n        \"timestamp\",\n        \"actionType\",\n        \"objectRole\",\n        \"result\",\n        \"stage\",\n        \"strategy\"\n      ],\n      \"example_action_types\": [],\n      \"minimal_contact_message\": {\n        \"personID\": \"required\",\n        \"learningBoxID\": \"required\",\n        \"learningObjectID\": \"required\",\n        \"timestamp\": \"required\"\n      },\n      \"sequence_fields\": [\n        \"previousObjectID\",\n        \"nextObjectID\",\n        \"attemptNumber\",\n        \"durationSincePrevious\",\n        \"dependencySatisfied\",\n        \"timeGapBoundary\",\n        \"learningBoxSwitchBoundary\"\n      ],\n      \"result_values\": []\n    },\n    \"engine_derivations_needed\": {\n      \"time\": \"unknown\",\n      \"activity_density\": \"unknown\",\n      \"variation\": \"unknown\",\n      \"resilience\": \"unknown\",\n      \"success\": \"unknown\",\n      \"sequence_patterns\": \"unknown\"\n    },\n    \"privacy_notes\": \"unknown\"\n  },\n  \"simulation_definition\": {\n    \"rich_context_allowed\": true,\n    \"not_visible_to_engine\": [],\n    \"physical_layout\": \"unknown\",\n    \"materials_and_states\": [],\n    \"object_affordances\": [],\n    \"participant_situations\": [],\n    \"social_dynamics\": \"unknown\",\n    \"facilitator_roles\": [],\n    \"environmental_cues\": [],\n    \"realism_notes_for_contact_generation\": \"unknown\"\n  },\n  \"archetype_expectations\": [],\n  \"source_integrity\": {\n    \"explicitly_stated_by_user\": [],\n    \"normalized_by_model\": [],\n    \"left_unknown\": []\n  }\n}\n\nMenselijke beschrijving:\n[PLAK HIER JE MENSELIJKE BESCHRIJVING VAN DE LEERARCHITECTUUR]",
+      "{\n  \"schema_version\": \"leerbox_capture_v5\",\n  \"capture_mode\": \"unknown\",\n  \"raw_user_description\": \"\",\n  \"fallback_latex_description\": {\n    \"format\": \"latex\",\n    \"source_style\": \"user_fallback\",\n    \"body\": \"\\\\documentclass{article}\\n\\n\\\\usepackage[dutch]{babel}\\n\\n\\\\usepackage[utf8]{inputenc}\\n\\n\\\\usepackage[T1]{fontenc}\\n\\n\\\\usepackage[margin=2.4cm]{geometry}\\n\\n\\\\usepackage{xcolor}\\n\\n\\\\definecolor{leerpret}{HTML}{167C72}\\n\\n\\\\begin{document}\\n\\n\\\\section*{Van Geimporteerde leerbox naar een gevatte leerbox}\\n\\n\\\\textbf{Verrijkingsplan voor een bestaande leerattractie}\\n\\nWe willen de bestaande leerattractie vatten in een leerbox. Dat betekent dat we de aanwezige onderwijsarchitectuur eerst herkenbaar vastleggen en haar daarna doelgericht verrijken met handelingsmogelijkheden, feedback, vrijheid, herstel en observeerbaar succes.\\n\\n\\\\subsection*{Werkwijze en rol van de Leerpretarchitect}\\n\\nDe Leerpretarchitect bewaakt de bedoeling van de bestaande praktijk, controleert of de herkenning klopt, kiest welke verrijkingen passend zijn en voorkomt dat techniek of spelvorm het leerdoel overneemt. De architect accordeert dus zowel de vertaling als de verwachte bijdrage aan Leerpret.\\n\\n\\\\subsubsection*{Van onderwijsarchitectuur naar leerbox}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Herkennen: beschrijven wat al aanwezig is in bedoeling, doelgroep, start, route, weerstand en succes.\\n\\n\\\\item Herleiden: verbinden van bronuitspraken aan velden in de onderwijsarchitectuur.\\n\\n\\\\item Vatten: vertalen naar leerobjecten, acties, routes, afhankelijkheden en meetbare succesmomenten.\\n\\n\\\\item Verrijken: toevoegen wat nog ontbreekt voor tijd, activiteit, variatie, veerkracht en succes.\\n\\n\\\\item Toetsen: observeren van echte actiereeksen en vergelijken van de gemeten Leerpret met de verwachting.\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Herkende onderwijsarchitectuur}\\n\\nDit is wat in de huidige leerattractie en de beschikbare bronnen is herkend.\\n\\n\\\\subsubsection*{Identiteit en context}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Naam: Geimporteerde leerbox\\n\\n\\\\item Type leerbox: leerroute\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Pedagogische kern}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Centraal leerdoel: De deelnemer doorloopt de vaste route.\\n\\n\\\\item Succesdefinitie: De deelnemer bereikt aantoonbaar de uitgang.\\n\\n\\\\item Doelgroep: Testdeelnemers\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Ervaring, start en route}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Spelvorm: Routepuzzel\\n\\n\\\\item Eerste zichtbare actie: Open het startobject.\\n\\n\\\\item Routemodel: vertakkend\\n\\n\\\\item Hoofdbarrière: Een bewuste weerstandsstap.\\n\\n\\\\end{itemize}\\n\\n\\\\subsubsection*{Gevatte structuur}\\n\\n\\\\begin{itemize}\\n\\n\\\\item Leerobjecten: 4\\n\\n\\\\item Routestappen: 3\\n\\n\\\\item Afhankelijkheden: 0\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Bronvermelding}\\n\\nVoor dit plan beschikbare en in de capture geregistreerde bronnen:\\n\\n\\\\begin{itemize}\\n\\n\\\\item leerbox.nl\\n\\n\\\\item articles/Leerpret gevat.tex\\n\\n\\\\item wikibooks/collections/leerpret-bronnen\\n\\n\\\\item wikibooks/books\\n\\n\\\\end{itemize}\\n\\n\\\\subsection*{Voorgestelde verrijkingen}\\n\\nDeze onderdelen zijn nog niet aanwezig. De Leerpretarchitect beoordeelt, concretiseert en accordeert iedere verrijking.\\n\\n\\\\subsubsection*{1. Directe feedbacklus toevoegen}\\n\\nMaak na iedere betekenisvolle actie zichtbaar wat veranderde en welke mogelijkheden nu ontstaan.\\n\\n\\\\textbf{Verwachte invloed: A, R, S.} Acties worden begrijpelijker, herstelbaarder en succes wordt zichtbaarder.\\n\\n\\\\subsubsection*{2. Keuzevrijheid expliciteren}\\n\\nBepaal waar de deelnemer route, tempo, rol of aanpak werkelijk zelf kan kiezen.\\n\\n\\\\textbf{Verwachte invloed: V, R.} Meer routevariatie en ruimte om na frictie anders verder te gaan.\\n\\n\\\\subsubsection*{3. Herstelmogelijkheden aanbieden}\\n\\nOntwerp meerdere veilige manieren om na een mislukking opnieuw of anders verder te gaan.\\n\\n\\\\textbf{Verwachte invloed: R, V.} Sterkere veerkracht en meer variatie na tegenslag.\\n\\n\\\\subsubsection*{4. Meetbare acties vastleggen}\\n\\nVertaal de kernhandelingen naar een klein vocabulaire van observeerbare actietypen.\\n\\n\\\\textbf{Verwachte invloed: T, A, V, R, S.} De verwachte Leerpret-impact wordt toetsbaar met echte actiereeksen.\\n\\n\\\\subsection*{Verwacht effect op Leerpret}\\n\\n0/5 Leerpret-markers zijn momenteel inhoudelijk onderbouwd. De voorgestelde verrijkingen richten zich vooral op A, R, S, V, T.\\n\\n\\\\textit{De pijlen beschrijven een verwachte richting, geen gegarandeerde numerieke stijging. De werkelijke Leerpret-waarde ontstaat pas uit gemeten actiereeksen en kan na een simulatietest worden vergeleken.}\\n\\n\\\\end{document}\"\n  },\n  \"computertaal_statements\": {\n    \"rationale\": \"Deze specifieke trefwoorden en syntaxisdefinities zijn gekozen op basis van eerdere praktijkvalidatie, omdat ze patronen van vrije actieregulatie consistent vangen in leermetadata.\",\n    \"full_architecture\": [\n      \"ARCHITECTURE geimporteerde-leerbox HAS_NAME \\\"Geimporteerde leerbox\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox HAS_GOAL \\\"De deelnemer doorloopt de vaste route.\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox FOR_TARGET_GROUP \\\"Testdeelnemers\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox USES_PLAY_FORM \\\"Routepuzzel\\\"\",\n      \"ARCHITECTURE geimporteerde-leerbox HAS_ROUTE_MODEL \\\"vertakkend\\\"\",\n      \"OBJECT startobject ROLE \\\"entry; TYPE start; AFFORDANCE undefined\\\"\",\n      \"OBJECT weerstandsobject ROLE \\\"resistance; TYPE challenge; AFFORDANCE undefined\\\"\",\n      \"OBJECT succesobject ROLE \\\"success; TYPE reward; AFFORDANCE undefined\\\"\",\n      \"OBJECT eindobject ROLE \\\"exit; TYPE exit; AFFORDANCE undefined\\\"\",\n      \"ROUTE_STEP 1 USES \\\"undefined; ACTION open; FEEDBACK undefined\\\"\",\n      \"ROUTE_STEP 2 USES \\\"undefined; ACTION answer; FEEDBACK undefined\\\"\",\n      \"ROUTE_STEP 3 USES \\\"undefined; ACTION continue; FEEDBACK undefined\\\"\"\n    ],\n    \"captured_learning_box\": [\n      \"VAT geimporteerde-leerbox ENTRY_OBJECT \\\"startobject\\\"\",\n      \"VAT geimporteerde-leerbox RESISTANCE_OBJECTS \\\"weerstandsobject\\\"\",\n      \"VAT geimporteerde-leerbox SUCCESS_OBJECTS \\\"succesobject\\\"\",\n      \"VAT geimporteerde-leerbox EXIT_OBJECT \\\"eindobject\\\"\",\n      \"VAT_OBJECT startobject TYPE \\\"start; ROLE entry\\\"\",\n      \"VAT_OBJECT weerstandsobject TYPE \\\"challenge; ROLE resistance\\\"\",\n      \"VAT_OBJECT succesobject TYPE \\\"reward; ROLE success\\\"\",\n      \"VAT_OBJECT eindobject TYPE \\\"exit; ROLE exit\\\"\"\n    ]\n  },\n  \"completeness\": {\n    \"required_fields_complete\": true,\n    \"unknown_fields\": [],\n    \"open_questions\": []\n  },\n  \"metadata\": {\n    \"work_name\": \"Geimporteerde leerbox\",\n    \"leerbox_id\": \"geimporteerde-leerbox\",\n    \"type\": \"leerroute\",\n    \"status\": \"concept\",\n    \"domain\": \"unknown\",\n    \"summary\": \"unknown\"\n  },\n  \"pedagogical_core\": {\n    \"central_learning_goal\": \"De deelnemer doorloopt de vaste route.\",\n    \"central_discovery\": \"unknown\",\n    \"success_definition\": \"De deelnemer bereikt aantoonbaar de uitgang.\",\n    \"why_it_matters_for_participant\": \"unknown\"\n  },\n  \"participants\": {\n    \"primary_target_group\": \"Testdeelnemers\",\n    \"secondary_target_groups\": [],\n    \"prior_knowledge\": \"unknown\",\n    \"known_barriers_or_support_needs\": \"unknown\",\n    \"social_setting\": \"unknown\"\n  },\n  \"leerbox_design\": {\n    \"attraction_type\": [],\n    \"learning_modes\": [],\n    \"leerbox_principles\": [],\n    \"material_mix\": [],\n    \"box_climates\": [],\n    \"good_practice_tags\": [],\n    \"path_role_requirements\": {\n      \"entry_object_id\": \"startobject\",\n      \"resistance_object_ids\": [\n        \"weerstandsobject\"\n      ],\n      \"success_object_ids\": [\n        \"succesobject\"\n      ],\n      \"exit_object_id\": \"eindobject\",\n      \"exit_must_be_distinct_from_success\": true,\n      \"exit_must_be_distinct_from_resistance\": true\n    },\n    \"source_basis\": [\n      \"leerbox.nl\",\n      \"articles/Leerpret gevat.tex\",\n      \"wikibooks/collections/leerpret-bronnen\",\n      \"wikibooks/books\"\n    ]\n  },\n  \"game_design\": {\n    \"game_required\": true,\n    \"game_genres\": [],\n    \"player_goal\": \"unknown\",\n    \"win_state\": \"unknown\",\n    \"fail_state\": \"unknown\",\n    \"rules_summary\": \"unknown\",\n    \"mechanics\": [],\n    \"dynamics\": [],\n    \"aesthetics\": [],\n    \"players_and_roles\": [],\n    \"resources\": [],\n    \"levels_or_progression\": [],\n    \"core_loops\": [],\n    \"challenge_curve\": \"unknown\",\n    \"onboarding\": \"unknown\",\n    \"balancing_notes\": \"unknown\",\n    \"narrative_frame\": \"unknown\",\n    \"game_feedback\": [],\n    \"telemetry_for_gameplay\": []\n  },\n  \"entry_and_orientation\": {\n    \"first_visible_action\": \"Open het startobject.\",\n    \"minimal_start_instruction\": \"unknown\",\n    \"self_starting_signal\": \"De startknop licht op.\",\n    \"self_explaining_cues\": [],\n    \"proactive_invitation\": \"Kies de eerste stap.\"\n  },\n  \"play_characteristics\": {\n    \"recognizable_play_form\": \"Routepuzzel\",\n    \"play_theme_or_story\": \"unknown\",\n    \"core_mechanics\": [],\n    \"rules_or_constraints\": [],\n    \"freedom_degrees\": \"Keuze tussen oefenen en doorgaan.\",\n    \"known_game_or_familiar_hook\": \"unknown\",\n    \"roles_or_multiplayer_structure\": \"unknown\",\n    \"direct_feedback_loop\": \"unknown\"\n  },\n  \"freedom_and_sequence\": {\n    \"route_model\": \"vertakkend\",\n    \"freedom_principle\": \"unknown\",\n    \"preferred_sequence\": [],\n    \"hard_dependencies\": [],\n    \"soft_dependencies\": [],\n    \"free_choice_zones\": [],\n    \"forced_path_risk\": \"unknown\",\n    \"variation_opportunities\": [],\n    \"repetition_logic\": {\n      \"expected_repetition\": \"unknown\",\n      \"repetition_as_goal_or_effect\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"objects\": [\n    {\n      \"object_id\": \"startobject\",\n      \"name\": \"Start\",\n      \"role\": \"entry\",\n      \"object_type\": \"start\",\n      \"editor_position\": {\n        \"x\": 90,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"weerstandsobject\",\n      \"name\": \"Weerstand\",\n      \"role\": \"resistance\",\n      \"object_type\": \"challenge\",\n      \"editor_position\": {\n        \"x\": 540,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"succesobject\",\n      \"name\": \"Succes\",\n      \"role\": \"success\",\n      \"object_type\": \"reward\",\n      \"editor_position\": {\n        \"x\": 990,\n        \"y\": 120\n      }\n    },\n    {\n      \"object_id\": \"eindobject\",\n      \"name\": \"Einde\",\n      \"role\": \"exit\",\n      \"object_type\": \"exit\",\n      \"editor_position\": {\n        \"x\": 90,\n        \"y\": 265\n      }\n    }\n  ],\n  \"interaction_route\": [\n    {\n      \"step\": 1,\n      \"from_object_id\": \"startobject\",\n      \"to_object_id\": \"weerstandsobject\",\n      \"action_type\": \"open\"\n    },\n    {\n      \"step\": 2,\n      \"from_object_id\": \"weerstandsobject\",\n      \"to_object_id\": \"succesobject\",\n      \"action_type\": \"answer\"\n    },\n    {\n      \"step\": 3,\n      \"from_object_id\": \"succesobject\",\n      \"to_object_id\": \"eindobject\",\n      \"action_type\": \"continue\"\n    }\n  ],\n  \"barriers_and_recovery\": {\n    \"main_barrier\": \"Een bewuste weerstandsstap.\",\n    \"why_productive\": \"unknown\",\n    \"recovery_options\": [],\n    \"too_hard_when\": \"unknown\"\n  },\n  \"didactic_functions\": {\n    \"goal_clarity\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"motivation\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"prior_knowledge_connection\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"orientation\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"practice_opportunity\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"process_support\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"feedback\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"assessment_or_success_evidence\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"evaluation_or_reflection\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"playful_learning_requirements\": {\n    \"recognizable_play_frame\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"familiar_or_fast_entry\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"rules_explicit_or_discoverable\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"freedom_to_choose_or_shape_play\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"creativity_and_self_thinking\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"direct_feedback_loop\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"safe_try_retry_space\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"role_or_multiplayer_interaction\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"proactive_initiative_invited\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"learning_style_and_adaptivity\": {\n    \"playful_entry\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"reproductive_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"application_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"meaning_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"productive_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"adaptivity_in_tempo_or_route\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    },\n    \"individual_and_social_options\": {\n      \"status\": \"unknown\",\n      \"evidence\": \"unknown\"\n    }\n  },\n  \"measurement\": {\n    \"marker_mapping\": {\n      \"T\": \"unknown\",\n      \"A\": \"unknown\",\n      \"V\": \"unknown\",\n      \"R\": \"unknown\",\n      \"S\": \"unknown\"\n    },\n    \"event_contract\": {\n      \"required_fields\": [\n        \"personID\",\n        \"sessionID\",\n        \"learningBoxID\",\n        \"leerbox_id\",\n        \"learningObjectID\",\n        \"timestamp\",\n        \"actionType\",\n        \"objectRole\",\n        \"result\",\n        \"stage\",\n        \"strategy\"\n      ],\n      \"example_action_types\": [],\n      \"minimal_contact_message\": {\n        \"personID\": \"required\",\n        \"learningBoxID\": \"required\",\n        \"learningObjectID\": \"required\",\n        \"timestamp\": \"required\"\n      },\n      \"sequence_fields\": [\n        \"previousObjectID\",\n        \"nextObjectID\",\n        \"attemptNumber\",\n        \"durationSincePrevious\",\n        \"dependencySatisfied\",\n        \"timeGapBoundary\",\n        \"learningBoxSwitchBoundary\"\n      ],\n      \"result_values\": []\n    },\n    \"engine_derivations_needed\": {\n      \"time\": \"unknown\",\n      \"activity_density\": \"unknown\",\n      \"variation\": \"unknown\",\n      \"resilience\": \"unknown\",\n      \"success\": \"unknown\",\n      \"sequence_patterns\": \"unknown\"\n    },\n    \"privacy_notes\": \"unknown\"\n  },\n  \"simulation_definition\": {\n    \"rich_context_allowed\": true,\n    \"not_visible_to_engine\": [],\n    \"physical_layout\": \"unknown\",\n    \"materials_and_states\": [],\n    \"object_affordances\": [],\n    \"participant_situations\": [],\n    \"social_dynamics\": \"unknown\",\n    \"facilitator_roles\": [],\n    \"environmental_cues\": [],\n    \"realism_notes_for_contact_generation\": \"unknown\"\n  },\n  \"archetype_expectations\": [],\n  \"source_integrity\": {\n    \"explicitly_stated_by_user\": [],\n    \"normalized_by_model\": [],\n    \"left_unknown\": []\n  }\n}"
+    ],
+    "network": [],
+    "stateSha256": "68dafefa3b96ba2f2ae275e9b166c0131b9f60a6c47a31174057c0ecea27512d",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "json-output-download-blueprint",
+    "cssSha256": "15e87567097c5bf08454b52aae8b5b9abe523a4771a3002ccd1196937d2cc2ad",
+    "domSha256": "3c35ddf2b4ba699e349a471dd118f5c31d1d0e3057b04f9e4c72d0008a5dd1c4",
+    "downloads": [
+      {
+        "sha256": "39e81cddafee8d5f0f567fbd46859bea171d6a509d0797b2f332cc97b54f6d27",
+        "size": 4205,
+        "suggestedFilename": "geimporteerde-leerbox-verrijkingsplan.tex"
+      }
+    ],
+    "errors": [],
+    "geometrySha256": "48aa90f6e2f656dfc8bcd44903da5484b2ce85529df8808da03f9c0e86acc943",
+    "messages": [],
+    "network": [],
+    "stateSha256": "20b9fa25731192c7e89df77b38cf6431de543a183cf404cfe91cd7ef9abb5119",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "testdata-file-valid",
+    "cssSha256": "f847bcc083ba47d7758e6dfe3ab98657be4e72742d91d87eba3bd60887bf9643",
+    "domSha256": "91d744f2df85a7ddea83953fef185d7ab94d44d242d2372f4aeda0d6d4d9ca7f",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4520ab23d198cd675859c6ccf5c22bb305862f5f0b5c49a515b9a01d4a372ce7",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "testdata-text-invalid-json",
+    "cssSha256": "aa1f98dc2a5e0f24c862f560f6afefdf360f329ade594637aca0d3f1c834fecb",
+    "domSha256": "621892e653b187dec5b82a19b021c906a8d0d9ad9f015636f1c4aa01608534b3",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "204db74746f680216f7173638dfe77f73082d0a850c0a2b82f3a2974627987c9",
+    "messages": [],
+    "network": [],
+    "stateSha256": "b20838fca4bcf3a361f9b9656ad3edf5829bc5fd3efe72258c5d16d7eeaea727",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "testdata-text-invalid-fields",
+    "cssSha256": "3d77035a74922ce2bca6609e791a0977869c44bf1f300e490c0a66e799aa3b1c",
+    "domSha256": "125e1c49428bb7fe471c016f2d131f86cb5e0742297ae1d28b91b4eb42f40bbe",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c4c89a197e141b42200c43a86a16ff8d52a283b7ef42e859480f1ae6a0bb7831",
+    "messages": [],
+    "network": [],
+    "stateSha256": "ec9b42fa32212889de25d3aedac5f7560cfba8ba48c9f0af2579046c5275600e",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "testdata-text-valid",
+    "cssSha256": "f847bcc083ba47d7758e6dfe3ab98657be4e72742d91d87eba3bd60887bf9643",
+    "domSha256": "91d744f2df85a7ddea83953fef185d7ab94d44d242d2372f4aeda0d6d4d9ca7f",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4520ab23d198cd675859c6ccf5c22bb305862f5f0b5c49a515b9a01d4a372ce7",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-profile-group",
+    "cssSha256": "725a26247efca31dff5ea589cc6eb58d76a336900a7e2d648ce8976c0dbbf50b",
+    "domSha256": "9af92ee0c639d62cb60324f214d2c99c2cf52a4f3afce64347fee9a6c596bf7b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "30ef85893ad97a1f535ea1614a1c884f0ddedc8cab7ac00cf7184ac26e3d3835",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-profile-individual",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "48abd5e9df4e7ccc87d0bdd8b27bde7b8b4ef9649ae74ba017c14e4285646986",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "2c5da54c43a064d9bb83c6cc7924bf112832f0d0fb5f4d1fae9839decbe2336b",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-archetype-veroveraar",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "63d58a9e501519c50bf50d675eed026d0b78023aa1e1d18d83ebcd12554e220b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "c27d96d76c788e25f22f477b23a0b57a3464a6571c1fbf3533858e92e6c90d85",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-archetype-verwerver",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "e343e9af353accc82c33b78ee9b8e5e10bc8dda374d0c679ff7832189dc6da5b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "128c29fea1a7da16dbdf335abbe6e573e9710606b0feb30411102a62df3d0660",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-archetype-verkenner",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "86d0949393c8240e812fbecbed19559ec6fd62b7d4becb86452b4c0a85d1220f",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4e9f6c10d94957ca63a58717cd26e208c3424a7ec6470b56d956a3645f0aa2e6",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-archetype-volger",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "78ed07ab08c0e9b4abb10ff6198685392c668412c3a5044b73643d9a3ecdcf04",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "2f0a759d5ea5cb294abb68682437af4fc1c1daed3443ab8c8e70f5e8dbc8b5ea",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-archetype-verlater",
+    "cssSha256": "5bc358c1cffe2f341f0c8aa73f2c5db891356ee9ab23368f00cda16f0b3aa0ed",
+    "domSha256": "cd4d8cbf86f7574b597436f0a843e40d90e716e91de00b1d4d1d1f19d4c6e74b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d7975b35c891e31929fc98313bfd663d55c8954a228e129d9db9ffc651303e24",
+    "messages": [],
+    "network": [],
+    "stateSha256": "da3fab849917aed232f45352a521c0258f8efad202e4d13ae0618ab522451f0a",
+    "svgDrawablesSha256": "062315f26fe62fac4d69a9881c65cfcaca00f6e2f4a80feec4a1705396156c16"
+  },
+  {
+    "action": "simulation-run-report",
+    "cssSha256": "d34db06682e281378e43e15e4b3a7fe1a3a8e034140fd9bffa19f396e905ae3b",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "45c11cd25eeeb26ebd835f2f6fa585900fa53a91ac33fa4ddfa7e234fa9e091e",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-parameters-open",
+    "cssSha256": "6c1861b05f241078d16e585e872b2b7661df2da4e2798b5639463658d4e63897",
+    "domSha256": "26c7459c4c1e5938382ac07d1ffc48e5f27f6d5fa2f99e814d4fdc65c2cc97ae",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c3b9acb4411f2320a4b4177bcbcd8765c8cd0f5e6f03914c5d86e954a8a6c388",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4937f88bfe518699f22f4730c60a423ae49b3aba6599e687b092752ae13661e9",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-prompt-created",
+    "cssSha256": "1b40a27b0400c3eab792a919295f3423eeb46bdb269313ba8391c27dec889129",
+    "domSha256": "d72c1034e92401433d118cb032ca0f42d93c8c7c14023fdeb8edf99a46739b2c",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "4f29311c54d94c079d05c8de66c5ce8f3283ded7efc809c4541cfe2641bd9b3e",
+    "messages": [],
+    "network": [],
+    "stateSha256": "c0acc78a29383137ee44757b03401829380a05645a29b804b9859eb0fb5134b7",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-prompt-copy",
+    "cssSha256": "ab93a4c653a2c17940e6b43068a3b1578e79522b14df7ca434f81dbbc9d389d2",
+    "domSha256": "ef9a93318c3f7429417187e6ab1d8e63823b32057b72c235aa1f3dad0b7c1799",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d42027804cddf83b868a8b94d3e4258e7e13976d47b5bb991e6045d0d3c129d8",
+    "messages": [],
+    "network": [],
+    "stateSha256": "20c3742a56f78f820a1606a3f0e760cbf86b52346fc355375e7f011569f47a50",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-prompt-done-close",
+    "cssSha256": "e056bb0af69c8b271958a7faad73fc223db3541bfb44d09f2a53bda194d0a984",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "e8dfb45890462073f01a770cbe7c7964006fa534fb5937884efd7f9ccd3fa445",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-prompt-icon-close",
+    "cssSha256": "e056bb0af69c8b271958a7faad73fc223db3541bfb44d09f2a53bda194d0a984",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "e8dfb45890462073f01a770cbe7c7964006fa534fb5937884efd7f9ccd3fa445",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-parameters-cancel",
+    "cssSha256": "f50dc89b704736f659b15ecc4ba5ae3de469f3afcc1bc0e12f48c8514ed93f0f",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "e8dfb45890462073f01a770cbe7c7964006fa534fb5937884efd7f9ccd3fa445",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "simulation-parameters-icon-close",
+    "cssSha256": "e056bb0af69c8b271958a7faad73fc223db3541bfb44d09f2a53bda194d0a984",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "e8dfb45890462073f01a770cbe7c7964006fa534fb5937884efd7f9ccd3fa445",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "new-capture-confirm-dismiss",
+    "cssSha256": "e056bb0af69c8b271958a7faad73fc223db3541bfb44d09f2a53bda194d0a984",
+    "domSha256": "ff5787342635f6556bc18d8c583bb4b6d7b11be6e832e02c7597be6be310499e",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9bd2ae0ba5ca0284f75a3795de55cb1e589590174160b104dcf6ec550286babf",
+    "messages": [],
+    "network": [],
+    "stateSha256": "e8dfb45890462073f01a770cbe7c7964006fa534fb5937884efd7f9ccd3fa445",
+    "svgDrawablesSha256": "d55540155cef4c34d3a4edd7e0459ee1551a512483aafa6ddb931886bb3d87b2"
+  },
+  {
+    "action": "new-capture-confirm-accept",
+    "cssSha256": "f208ee955941922a3c9171aef7a7c37ca0a5dfd31dd0c049ea59fc14c4680129",
+    "domSha256": "3e174f7a416ba1485bf69b4f98910358f5fdef4c98fc2e5874544bf7a7bb0a9c",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "dacf7082cd5beccd08d44116888486243a52f9c0ad626acb37d1e2ec54dfa7ac",
+    "messages": [],
+    "network": [],
+    "stateSha256": "6c3b49af79bea5c0e6686677dc35c6d8219a68c6634e5b3b8074eb88c58e38ad",
+    "svgDrawablesSha256": "abd9ccece12cbb0c6d862ad420ba24e460079afdc52364ea108e4f0a819a9b93"
+  }
+]

@@ -626,6 +626,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
   };
   let networkCanvasCenteredSignature = "";
   let legoFlowMap = null;
+  let legoSpatial = null;
   let legoFlowMapError = "";
   let cableController = null;
   let cableModeRequested = false;
@@ -823,31 +824,50 @@ HIER IS DE STRUCTUUR (SYNTAX):
   populateOptionControls();
   applyLanguage();
   hydrateForm();
-  initializeLegoFlowMap();
+  const legoFlowMapReady = initializeLegoFlowMap();
+  const selectedCaptureReady = initializeSelectedCapture();
   render();
   initializeAgent();
-  initializeSelectedCapture();
-  publishCaptureUpdate();
+  Promise.all([legoFlowMapReady, selectedCaptureReady]).then(() => {
+    render();
+    publishCaptureUpdate();
+  });
 
   function initializeLegoFlowMap() {
     if (!window.LeerpretSDKLoaderReady) {
       legoFlowMapError = "De LeerpretSDK-loader is niet beschikbaar.";
-      return;
+      return Promise.resolve(null);
     }
-    window.LeerpretSDKLoaderReady
-      .then((loader) => loader.load("lego-flow-map"))
-      .then(([component]) => {
-        if (!component?.renderScene || !component?.updateDragFrame) throw new Error("lego-flow-map mist de live drag-renderer");
+    return window.LeerpretSDKLoaderReady
+      .then((loader) => loader.load(["lego-flow-map", "lego-spatial"]))
+      .then(([component, spatial]) => {
+        if (!component?.renderScene
+          || !component?.updateDragFrame
+          || !component?.layoutScreenSceneV1
+          || !component?.clampScreenPositionV1
+          || !component?.studConnectionPoint
+          || !component?.visibleLayerCenterV1
+          || !component?.centerDeltaV1
+          || !component?.centeredScrollOffsetV1
+          || !component?.clientPointToLayerV1
+          || !component?.panScrollOffsetV1
+          || !component?.dragScreenPositionV1
+          || !spatial?.radarSeriesPoints) {
+          throw new Error("lego-flow-map mist de screen-v1 compatibiliteits-API");
+        }
         legoFlowMap = component;
+        legoSpatial = spatial;
         document.querySelectorAll("[data-object-preset]").forEach((button) => {
           const preview = button.querySelector(".lego-flow-tool-preview");
           if (preview) preview.innerHTML = legoFlowMap.toolboxPreviewMarkup(button.dataset.objectPreset);
         });
         render();
+        return component;
       })
       .catch((error) => {
         legoFlowMapError = error?.message || "De LEGO-SDK kon niet laden.";
         renderNetworkCanvas(state.capture);
+        return null;
       });
   }
 
@@ -886,8 +906,6 @@ HIER IS DE STRUCTUUR (SYNTAX):
       state.capture = normalizeCapture(await response.json());
       localStorage.setItem(storageKey, JSON.stringify(state.capture));
       hydrateForm();
-      render();
-      publishCaptureUpdate();
     } catch (error) {
       console.warn("Geselecteerde leerbox kon niet in de Editor worden geladen.", error);
     }
@@ -3258,8 +3276,13 @@ HIER IS DE STRUCTUUR (SYNTAX):
       });
       canvasScroller.addEventListener("pointermove", (event) => {
         if (!panState || event.pointerId !== panState.pointerId) return;
-        canvasScroller.scrollLeft = panState.left - (event.clientX - panState.x);
-        canvasScroller.scrollTop = panState.top - (event.clientY - panState.y);
+        const offset = legoFlowMap.panScrollOffsetV1(
+          { left: panState.left, top: panState.top },
+          { x: panState.x, y: panState.y },
+          event
+        );
+        canvasScroller.scrollLeft = offset.x;
+        canvasScroller.scrollTop = offset.y;
       });
       canvasScroller.addEventListener("pointerup", stopPan);
       canvasScroller.addEventListener("pointercancel", stopPan);
@@ -3285,7 +3308,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
       const preset = event.dataTransfer.getData("text/leerpret-object");
       if (!preset) return;
       const bounds = elements.networkNodes?.getBoundingClientRect() || elements.networkCanvas.getBoundingClientRect();
-      addPresetObject(preset, event.clientX - bounds.left, event.clientY - bounds.top);
+      const position = legoFlowMap.clientPointToLayerV1(event, bounds);
+      addPresetObject(preset, position.x, position.y);
     });
     window.addEventListener("resize", () => renderNetworkCanvas(state.capture));
   }
@@ -3305,6 +3329,12 @@ HIER IS DE STRUCTUUR (SYNTAX):
     item.object_id = baseId;
     while (ids.has(item.object_id)) item.object_id = `${baseId}_${++suffix}`;
     const center = visibleCanvasCenter();
+    if ((x == null || y == null) && !center) {
+      legoFlowMapReady.then(() => {
+        if (legoFlowMap) addPresetObject(preset, x, y);
+      });
+      return;
+    }
     item.editor_position = {
       x: Math.round(x ?? center.x),
       y: Math.round(y ?? center.y)
@@ -3337,6 +3367,12 @@ HIER IS DE STRUCTUUR (SYNTAX):
     item.object_id = baseId;
     while (ids.has(item.object_id)) item.object_id = `${baseId}_${++suffix}`;
     const center = visibleCanvasCenter();
+    if ((x == null || y == null) && !center) {
+      legoFlowMapReady.then(() => {
+        if (legoFlowMap) addLibraryObject(declaration, x, y);
+      });
+      return;
+    }
     item.editor_position = { x: Math.round(x ?? center.x), y: Math.round(y ?? center.y) };
     state.capture.objects.push(item);
     persistAndRender();
@@ -3346,18 +3382,14 @@ HIER IS DE STRUCTUUR (SYNTAX):
   /* Middelpunt van wat de gebruiker nu ziet, uitgedrukt in objectcoördinaten.
      Een nieuw object hoort daar te verschijnen, niet in het midden van de hele wereld. */
   function visibleCanvasCenter() {
+    if (!legoFlowMap) return null;
     const nodesLayer = elements.networkNodes;
     const layout = elements.networkCanvas?.closest(".strategy-canvas-layout");
-    if (!nodesLayer || !layout) {
-      const bounds = nodesLayer?.getBoundingClientRect() || elements.networkCanvas?.getBoundingClientRect();
-      return { x: Math.max(70, (bounds?.width || 700) / 2), y: Math.max(80, (bounds?.height || 500) / 2) };
-    }
-    const layerRect = nodesLayer.getBoundingClientRect();
-    const viewRect = layout.getBoundingClientRect();
-    return {
-      x: Math.max(70, viewRect.left + viewRect.width / 2 - layerRect.left),
-      y: Math.max(80, viewRect.top + viewRect.height / 2 - layerRect.top)
-    };
+    return legoFlowMap.visibleLayerCenterV1({
+      layerRect: nodesLayer && layout ? nodesLayer.getBoundingClientRect() : null,
+      viewportRect: nodesLayer && layout ? layout.getBoundingClientRect() : null,
+      fallbackRect: nodesLayer?.getBoundingClientRect() || elements.networkCanvas?.getBoundingClientRect()
+    });
   }
 
   /* Schuift de kaart zo dat het opgegeven object midden in beeld staat. */
@@ -3369,6 +3401,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
      zelf geen plek op de kaart; die brengt de objecten in beeld die hij verbindt,
      met het midden tussen beide als middelpunt. */
   function centerObjectsInCanvas(objectIds) {
+    if (!legoFlowMap) return;
     const layout = elements.networkCanvas?.closest(".strategy-canvas-layout");
     if (!layout || !elements.networkNodes) return;
     const indexes = (objectIds || [])
@@ -3383,11 +3416,10 @@ HIER IS DE STRUCTUUR (SYNTAX):
       if (!nodes.length) return;
 
       const rects = nodes.map((node) => node.getBoundingClientRect());
-      const midX = rects.reduce((sum, rect) => sum + rect.left + rect.width / 2, 0) / rects.length;
-      const midY = rects.reduce((sum, rect) => sum + rect.top + rect.height / 2, 0) / rects.length;
       const viewRect = layout.getBoundingClientRect();
-      layout.scrollLeft += midX - (viewRect.left + viewRect.width / 2);
-      layout.scrollTop += midY - (viewRect.top + viewRect.height / 2);
+      const delta = legoFlowMap.centerDeltaV1(rects, viewRect);
+      layout.scrollLeft += delta.x;
+      layout.scrollTop += delta.y;
 
       nodes.forEach((node) => {
         node.classList.add("is-just-added");
@@ -3402,64 +3434,39 @@ HIER IS DE STRUCTUUR (SYNTAX):
     const embeddedWorkbench = document.body.classList.contains("is-workbench-embedded");
     const layout = elements.networkCanvas.closest(".strategy-canvas-layout");
     if (embeddedWorkbench) updateHudAnchor();
-    // Venster = window-maat: stabiel, kan nooit met de canvasgrootte meegroeien (geen terugkoppellus).
-    const viewportWidth = Math.max(320, window.innerWidth || 720);
-    const viewportHeight = Math.max(320, window.innerHeight || 540);
-    const storedPositions = objects
-      .map((object) => object.editor_position || {})
-      .map((position) => ({ x: Number(position.x) || 0, y: Number(position.y) || 0 }));
-    // Bounding box van de getekende leerobjecten (incl. halve nodebreedte en boogruimte van relaties).
-    const hasDrawing = storedPositions.length > 0;
-    const bboxMinX = (hasDrawing ? Math.min(...storedPositions.map((position) => position.x)) : 62) - 90;
-    const bboxMinY = (hasDrawing ? Math.min(...storedPositions.map((position) => position.y)) : 85) - 70;
-    const bboxMaxX = (hasDrawing ? Math.max(...storedPositions.map((position) => position.x)) : 700) + 90;
-    const bboxMaxY = (hasDrawing ? Math.max(...storedPositions.map((position) => position.y)) : 475) + 70;
-    // Canvas = tekening + precies één venster marge rondom: sliders in het midden = midden van de tekening.
-    const dynamicCanvasWidth = (bboxMaxX - bboxMinX) + viewportWidth * 2;
-    const dynamicCanvasHeight = (bboxMaxY - bboxMinY) + viewportHeight * 2;
-    // De objectlaag behoudt de opgeslagen coördinaten en wordt zo geplaatst dat de bbox gecentreerd ligt.
-    const offsetX = viewportWidth - bboxMinX;
-    const offsetY = viewportHeight - bboxMinY;
-    const width = embeddedWorkbench
-      ? bboxMaxX + viewportWidth
-      : Math.max(900, elements.networkNodes.clientWidth || elements.networkCanvas.clientWidth || 720);
-    const height = embeddedWorkbench
-      ? bboxMaxY + viewportHeight
-      : Math.max(680, elements.networkNodes.clientHeight || elements.networkCanvas.clientHeight || 540);
+    if (!legoFlowMap) {
+      elements.networkEdges.innerHTML = "";
+      elements.networkNodes.innerHTML = `<div class="lego-flow-sdk-status">${escapeText(legoFlowMapError || "Isometrische LEGO-kaart laden…")}</div>`;
+      elements.canvasEmptyState.hidden = true;
+      return;
+    }
+    const sceneLayout = legoFlowMap.layoutScreenSceneV1({
+      positions: objects.map((object) => object.editor_position || null),
+      viewportWidth: window.innerWidth,
+      viewportHeight: window.innerHeight,
+      embedded: embeddedWorkbench,
+      nodesWidth: elements.networkNodes.clientWidth,
+      canvasWidth: elements.networkCanvas.clientWidth,
+      nodesHeight: elements.networkNodes.clientHeight,
+      canvasHeight: elements.networkCanvas.clientHeight
+    });
+    const { width, height, drawnHeight } = sceneLayout;
     if (embeddedWorkbench && layout) {
-      layout.style.setProperty("--dynamic-canvas-offset-x", `${offsetX}px`);
-      layout.style.setProperty("--dynamic-canvas-offset-y", `${offsetY}px`);
-      layout.style.setProperty("--dynamic-canvas-width", `${dynamicCanvasWidth}px`);
-      layout.style.setProperty("--dynamic-canvas-height", `${dynamicCanvasHeight}px`);
+      layout.style.setProperty("--dynamic-canvas-offset-x", `${sceneLayout.offsetX}px`);
+      layout.style.setProperty("--dynamic-canvas-offset-y", `${sceneLayout.offsetY}px`);
+      layout.style.setProperty("--dynamic-canvas-width", `${sceneLayout.dynamicCanvasWidth}px`);
+      layout.style.setProperty("--dynamic-canvas-height", `${sceneLayout.dynamicCanvasHeight}px`);
       layout.style.setProperty("--dynamic-content-width", `${width}px`);
       layout.style.setProperty("--dynamic-content-height", `${height}px`);
     }
-    // Standaardraster: 3 kolommen. De klemhoogte groeit mee met het aantal rijen,
-    // anders klappen alle rijen onder de canvashoogte op één lijn samen (nodes over elkaar).
-    const gridColumns = 3;
-    const gridRowHeight = 145;
-    const gridRows = Math.max(1, Math.ceil(objects.length / gridColumns));
-    const layoutHeight = Math.max(height, 120 + (gridRows - 1) * gridRowHeight + 55);
     objects.forEach((object, index) => {
+      const position = sceneLayout.positions[index];
       if (!object.editor_position) {
-        object.editor_position = { x: 90 + (index % gridColumns) * Math.max(150, (width - 180) / gridColumns), y: 120 + Math.floor(index / gridColumns) * gridRowHeight };
+        object.editor_position = { x: position.x, y: position.y };
+      } else {
+        object.editor_position.x = position.x;
+        object.editor_position.y = position.y;
       }
-      object.editor_position.x = Math.max(62, Math.min(width - 62, Number(object.editor_position.x) || 62));
-      object.editor_position.y = Math.max(85, Math.min(layoutHeight - 55, Number(object.editor_position.y) || 85));
-    });
-    // Ontstapelen: nodes die elkaar overlappen (ook uit eerder opgeslagen, geklemde posities)
-    // worden onder elkaar gezet in plaats van over elkaar.
-    const minGapX = 150;
-    const minGapY = 90;
-    const placed = [];
-    objects.forEach((object) => {
-      let guard = 0;
-      while (guard++ < 200 && placed.some((other) =>
-        Math.abs(other.x - object.editor_position.x) < minGapX &&
-        Math.abs(other.y - object.editor_position.y) < minGapY)) {
-        object.editor_position.y += gridRowHeight;
-      }
-      placed.push({ x: object.editor_position.x, y: object.editor_position.y });
     });
     const byId = new Map(objects.map((object) => [object.object_id, object]));
 
@@ -3494,16 +3501,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
       ? objects.slice(1).map((object, index) => ({ from: objects[index].object_id, to: object.object_id, type: "free" }))
       : [];
     const edges = [...freeEdges, ...strictEdges, ...conditionalEdges];
-    // Relatielaag volgt de werkelijke tekenhoogte, zodat kabels blijven aansluiten
-    // op nodes die door het ontstapelen lager staan dan de canvashoogte.
-    const drawnHeight = Math.max(height, ...objects.map((object) => object.editor_position.y + 55));
     elements.networkEdges.setAttribute("viewBox", `0 0 ${width} ${drawnHeight}`);
-    if (!legoFlowMap) {
-      elements.networkEdges.innerHTML = "";
-      elements.networkNodes.innerHTML = `<div class="lego-flow-sdk-status">${escapeText(legoFlowMapError || "Isometrische LEGO-kaart laden…")}</div>`;
-      elements.canvasEmptyState.hidden = true;
-      return;
-    }
     const scene = legoFlowMap.renderScene({
       width,
       height: drawnHeight,
@@ -3568,11 +3566,16 @@ HIER IS DE STRUCTUUR (SYNTAX):
      een leerboxwissel of een refresh, nu ook met de hand op te roepen: na veel slepen
      is het midden van de leerobjecten anders niet meer terug te vinden. */
   function centerCanvasOnDrawing() {
+    if (!legoFlowMap) return;
     const layout = elements.networkCanvas?.closest(".strategy-canvas-layout");
     if (!layout || layout.clientWidth === 0) return;
     window.requestAnimationFrame(() => {
-      layout.scrollLeft = Math.max(0, (layout.scrollWidth - layout.clientWidth) / 2);
-      layout.scrollTop = Math.max(0, (layout.scrollHeight - layout.clientHeight) / 2);
+      const offset = legoFlowMap.centeredScrollOffsetV1(
+        { width: layout.scrollWidth, height: layout.scrollHeight },
+        { width: layout.clientWidth, height: layout.clientHeight }
+      );
+      layout.scrollLeft = offset.x;
+      layout.scrollTop = offset.y;
     });
   }
 
@@ -3622,10 +3625,13 @@ HIER IS DE STRUCTUUR (SYNTAX):
     }
     const move = (moveEvent) => {
       const layerRect = elements.networkNodes.getBoundingClientRect();
-      const x = moveEvent.clientX - layerRect.left;
-      const y = moveEvent.clientY - layerRect.top;
+      const pointer = legoFlowMap.clientPointToLayerV1(moveEvent, layerRect);
+      const sourcePoint = legoFlowMap.studConnectionPoint({
+        x: source.editor_position.x,
+        y: source.editor_position.y
+      });
       band.setAttribute("d", legoFlowMap
-        ? legoFlowMap.previewCablePath([source.editor_position.x, source.editor_position.y - 27], [x, y])
+        ? legoFlowMap.previewCablePath(sourcePoint, [pointer.x, pointer.y])
         : "");
     };
     linking.move = move;
@@ -3702,11 +3708,16 @@ HIER IS DE STRUCTUUR (SYNTAX):
     let moved = false;
     node.setPointerCapture(event.pointerId);
     const move = (moveEvent) => {
-      const dx = moveEvent.clientX - start.x;
-      const dy = moveEvent.clientY - start.y;
-      if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
-      object.editor_position.x = Math.max(62, Math.min(canvasBounds.width - 62, start.left + dx));
-      object.editor_position.y = Math.max(85, Math.min(canvasBounds.height - 55, start.top + dy));
+      const drag = legoFlowMap.dragScreenPositionV1({
+        pointerStart: { x: start.x, y: start.y },
+        pointerCurrent: moveEvent,
+        positionStart: { left: start.left, top: start.top },
+        bounds: { width: canvasBounds.width, height: canvasBounds.height },
+        threshold: 5
+      });
+      if (drag.moved) moved = true;
+      object.editor_position.x = drag.position.x;
+      object.editor_position.y = drag.position.y;
       legoFlowMap.updateDragFrame({
         node,
         nodesRoot: elements.networkNodes,
@@ -4378,7 +4389,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     // Een nieuw object krijgt zijn plek in het midden van wat je nu ziet.
     if (isNewObject && !next.editor_position) {
       const center = visibleCanvasCenter();
-      next.editor_position = { x: Math.round(center.x), y: Math.round(center.y) };
+      if (center) next.editor_position = { x: Math.round(center.x), y: Math.round(center.y) };
     }
     renumberSteps();
     elements.blockDialog.close();
@@ -5051,17 +5062,10 @@ HIER IS DE STRUCTUUR (SYNTAX):
     const labels = ["T", "A", "V", "R", "S"];
     const center = 92;
     const radius = 70;
-    const points = labels.map((label, index) => {
-      const angle = -Math.PI / 2 + index * (Math.PI * 2 / labels.length);
-      const value = markers[label] || 0;
-      return {
-        label,
-        x: center + Math.cos(angle) * radius * value,
-        y: center + Math.sin(angle) * radius * value,
-        axisX: center + Math.cos(angle) * radius,
-        axisY: center + Math.sin(angle) * radius
-      };
-    });
+    const points = legoSpatial.radarSeriesPoints(
+      labels.map(label => markers[label] || 0),
+      { center: [center, center], radius }
+    ).map((point, index) => ({ ...point, label: labels[index] }));
     return `
       <svg class="radar-chart" viewBox="0 0 184 184" role="img" aria-label="Radardiagram">
         <polygon points="${points.map((point) => `${point.axisX},${point.axisY}`).join(" ")}" class="radar-grid"></polygon>

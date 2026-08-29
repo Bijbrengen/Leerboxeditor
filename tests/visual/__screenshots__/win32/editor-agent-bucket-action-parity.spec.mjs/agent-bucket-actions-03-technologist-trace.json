@@ -1,0 +1,131 @@
+[
+  {
+    "actionId": "technologist-agent-send-confirmed",
+    "control": "#agentInput + #agentSendButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 0,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "e61b64d33af40bf1d15ec07703527c2073b865e35f5a34b3d15e512ffce0eeae",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox-agent/status",
+          "query": {
+            "probe": "true"
+          },
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox/captures/e2e-fixture",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/auth/editor-access",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/simulator/datasets",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "3a6c09c04e1ce7487afe8dbed41911b6c9985cb88a9f482e44f74958994dca91",
+            "summary": {
+              "bucketSourceIds": [],
+              "captureSha256": "2f7bc263712ffff4e51bb209f8e0ce58c0f6ba6ad379ae581376dcf22f4dd232",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 41,
+                  "role": "user",
+                  "sha256": "db64bd5ac1f06f48de9d3bfdcbb522a9d800197c88c949379329059d0036342e"
+                }
+              ],
+              "mode": "",
+              "role": "technologist",
+              "useProjectBucket": false
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "3f8b27d7f373f0102ff77a88f7d78deb7c139caf29081d751a475ff04213bec3",
+    "output": {
+      "assets": "49041a83d34516674280fb9bbbb19ef9cc127c8dd03af1692977f734984144aa",
+      "css": "cb46b0c62bb904beae3b59782d198593876ae12b0680229f340be833d9e43c82",
+      "dom": "731836b57ce8e66044c19202b71d77d9ba83d60e032212f3b7e78ac641534292",
+      "geometry": "fe85a5f00253a50c90e8724cddea00b2dff74e7c34584c49b9257d0c4030e488",
+      "state": "8de82d304bc6faee0477df5092763ab8bc3f04cdaa138027fdbac5ebe8f2ddb4",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "technologist-trace-open",
+    "control": "#agentTraceToggle",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "c509e1603e7a96cf9eb0be890cadf29513f3585d19ffa8ae6b2c6058a8df8d44",
+    "output": {
+      "assets": "04505b45db0c857dbabb0e40cfa5043f404d8957adf8b2484048c455a815ccab",
+      "css": "268acaa331904eb5adc518a089642422abde91188225d1be1dee41e689519a30",
+      "dom": "261c940c294800b965c4194dd06cb2a3719d9dbaac80603dc5d0ed1e1120ac12",
+      "geometry": "2ab7b386d18a5b709769798b2429a4666ebf006d83b03fd0cb2e9c9633c291a8",
+      "state": "4044cd31a51f9c66db1d69790c2a5e238cb7c43a0236dcadca8ffb7f8bc638ac",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "technologist-trace-close",
+    "control": "#agentTraceClose",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "421b91ac4ed69e43d34fb8dd0e632fd21dd2ac78b0716a0572d3f2f102314a59",
+    "output": {
+      "assets": "04505b45db0c857dbabb0e40cfa5043f404d8957adf8b2484048c455a815ccab",
+      "css": "cb46b0c62bb904beae3b59782d198593876ae12b0680229f340be833d9e43c82",
+      "dom": "2d29fa42cbfda8dc4c51be0f1850037dd47e58c4ee83bec57830ce7d15acb060",
+      "geometry": "fe85a5f00253a50c90e8724cddea00b2dff74e7c34584c49b9257d0c4030e488",
+      "state": "8de82d304bc6faee0477df5092763ab8bc3f04cdaa138027fdbac5ebe8f2ddb4",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  }
+]

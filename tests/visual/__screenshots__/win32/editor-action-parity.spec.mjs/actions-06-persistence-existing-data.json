@@ -1,0 +1,704 @@
+[
+  {
+    "action": "persistence-autosave-field-edit",
+    "cssSha256": "000f92ad30406265e3de8af60c20ad3209e81a19ff829b7f387c05b495a1658e",
+    "domSha256": "43657e6b7573388fe5a2bbac8d85f219205e9f6deaaea2777c70da4ed5c97f2c",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "2a46bf7bee44b9206a59729d86ca227e1f9c32f49ac54c2148966bb7aa7155a6",
+    "messages": [
+      {
+        "dataSha256": "e52dbb5e76ae03f35973f6307d033fd3732e787de45fc6ad77be6be0ee4d4755",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "2e3a7975d766cffa0cea84de45c3b8bfcc46d38ae1fcb122fe976e3e17d4e7c8",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "history-open-loaded",
+    "cssSha256": "1385ad0b6ae61fbf2197c8136a2b3cc5876125077914c4bf97fba2284d6e0005",
+    "domSha256": "96fcf287664d3d70c415345a72d36fbd189af7e7c3fadec502fe762146bf514a",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "0579a8edb2aa4ea0158990a648c4a9db689cb3e0211b5ae2021b848c72af97b4",
+    "messages": [],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "602709f21e9475b8669c22a88ff41abe5b54b4bd3e4b8eca29583cf757b14129",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "history-close",
+    "cssSha256": "0dcd87f19b629f8f845742e1a1d55112f629540898620f3b541df47df1da03ce",
+    "domSha256": "7d8b2c29e021344b42dbc67b1b5bc99995d2aeb3e4e66661cfbaeb1baf97229c",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "0529391cd4cef0adf9bb5a7f40a3ca2b193848678ccfba71d14a359ed78a7458",
+    "messages": [],
+    "network": [],
+    "stateSha256": "98acef89bd94bb431d7fc7c01aa5b6a405a73205c1a64a7c38e270fe3b7a46c8",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "history-restore-version",
+    "cssSha256": "f30e7dd55c626746ecaee8e5103771834d12ff220d39b85caddb3c3017aaff77",
+    "domSha256": "8d24956ca19f5ed42b94e98ba2d65dbcf8a2353873410ef953134b7c8c50d347",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "bd6521792c44c150290d983f0daf8ad2fa31edf047df4744061bf7c1dcaec6ae",
+    "messages": [
+      {
+        "dataSha256": "e52dbb5e76ae03f35973f6307d033fd3732e787de45fc6ad77be6be0ee4d4755",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "3570bbbfdd85f9c9d25c4169583bec4cbdfd9bae9e301d87e9b0c381bc6afa0e",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "architecture"
+      },
+      {
+        "dataSha256": "dfdc76965a2f9972defb1bcb93f5b888f572f9b5da8b85b4303fa4282557498e",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/restore/7",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7"
+      }
+    ],
+    "stateSha256": "14a2c996161c2828befbe67aa582b71863f9013895be1b3cf52880593cbd31bd",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "existing-data-use-preview-events",
+    "cssSha256": "eb117395b96ae9628c0934c11dcfa3133a395667dd2df26d36c11454740b9553",
+    "domSha256": "d2ef7ad25b78dae01d4ece017800e3d6e38cc7a253c8cd6c40909ffe88ff02ae",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c75735718b28f9834f058b0eb6a5816c9305e3145e0c45519d02624d73918497",
+    "messages": [],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data",
+        "method": "GET",
+        "pathname": "/api/leerbox-tests/e2e-fixture/data",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/restore/7",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7"
+      }
+    ],
+    "stateSha256": "12749bc1489ad1064578bbb1f03fc004d7345cb14087aae958be9e2b03b0bd3d",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "existing-data-use-file",
+    "cssSha256": "9a471cb461e8abf7d3b210fe9d95cd3ca6774821c621cc5a20c1deec09c18588",
+    "domSha256": "efb4dbadb7b437be50ba1e67a56482b843cad3e2026c3945899fc3b2fb3b2d4c",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "f64f555b47445ebe941e378758827d378b86c1b5a70ae42bd36c36d5a023df4f",
+    "messages": [],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/fixtures/e2e-events.json",
+        "method": "GET",
+        "pathname": "/api/fixtures/e2e-events.json",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/fixtures/e2e-events.json"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data",
+        "method": "GET",
+        "pathname": "/api/leerbox-tests/e2e-fixture/data",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/restore/7",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7"
+      }
+    ],
+    "stateSha256": "9e9c1b0ea5f867cb57553a2e58c449edad6f6d12017c3d20c2eafc6bb1a728ed",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "existing-data-run-and-complete",
+    "cssSha256": "360058a045a640dd29cacc9296f5ccf5cee3bd167c47d0998e1909827cd0fc0e",
+    "domSha256": "9e3a280cd4f8daacceaf38ddf6483335c38db7897dc15c9fa265d2f44731e3e8",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "4d7bcc69b48a003d20110a930b06afc6554501cc10a5007bdcda2c3d9784552a",
+    "messages": [
+      {
+        "dataSha256": "e52dbb5e76ae03f35973f6307d033fd3732e787de45fc6ad77be6be0ee4d4755",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "3570bbbfdd85f9c9d25c4169583bec4cbdfd9bae9e301d87e9b0c381bc6afa0e",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "architecture"
+      },
+      {
+        "dataSha256": "dfdc76965a2f9972defb1bcb93f5b888f572f9b5da8b85b4303fa4282557498e",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "572e14287692a13eb4c726c1e8d34bf60dc0b43a01aa2c55dccfe8b219300e1e",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "running",
+        "type": "leerpret-simulation-status",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "314cde107a89baad99f8dfb7e44334039c8b02a0978cfbf6143478d2289909dd",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "complete",
+        "type": "leerpret-simulation-status",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "e7e5cc307c1f73312d61e1b371915d4f73f0822f67bdf5291899918e8bdfcc52",
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/autosave",
+        "postDataSha256": "6e6d07ba1da60dbfe585f82488c5a8bf8019ba4b1a121c0a934640d4dc1a1f57",
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/autosave"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/fixtures/e2e-events.json",
+        "method": "GET",
+        "pathname": "/api/fixtures/e2e-events.json",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/fixtures/e2e-events.json"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data",
+        "method": "GET",
+        "pathname": "/api/leerbox-tests/e2e-fixture/data",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox-tests/e2e-fixture/data"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture",
+        "method": "GET",
+        "pathname": "/api/leerbox/captures/e2e-fixture",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/captures/e2e-fixture"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/history",
+        "method": "GET",
+        "pathname": "/api/leerbox/e2e-fixture/history",
+        "postDataSha256": null,
+        "query": {
+          "limit": "50"
+        },
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/history?limit=50"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7",
+        "method": "POST",
+        "pathname": "/api/leerbox/e2e-fixture/restore/7",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/leerbox/e2e-fixture/restore/7"
+      }
+    ],
+    "stateSha256": "dbe44c13d90105ff4bb254c7be1acd423fdf8d4051dd8ad47b8d80314ce337a8",
+    "svgDrawablesSha256": "80121be1ee832986ac5cda9e7cadc2257a674b517823259221a099dd9dd0420a"
+  }
+]

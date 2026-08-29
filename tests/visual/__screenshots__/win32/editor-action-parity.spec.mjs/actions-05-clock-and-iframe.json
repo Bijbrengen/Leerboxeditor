@@ -1,0 +1,1274 @@
+[
+  {
+    "action": "clock-duration-keyboard-arrowup",
+    "cssSha256": "fc337190f2dbb175be54b2b6c63950b1d4c63186d28f024f1bacb4f9f3c3d304",
+    "domSha256": "6655c6e655c5f3eef24723163817d69e52d919bcdb1bc5b94d42a974cd565495",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c9d1ae72477329a2aa854d4c18bd56fccff5d5c537400c60eb1f58c6f071f4c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f9b36a128b4662d1857a445770a298dc2e5c35085c78dbfb18a85112fdbbae07",
+    "svgDrawablesSha256": "56bb0d63482679618f04bbab93067068fc722867d36d239211d8cab22f3b772b"
+  },
+  {
+    "action": "clock-duration-keyboard-arrowright",
+    "cssSha256": "fdf675685e337d94329ef0900a11d769478abb9150e42e929e495be53d9655a3",
+    "domSha256": "c7d2e211076ad3809eae31487782a50fc8e032185725117d406cf35433b24aba",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c9d1ae72477329a2aa854d4c18bd56fccff5d5c537400c60eb1f58c6f071f4c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "ea23d6b4ad57664d7f1225f57caea14082aee8fdf17d375daf9d11c12a73d147",
+    "svgDrawablesSha256": "c780f64f2e4d16e88ae4bb7b10516580eed76da874a3fbf2d74a81735e0cedd9"
+  },
+  {
+    "action": "clock-duration-keyboard-arrowdown",
+    "cssSha256": "fc337190f2dbb175be54b2b6c63950b1d4c63186d28f024f1bacb4f9f3c3d304",
+    "domSha256": "7ae6070117a156aea063e42a1c22d2ebd9e4ee7c7378894ed8a7e99d8ac24fed",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c9d1ae72477329a2aa854d4c18bd56fccff5d5c537400c60eb1f58c6f071f4c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "f9b36a128b4662d1857a445770a298dc2e5c35085c78dbfb18a85112fdbbae07",
+    "svgDrawablesSha256": "56bb0d63482679618f04bbab93067068fc722867d36d239211d8cab22f3b772b"
+  },
+  {
+    "action": "clock-duration-keyboard-arrowleft",
+    "cssSha256": "4707e9b5c6e6ec04a7e8984fd29030f236c540a3152db1af870e66bd5e852937",
+    "domSha256": "00b89b761c623428bfd5a8e0401ebd49cf6ce0d9f2db6c3bd9be65cb40db7752",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c9d1ae72477329a2aa854d4c18bd56fccff5d5c537400c60eb1f58c6f071f4c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "fecbb779de0f0c89fe0f24c40df29a60409e313e722805a3840e742ab4ae9396",
+    "svgDrawablesSha256": "b9e44f9bb0e0f2501ee8ca4f0425f49e79395285a66fd11778d95d2c388ba322"
+  },
+  {
+    "action": "clock-duration-pointer",
+    "cssSha256": "92c43370a5e88a375ad23cbd23e8cc0284f0cc91469ad2caa249e3f23264f654",
+    "domSha256": "00b89b761c623428bfd5a8e0401ebd49cf6ce0d9f2db6c3bd9be65cb40db7752",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "c9d1ae72477329a2aa854d4c18bd56fccff5d5c537400c60eb1f58c6f071f4c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "bb961e9afdef8c2b4220096ed14edc4955b4df5788fcad7270315e2498c2e0d7",
+    "svgDrawablesSha256": "b9e44f9bb0e0f2501ee8ca4f0425f49e79395285a66fd11778d95d2c388ba322"
+  },
+  {
+    "action": "clock-actions-keyboard-arrowup",
+    "cssSha256": "853750834c78b9f014f52a9050d0498772c9e1910e8847ddbe5626a2ac7a19df",
+    "domSha256": "798480a5e478dc0b277b9bfe1d3281267d685a8abbd5bf32ebe595f722f92c3d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "5792686f074047b8bca34933005b15ec2eb33abd52010800d6a10b4fd5e4205d",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4697c2234777c4267fbc14a3cdb01892953adf92b8e01afe69279d9bd1c9814f",
+    "svgDrawablesSha256": "61dbc27d9b55b7f23e53b3e5f1ebe65d87d60244b6ba1e041fe39a7cbd50513e"
+  },
+  {
+    "action": "clock-actions-keyboard-arrowright",
+    "cssSha256": "d104e6d2824ff035106846f2dad0b2130817cc914a2f61ebd6ed570e8a909b94",
+    "domSha256": "b111c8badf6eacc498a9d977e2580c47470ce2639e3a9303a2264a37d8a58e18",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "7593e6f4c45ab4f251cd1ff4d9e2cb5c3e8f2886e5024ca0478bfee7c6172896",
+    "messages": [],
+    "network": [],
+    "stateSha256": "68934cd0d5419a39684522865e3f0ee222956ab8eb1d5350c356c4298913ff65",
+    "svgDrawablesSha256": "0d519d2e8aa4fa86e20442f2f42717d69e19a7a87cfbdde7e92f0895d8b5f514"
+  },
+  {
+    "action": "clock-actions-keyboard-arrowdown",
+    "cssSha256": "853750834c78b9f014f52a9050d0498772c9e1910e8847ddbe5626a2ac7a19df",
+    "domSha256": "798480a5e478dc0b277b9bfe1d3281267d685a8abbd5bf32ebe595f722f92c3d",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "5792686f074047b8bca34933005b15ec2eb33abd52010800d6a10b4fd5e4205d",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4697c2234777c4267fbc14a3cdb01892953adf92b8e01afe69279d9bd1c9814f",
+    "svgDrawablesSha256": "61dbc27d9b55b7f23e53b3e5f1ebe65d87d60244b6ba1e041fe39a7cbd50513e"
+  },
+  {
+    "action": "clock-actions-keyboard-arrowleft",
+    "cssSha256": "78fea1d3c84eaa9b5ffc133eda6996955952732b22e16b10e28d35c8c0661d1f",
+    "domSha256": "67b52dc77ee63d9f967905926201d625c96266c968265cd4d7861b78c7dd7655",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "7593e6f4c45ab4f251cd1ff4d9e2cb5c3e8f2886e5024ca0478bfee7c6172896",
+    "messages": [],
+    "network": [],
+    "stateSha256": "1f01212b0921c317000888b9dc884021efa9e74c9c54ec4d0b25fb92d352381b",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "clock-actions-pointer",
+    "cssSha256": "92c43370a5e88a375ad23cbd23e8cc0284f0cc91469ad2caa249e3f23264f654",
+    "domSha256": "67b52dc77ee63d9f967905926201d625c96266c968265cd4d7861b78c7dd7655",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "7593e6f4c45ab4f251cd1ff4d9e2cb5c3e8f2886e5024ca0478bfee7c6172896",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4c6754867a28f5fdc8532bd6514bc62318028bc95ae1cf538bc3d4845b2e6597",
+    "svgDrawablesSha256": "b5e44f822d5e9a116e85ebf278d3786044eb99c5301e2968265400c9e2dfd5e0"
+  },
+  {
+    "action": "clock-number-change",
+    "cssSha256": "7a82839dd64f57c2421f23b3c52195e584c761497819606bb4d839dcddea592d",
+    "domSha256": "325f74e19e5e29a29635025cef1f7f5ae9cb9ade7edc50e7b533669298de6d8f",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "d6b7ad3487df11b502dab337c0cd25c6a7dd7a5a4311f861d18056b03c25b046",
+    "messages": [],
+    "network": [],
+    "stateSha256": "4ce49d5bedebe275bc0550ee30b9771d1d0ec2936d96db20378bde2e54a7f9a8",
+    "svgDrawablesSha256": "43a541925c2c19d08f6f694b7233a49b21f46e87735424e55abcfb0f28aa0653"
+  },
+  {
+    "action": "clock-play-without-data",
+    "cssSha256": "3d5229bf07adae2cff0ebcefee19c92efea257b0de8ff3d6a058da071a0da107",
+    "domSha256": "01f633bd4933e67df3c8d1ae68ccf4965e6b755bec095540c358c2a7c012c393",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "6a8237b7c7bfac8ac54a459589e6c4946fce5a2ea375e8eccd7a19f7733080c3",
+    "messages": [],
+    "network": [],
+    "stateSha256": "26920730fc7614d5f62312c68d83c1ac9e1f542082b368ad023ad7492fbdfbb2",
+    "svgDrawablesSha256": "43a541925c2c19d08f6f694b7233a49b21f46e87735424e55abcfb0f28aa0653"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-view-default",
+    "cssSha256": "8b72d2e6767741c9854b4c26ee5feafcbd28556a59f57d14be4710339909a491",
+    "domSha256": "2d522b1f3c4dbe927feca9f630582fabc90f3b9b68b0a45c8074a0dda429e6f6",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "95db5ad35e03d291d9006f88204f20cf06d78272e4369c1608a4f500454e0af6",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "4f76dc2866f9062f9454425a08ff32754b63d237c5c644963965edeed6877768",
+    "svgDrawablesSha256": "43a541925c2c19d08f6f694b7233a49b21f46e87735424e55abcfb0f28aa0653"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-click-control-promptbutton",
+    "cssSha256": "787543fd0407989e731474ad2e15345936c810354563ec1d3562b1355ff7e2ea",
+    "domSha256": "b2c33bfcce63c1457d53b1924e0308976f40b71e5b96550b54b195a4dd71c225",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "6768b3bfb811013bdf1ca282d0c811cd34cd9f26173ff8edce56ddcd27716287",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "e8d29c263b1d6712f893696bfcd93b4ac8d666f0b541210f51c546f6fd5009af",
+    "svgDrawablesSha256": "43a541925c2c19d08f6f694b7233a49b21f46e87735424e55abcfb0f28aa0653"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-close-overlays-default",
+    "cssSha256": "8b72d2e6767741c9854b4c26ee5feafcbd28556a59f57d14be4710339909a491",
+    "domSha256": "2d522b1f3c4dbe927feca9f630582fabc90f3b9b68b0a45c8074a0dda429e6f6",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "95db5ad35e03d291d9006f88204f20cf06d78272e4369c1608a4f500454e0af6",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "05fa6e9f239bd85f5c5dd59dace5743e5e75a957b8a30f3ec0617460821ff637",
+    "svgDrawablesSha256": "43a541925c2c19d08f6f694b7233a49b21f46e87735424e55abcfb0f28aa0653"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-add-object-preset-entry",
+    "cssSha256": "b909c75a907e80f96d0e185a5cbf60810027e8d7a17d54f948f7d368358e214b",
+    "domSha256": "b54229e00de1c7efb188e6d85198817ec4a14ab8decf01e8ea5af678c159df1b",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "9eed63f9266ff12c5f83189898ddf4b5795195bd3984aa20e4dd02dd930903c3",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "278e3ed183220f31c7637491717b00eeab7656314b496c93d073b0e139091e01",
+    "svgDrawablesSha256": "cac763e7b5964ee0aa28b69af8a21004ac1b5eeaae710bada973d8af987d2f50"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-add-library-item-default",
+    "cssSha256": "fc1fc236d7980f28537dc5a4b57d73291f91fbb1a3a473a5982fa3a91b609855",
+    "domSha256": "f77f392e850089a0224f320f35c5f62fd432457877f6b6436ba612183032adfa",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "279fe57a650d72a864891df87e26b2428be3cfc35a3bd772bdf1fde3111d8416",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "881efc471c9efabc9a25f14a6382780245f31205d04d8124f8e6813c77f5a927",
+    "svgDrawablesSha256": "0f173c5cc52644374a414c1949fa6c6cc938c6dfc6e0cd8e157903e63e67147e"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-start-cable-default",
+    "cssSha256": "4f0d287efbdb23adaa3ca1ab87f399b1ba9e9e49370c01dfb85339280e3fe420",
+    "domSha256": "b5ec1f4257a0ced52f57c94c8674f685690ff15b00df52b42040b8efcd39d447",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "a6f10c239189cd44768c9fb4c60bad8f48475660a4da645249513750dd110ccc",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "57ed4b3de5f36f66e25f4c6f8887ac5e32dca015cdaae3c09b8bcfc149972929",
+    "svgDrawablesSha256": "c7819272acb8f7a886c7d6a20e430b11d396fb8da4581834ba160769142fc844"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-connection-mode-conditional",
+    "cssSha256": "4f0d287efbdb23adaa3ca1ab87f399b1ba9e9e49370c01dfb85339280e3fe420",
+    "domSha256": "925cd01efd58fdd83fb1e3b88a3f55278bb9fb35be7e0e4a9a0dbd47256e8604",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "a6f10c239189cd44768c9fb4c60bad8f48475660a4da645249513750dd110ccc",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "57ed4b3de5f36f66e25f4c6f8887ac5e32dca015cdaae3c09b8bcfc149972929",
+    "svgDrawablesSha256": "f785a881a8decace77de7ad3141fcb2117536e418b4c43e8599121c1a1ab1a4e"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-generate-preview-default",
+    "cssSha256": "4f0d287efbdb23adaa3ca1ab87f399b1ba9e9e49370c01dfb85339280e3fe420",
+    "domSha256": "925cd01efd58fdd83fb1e3b88a3f55278bb9fb35be7e0e4a9a0dbd47256e8604",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "a6f10c239189cd44768c9fb4c60bad8f48475660a4da645249513750dd110ccc",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "03de5538f47039733486e54053effb5987cd390fc348dd0f43b6c9e6c2f56f6c",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "<API_ORIGIN>/previews/e2e-fixture/index.html",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-preview-generated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "d84f7aebe179f5b0981ba26d3ad01bcc3e32c098643c3c78c79135b046ff5792",
+        "logicalName": "<API_ORIGIN>/api/developer/previews/generate",
+        "method": "POST",
+        "pathname": "/api/developer/previews/generate",
+        "postDataSha256": "88c0c391bd081381d3fd4061358ff8e8be07104d98c0d64e6c1259463cfc3090",
+        "query": {},
+        "url": "<API_ORIGIN>/api/developer/previews/generate"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "57ed4b3de5f36f66e25f4c6f8887ac5e32dca015cdaae3c09b8bcfc149972929",
+    "svgDrawablesSha256": "f785a881a8decace77de7ad3141fcb2117536e418b4c43e8599121c1a1ab1a4e"
+  },
+  {
+    "action": "iframe-in-leerpret-editor-simulation-control-pause",
+    "cssSha256": "4f0d287efbdb23adaa3ca1ab87f399b1ba9e9e49370c01dfb85339280e3fe420",
+    "domSha256": "925cd01efd58fdd83fb1e3b88a3f55278bb9fb35be7e0e4a9a0dbd47256e8604",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "a6f10c239189cd44768c9fb4c60bad8f48475660a4da645249513750dd110ccc",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "03de5538f47039733486e54053effb5987cd390fc348dd0f43b6c9e6c2f56f6c",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "<API_ORIGIN>/previews/e2e-fixture/index.html",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-preview-generated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "d84f7aebe179f5b0981ba26d3ad01bcc3e32c098643c3c78c79135b046ff5792",
+        "logicalName": "<API_ORIGIN>/api/developer/previews/generate",
+        "method": "POST",
+        "pathname": "/api/developer/previews/generate",
+        "postDataSha256": "88c0c391bd081381d3fd4061358ff8e8be07104d98c0d64e6c1259463cfc3090",
+        "query": {},
+        "url": "<API_ORIGIN>/api/developer/previews/generate"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "57ed4b3de5f36f66e25f4c6f8887ac5e32dca015cdaae3c09b8bcfc149972929",
+    "svgDrawablesSha256": "f785a881a8decace77de7ad3141fcb2117536e418b4c43e8599121c1a1ab1a4e"
+  },
+  {
+    "action": "iframe-reject-unknown-click-control",
+    "cssSha256": "4f0d287efbdb23adaa3ca1ab87f399b1ba9e9e49370c01dfb85339280e3fe420",
+    "domSha256": "925cd01efd58fdd83fb1e3b88a3f55278bb9fb35be7e0e4a9a0dbd47256e8604",
+    "downloads": [],
+    "errors": [],
+    "geometrySha256": "a6f10c239189cd44768c9fb4c60bad8f48475660a4da645249513750dd110ccc",
+    "messages": [
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "b23882f1d569ec629edea55ac69b24db91b3839ce33b38f259fad3fdda6decb8",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 0,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "c3efc4f3c244d35637e15c7bdf0038b5e3056bcca5dd950255d8133089a38016",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 1,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "ebd22117c3f2f3ca79ca869096645103d6289e757115d43000ad15253aa81beb",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-capture-updated",
+        "workspaceView": ""
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "1ef248480d985c74d36e47e5cf5fd993c3018c781fb8956356024e4948a52156",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": null,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-editor-workspace-view",
+        "workspaceView": "vat"
+      },
+      {
+        "dataSha256": "03de5538f47039733486e54053effb5987cd390fc348dd0f43b6c9e6c2f56f6c",
+        "fromEditor": true,
+        "fromParent": false,
+        "fromSelf": false,
+        "objectCount": 2,
+        "origin": "<EDITOR_ORIGIN>",
+        "previewUrl": "<API_ORIGIN>/previews/e2e-fixture/index.html",
+        "sourceCount": null,
+        "status": "",
+        "type": "leerpret-preview-generated",
+        "workspaceView": ""
+      }
+    ],
+    "network": [
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": "d84f7aebe179f5b0981ba26d3ad01bcc3e32c098643c3c78c79135b046ff5792",
+        "logicalName": "<API_ORIGIN>/api/developer/previews/generate",
+        "method": "POST",
+        "pathname": "/api/developer/previews/generate",
+        "postDataSha256": "88c0c391bd081381d3fd4061358ff8e8be07104d98c0d64e6c1259463cfc3090",
+        "query": {},
+        "url": "<API_ORIGIN>/api/developer/previews/generate"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/leerbox-agent/status",
+        "method": "GET",
+        "pathname": "/api/leerbox-agent/status",
+        "postDataSha256": null,
+        "query": {
+          "probe": "true"
+        },
+        "url": "<API_ORIGIN>/api/leerbox-agent/status?probe=true"
+      },
+      {
+        "fieldNames": [],
+        "fileNames": [],
+        "jsonSha256": null,
+        "logicalName": "<API_ORIGIN>/api/simulator/datasets",
+        "method": "GET",
+        "pathname": "/api/simulator/datasets",
+        "postDataSha256": null,
+        "query": {},
+        "url": "<API_ORIGIN>/api/simulator/datasets"
+      }
+    ],
+    "stateSha256": "57ed4b3de5f36f66e25f4c6f8887ac5e32dca015cdaae3c09b8bcfc149972929",
+    "svgDrawablesSha256": "f785a881a8decace77de7ad3141fcb2117536e418b4c43e8599121c1a1ab1a4e"
+  }
+]

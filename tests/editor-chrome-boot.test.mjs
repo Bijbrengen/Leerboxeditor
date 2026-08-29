@@ -6,9 +6,12 @@ const source = readFileSync(new URL("../editor-chrome-boot.js", import.meta.url)
 const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 
 test("bootstrap koppelt de geïnjecteerde chrome expliciet via de Engine-SDK", () => {
-  assert.match(source, /\/sdk\/editor-chrome\/chrome\.js/);
+  assert.match(source, /loader\.load\("editor-chrome"\)/);
+  assert.match(source, /loader\.fetchAsset\("editor-chrome", "template\.html"\)/);
   assert.match(source, /chrome\.wire\(node\)/);
-  assert.doesNotMatch(source, /loader\.load\("editor-chrome"\)/);
+  assert.doesNotMatch(source, /\/sdk\/editor-chrome\//);
+  assert.doesNotMatch(source, /document\.createElement\("style"\)/);
+  assert.doesNotMatch(source, /right:20px|left:14px/);
 });
 
 test("bootstrap bevat geen leerboxdata of Engine-beslislogica", () => {
@@ -21,7 +24,7 @@ test("bootstrap verbergt SDK-mountfouten niet", () => {
 });
 
 test("editorpagina gebruikt de actuele chrome-bootstrap cacheversie", () => {
-  assert.match(indexSource, /editor-chrome-boot\.js\?v=auth-gate-4/);
+  assert.match(indexSource, /editor-chrome-boot\.js\?v=manifest-loader-6/);
 });
 
 test("chrome mount uitsluitend na SDK-toestemming", () => {

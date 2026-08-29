@@ -12,5 +12,5 @@ test("Editor-transport behoudt Headers van de centrale SDK-client", () => {
 });
 
 test("Editor laadt de gecorrigeerde SDK-transportversie", () => {
-  assert.match(indexSource, /leerpret-sdk\.js\?v=4/);
+  assert.match(indexSource, /leerpret-sdk\.js\?v=5/);
 });

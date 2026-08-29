@@ -29,17 +29,22 @@ De verantwoordelijkheden zijn bewust gescheiden:
 - `LeerpretEngine` bezit authenticatie, AI-calls, Project Buckets, autosave,
   mutatiegeschiedenis, previewgeneratie en simulatie.
 
-LeerpretEngine vindt deze repository via `LEERBOX_EDITOR_DIR` of standaard als
-buurmap `../LeerboxEditor`. De bestaande dashboard-URL blijft:
+De Editor draait op een zelfstandige, configureerbare HTTP-origin. De Engine
+leest of mount geen bestanden uit deze repository. Hij publiceert de ingestelde
+Editor-origin via het publieke UI-surfacecontract, waarna Dashboard die URL in
+een iframe gebruikt. Een lokale Editor-URL is bijvoorbeeld:
 
 ```text
-http://127.0.0.1:47111/tools/architect-editor/
+http://127.0.0.1:47114/
 ```
 
 `engine-adapter.js` vormt de grens tussen de statische editor en de dynamische
-Engine. Op localhost gebruikt de adapter standaard poort `47111`. Een andere
-Engine-API kan via de queryparameter `?api=...`, `window.LEERBOX_EDITOR_CONFIG`
-of `localStorage["leerbox-editor.apiBase"]` worden doorgegeven. Voorbeeld:
+Engine. Op localhost gebruikt de adapter standaard poort `47111`. Eén centrale
+SDK-bootstrap kiest de Engine-API in vaste prioriteit: queryparameter `?api=...`,
+`window.LEERBOX_EDITOR_CONFIG` en daarna
+`localStorage["leerbox-editor.apiBase"]`. De genormaliseerde waarde staat als
+`window.LeerpretSDKApiBase` vast voor SDK-loader, authenticatie, chrome en alle
+editor-API-calls. Voorbeeld:
 
 ```text
 http://127.0.0.1:47114/?api=http://127.0.0.1:47111/api
@@ -66,6 +71,55 @@ python -m http.server 47114
 Voor volledige integratie start je LeerpretEngine op poort `47111` en open je
 de Editor op zijn eigen origin. De Leerpret-frontend draait standaard op poort
 `47112` en zet de editor-URL rechtstreeks in een iframe.
+
+## Verificatie
+
+Installeer eenmalig de Node-afhankelijkheden en Playwright-Chromium:
+
+```powershell
+npm install
+npx playwright install chromium
+```
+
+De volledige verificatie start zelf een statische Editor-origin op poort
+`47114` en een LeerpretEngine-proces op poort `47111`:
+
+```powershell
+npm test
+```
+
+Wijs `LEERPRET_ENGINE_ROOT` naar een Engine-checkout als die niet in de
+standaardbuurmap staat. Tegen een al gestarte Engine kan de suite uitsluitend
+via HTTP draaien met `LEERPRET_USE_EXISTING_ENGINE=1` en een bijpassende
+`LEERPRET_API_URL`; de Editor leest ook dan geen Engine-bestanden.
+
+Daarmee draaien de Node-unittests, Python-contracttests en drie aanvullende
+Playwright-contractlagen. `editor-screen-parity` vergelijkt de huidige UI met
+PNG-goldens uit de ongemigreerde Editor op commit `bcc4b88`, met nul toegestane
+afwijkende pixels. `editor-action-parity` legt de volledige actiecatalogus vast
+in JSON-goldens met hashes van screenshot, DOM, CSS, geometrie, SVG, state,
+netwerk, downloads en iframeberichten. `editor-agent-bucket-action-parity` legt
+de bronimport-, Project Bucket- en Agentflows met dezelfde historische
+JSON-fingerprints vast. De manifesttest bewijst daarnaast dat de huidige Editor
+componenten met integriteit laadt. Zie `tests/visual/README.md` voor het
+baselinecontract.
+
+De beeldgoldens zijn bewust vastgezet voor Windows, Playwright-Chromium 1.62.1
+en de in de fixture genormaliseerde testfonts. Op een ander platform weigert de
+config met een duidelijke melding, omdat tolerantie nul anders geen betrouwbaar
+contract zou zijn.
+
+Een baseline-update van alle drie suites en de recursieve provenance is technisch
+geblokkeerd tenzij een afzonderlijke historische Editor draait en alle
+expliciete variabelen zijn gezet:
+
+```powershell
+$env:LEERBOX_EDITOR_TEST_URL = "http://127.0.0.1:47115/"
+$env:LEERBOX_EDITOR_LEGACY_BASELINE = "1"
+$env:LEERBOX_EDITOR_BASELINE_REF = "<volledige historische git-commit>"
+$env:LEERBOX_EDITOR_APPROVE_BASELINE_UPDATE = "1"
+npm run test:e2e:update-baselines
+```
 
 De taalopzet staat in `languages.js`. De standaardtaal is nu `nl`; extra talen kunnen later als extra key onder `messages` worden toegevoegd.
 

@@ -18,16 +18,19 @@ De dashboardbuitenschil staat in de buurrepository
 `../LeerpretEngine` en worden alleen via publieke `/api`-routes gebruikt.
 Importeer geen interne Engine-code en plaats geen secrets in deze repository.
 
-LeerpretEngine vindt deze repo via `LEERBOX_EDITOR_DIR` of standaard als
-`../LeerboxEditor` en mount hem op `/tools/architect-editor/`.
+De Editor draait op een eigen configureerbare HTTP-origin. LeerpretEngine
+publiceert die origin via zijn publieke UI-surfacecontract; de Engine leest of
+mount nooit bestanden uit deze repository.
 
 ## Verificatie
 
 Controleer na wijzigingen ten minste:
 
 1. dat `index.html` zelfstandig via een statische webserver opent;
-2. dat de Engine-route `/tools/architect-editor/` antwoordt;
+2. dat de publieke Engine-routes onder `/api/sdk/` antwoorden;
 3. dat de iframecommunicatie met de Leerpret-dashboardpagina blijft werken;
-4. dat API-calls een configureerbare `?api=`-base blijven gebruiken.
+4. dat API-calls een configureerbare `?api=`-base blijven gebruiken;
+5. dat `npm test` slaagt, inclusief de pixel-exacte Playwrightvergelijking met
+   de vastgelegde voor-migratiebeelden.
 
 Commit of push nooit zonder expliciete toestemming van de gebruiker.

@@ -1,0 +1,533 @@
+[
+  {
+    "actionId": "agent-view-loaded",
+    "control": "[data-workbench-view=\"agent\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 0,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "e61b64d33af40bf1d15ec07703527c2073b865e35f5a34b3d15e512ffce0eeae",
+          "type": "leerpret-source-count"
+        },
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox-agent/status",
+          "query": {
+            "probe": "true"
+          },
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox/captures/e2e-fixture",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/auth/editor-access",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/simulator/datasets",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "6db438552aaa9253e1ea16850de5ad9d6cd789697066f115e8f245fbfa8b8e98",
+    "output": {
+      "assets": "1310c1a95168723eb51cc36fbe6f438eb05e1a0a8d850fedff000f4a2e34cb53",
+      "css": "9f8401762a6c98727bd269a4335edaf195400a09a81098e4f85624c69c1656ea",
+      "dom": "7a96a049564c2406501b1f71765860368add4bfcc4711e44a79a94d64e4eea09",
+      "geometry": "aec1a1f770a266347636ba3e03a66ab27d939eafb8e8aa1aaaa96eae7edf5161",
+      "state": "7b23f8cb41e0c97d9e0bfed2576e7a17b7db6dd8448f315b38c999897f144466",
+      "svg": "600e397dd779feb89a1ae4054a3e247629ebde265554672f1a8fbec8ec43b46b"
+    }
+  },
+  {
+    "actionId": "agent-template-mode-selected",
+    "control": "#agentMode",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "7c051abbb49fe97546ff993f99eedd6590378fc54c22dfb92c2c8a5778d5c7f0",
+    "output": {
+      "assets": "baefc7d97dbb2cd96907944d1262a4d0a2da96a49789a98701e611123e53ceac",
+      "css": "1404eb4d9fa46b46d7dde36c2809c51c230ebdee7ae30faffa38bb8b4cf0757b",
+      "dom": "6b33fce97937ce1c3c3c45b4fcd206d532622bab298a4d4b11ec37d83942e1f8",
+      "geometry": "d1c430fd9567a53c658991f6337496cf70cc4e7d13a0c22797aef8b963b1a05a",
+      "state": "4e2d115f0dc34afb7906e436e3780efc9dd56c9a5e66d591af96ec3f115890a0",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-template-field-filled",
+    "control": "[data-template-field=\"0\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "cfe945f9c5610f8b5da5f21c367ec60a7908dfe47d56419a3ab59da4578bc7f6",
+    "output": {
+      "assets": "baefc7d97dbb2cd96907944d1262a4d0a2da96a49789a98701e611123e53ceac",
+      "css": "1404eb4d9fa46b46d7dde36c2809c51c230ebdee7ae30faffa38bb8b4cf0757b",
+      "dom": "6d46d630f7167760962b5181e93cde922ff929cd4fefb776faa91eef3eea6e87",
+      "geometry": "d1c430fd9567a53c658991f6337496cf70cc4e7d13a0c22797aef8b963b1a05a",
+      "state": "ac88404beab47a11bad4617bcdf89ec97c5e1567e2d833d0a5154599edcd9dec",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-template-send-token-cancelled",
+    "control": "#agentTokenDialog button[value=\"cancel\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "34153d3e1cbd0e6c7d1efeb0ede9c6016c5bf362d5f4979d66f6cc2566417efe",
+    "output": {
+      "assets": "baefc7d97dbb2cd96907944d1262a4d0a2da96a49789a98701e611123e53ceac",
+      "css": "29dd4016e9610a6d60574caa720df7af34688d556a3cd79b9514841018baff84",
+      "dom": "61a3e9f7ba6b689a80abe0d84d780f5f0d4361c8d4f21e015a73dfb8aadc72f5",
+      "geometry": "7d92e99994e50dc6bde148d28287390a162a52fad5224951b11a6ff46d3ae4ac",
+      "state": "1cf97ada22460afb06043f2a234f95e3729b0198754a96cf3cd533f4f19b2038",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-document-drawer-open",
+    "control": "#agentNewConversationButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "e9e72e3f76e0c735668d0c023a5a276b1f6ab1a3f082ae1b8fd0a648feac959c",
+    "output": {
+      "assets": "656c8c6c5f56d1dfd3b62fa1f9b746167cf1e195482d36964ebe37c172e47236",
+      "css": "061565fbd074abd6d05b881f34e296655354ef23a5e6faf4e937593d35a96b21",
+      "dom": "cfc1ab483cf6133f4eba33a34a7516ab78a381bb6c19a4d934fe7b9aecf534f1",
+      "geometry": "04a09e5343ad641512b1aedf83b267cd172ad5d47698501a05b6d892fd1dfc12",
+      "state": "4a83583f1ffbbea3c0aacbeff1a5e5d43c6038b706811259f0803b80be5ed084",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-source-consent-disabled",
+    "control": "#agentBucketConsent",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "4da8a86bf6dee02595e0876ccaf3ae1459cb94926fdcee321e5cda1093bc8785",
+    "output": {
+      "assets": "fd21b7b2c9710097ecc8e918e238a0f0101c294a946c822c8b640cb1e1702d62",
+      "css": "fe9665ec0bd29f07bc30084ec7e211c2e18f2f3cb6fb9d932d41c5ef61526270",
+      "dom": "c064cf816d7c62db26e7313e83ade2ddb866cc232b79e2128732eebb8140d6cd",
+      "geometry": "04a09e5343ad641512b1aedf83b267cd172ad5d47698501a05b6d892fd1dfc12",
+      "state": "77ccc3f3ec7c9a44d8d7056e3b256b20c5db6dacb76bef8ab616b8f0ee738993",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-source-consent-enabled",
+    "control": "#agentBucketConsent",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "24cc8f8a12216f16edded068f4e6389bc8a56508e06ef2e23caae6c1c496d1fe",
+    "output": {
+      "assets": "fd21b7b2c9710097ecc8e918e238a0f0101c294a946c822c8b640cb1e1702d62",
+      "css": "f853821f281eaa6722a6cd2598986dd6c1579e619e5812e0599d3374c3389ba4",
+      "dom": "4a518fec04a4f76475789b4bf3d179634143d22b8256690e4a677cfb764585f3",
+      "geometry": "04a09e5343ad641512b1aedf83b267cd172ad5d47698501a05b6d892fd1dfc12",
+      "state": "fea6eda9f7705e261907bdfbcfc06a7799144733a21e02c1e01995fb0f56f7de",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-document-drawer-closed",
+    "control": "#agentDocumentCloseButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "b1da29b8200175c935546b3b4491580078c19eedcb610f90e11c249d760c0ace",
+    "output": {
+      "assets": "fd21b7b2c9710097ecc8e918e238a0f0101c294a946c822c8b640cb1e1702d62",
+      "css": "061565fbd074abd6d05b881f34e296655354ef23a5e6faf4e937593d35a96b21",
+      "dom": "c8e46cc6e49f5c814a3b3d4622b087bb111022378c1573368111590aa7acfff2",
+      "geometry": "04a09e5343ad641512b1aedf83b267cd172ad5d47698501a05b6d892fd1dfc12",
+      "state": "6d93cedc0a6bcec43290b5ca25d735f77565d0db51e118ec5beb816f63151c9f",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-capture-mode-free-input",
+    "control": "#agentMode + #agentInput",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "5f9be9cf979b303727d621a616ae6970ee5729c4f1decb78f9377a41a731d604",
+    "output": {
+      "assets": "fd21b7b2c9710097ecc8e918e238a0f0101c294a946c822c8b640cb1e1702d62",
+      "css": "17b71405770857c562ea3bbb62dd1b40b236db7d03408138fa477c7d97fa40ea",
+      "dom": "c8e46cc6e49f5c814a3b3d4622b087bb111022378c1573368111590aa7acfff2",
+      "geometry": "a68a0f20d11aa456077d9907923c172bfd8a7894f7d2d964b58384e8d94bb548",
+      "state": "cf30ba19d32e88e0f02b3eea5927d5733c6e717e55af1039a7221917ee0cf1de",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-capture-send-confirmed",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "903d4cd4a1558b26824dcc5cb57b9e829ff46dd550f4f40abd910fa331e18e52",
+            "summary": {
+              "bucketSourceIds": [
+                "bron-een"
+              ],
+              "captureSha256": "acc9d9bff41cd8e5940a369c906c4a56ae9378e82a0d82cf539208eb47da9b30",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 39,
+                  "role": "user",
+                  "sha256": "1ffc6dd5422dd3c0c98bcc16a3b93eba251c3d04469f410791e22bc182d4d52f"
+                }
+              ],
+              "mode": "capture",
+              "role": "architect",
+              "useProjectBucket": true
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "78b310e6245bdfac130a7ac1b0e53a033f7c0a8ff58f9877e4f16c6fd214ff37",
+    "output": {
+      "assets": "82263187b66b0d8ae8d7aafab953e868edb299ce7304a286a3308c3daf20b198",
+      "css": "b2cb3bd50fecb5104d618340cd665b2e9aa982c38a2f7ad62834505c068e05b4",
+      "dom": "4cb34a85c012de11f6fbfd9718d655dcc10e7ee98863cc7da34eafa56ad80d84",
+      "geometry": "a42b9a02dfee7deae7d575d27b830c2ed785bb190de5786cce3ed622486d6651",
+      "state": "292710ed15342a7bb81bc1e1c4750bdc4a420eeded8f7eead8139be78dc8a381",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-capture-applied",
+    "control": "#agentApplyCaptureButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "78595068630acda21b7cb0695f9e61dbafed8be2c2cdce57e6e0a5ece9fadd49",
+    "output": {
+      "assets": "c258924ecaf177f26f569cbea76c72213f76e621de4d3ee51de6bf0ec14427b6",
+      "css": "ab99cc3837110d728ce1b7a73e2b3e68f13839ddf494edbfe032e64a4ab82368",
+      "dom": "eca64ec0f697a2cd24f0fa29ef97db9e2b643b2292fd4d710b84ac8e6f949a9f",
+      "geometry": "1921b8deb4764d8bb339402c5651e8aa6629decd084412782d0950d6337c15e9",
+      "state": "22914a813f430f93f5c35fd9630c4526e5158c96a15b6591a91cdb4495eff877",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-testdata-mode-free-input",
+    "control": "#agentMode + #agentInput",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "9abf954fc4e7fbea5c1e91257ec0650fa2d2e76d30fc64be96e769cd36652267",
+            "summary": {
+              "captureSha256": "3050d23a52f47570bd3ca9d222d812e5f704283c62885a9ba92804b0cd1c50e9"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox/e2e-fixture/autosave",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "9987e800387228ef44ba49b41395dc9701d3ce3bc15fb2ba0167baec457d816f",
+    "output": {
+      "assets": "fd89d8b0033848ccc4648e7e03898a9eafc2896215407adfa8158cde1cddc004",
+      "css": "decd84da9c57ece9b220708195f461a2681220fbcc80968b8110c17e7d7e787f",
+      "dom": "415ccc937b788b9cea2c4757254fc0333ae49beeded54f9ebbf8fdc95e62be7f",
+      "geometry": "fe427040c1b4f6470ee8022f288957de03fee9909ea11412dfeddc5b35166e2d",
+      "state": "312b8f30e4465a811af573db8d57d2356277a87eda171714c2dbc9ad829b087d",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-testdata-send-confirmed",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "e73f77652a73009596b9c010fee06d4e856904a4c7466c9ad62844ef85f5ad7b",
+            "summary": {
+              "bucketSourceIds": [],
+              "captureSha256": "3050d23a52f47570bd3ca9d222d812e5f704283c62885a9ba92804b0cd1c50e9",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 39,
+                  "role": "user",
+                  "sha256": "1ffc6dd5422dd3c0c98bcc16a3b93eba251c3d04469f410791e22bc182d4d52f"
+                },
+                {
+                  "characters": 334,
+                  "role": "assistant",
+                  "sha256": "b44a3394cee90f24c2d4bec34b5d389c955290390b60147ece2ccdec63e610a2"
+                },
+                {
+                  "characters": 41,
+                  "role": "user",
+                  "sha256": "826eff162ce771bd0af98527fc91549bdc22fd7682b25d26981e3dbe0aa6ca88"
+                }
+              ],
+              "mode": "testdata",
+              "role": "architect",
+              "useProjectBucket": false
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "f9bfcf7c0345563d782ef6d23dc8d9fc0acc85a9117c89a4a47ab13db08ecae9",
+    "output": {
+      "assets": "0dff62c805f9f6417d35cb3c196d93c7c9eba79645eb2303be7a8cc44fcc8d6d",
+      "css": "b77fe8bab4da10a632c914c64b88e13d2c2866e4a2903930648e0144892b3724",
+      "dom": "88449bc0be13c2f3f37d1ac58faa510a3e68e4ba0e9288f22d099f0b1274eda7",
+      "geometry": "3e8bcb5ad99f9a41b707caf4c07c173fdf2b105865ec9dbef3139c2282ac2268",
+      "state": "bdcd2b0a7e1f99d328610716696f8edea9246c1cfab36ba00101386b0e29bd7f",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-testdata-applied",
+    "control": "#agentApplyTestDataButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "e173f8eebd33f2f224b7ea394973ea089a1b5dbd184cc5b91c62722afe2d52e5",
+    "output": {
+      "assets": "de278beff9649c2ff588149ab68c4be27af2205c72748989d6841a61b3113109",
+      "css": "31016d81d264409096292b593b754d6aeee76653ed56434add4dbe8e26842e0a",
+      "dom": "98ae116c0965fb6b32ab825b7d6a4b9519929795c707871303210ea015c08f6a",
+      "geometry": "d17f81f9ac3a5563995c41ebd0a8399659a8e313b9c5e7b8969efedf5492efe9",
+      "state": "b95af0694e23f737a2164f8912e1dba4a846e65e2c97db6af2a1c99e2f2415cf",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-conversation-reset",
+    "control": "#agentResetConversationButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "ae42fe135bc4cec12c0fe08d882dd8834122fcbd74f435c03e83c39b8ef8e26a",
+    "output": {
+      "assets": "20033030aca4d01eada9e3e315dc0a44b9497d2af69451c9e7a8e0d13888b1d4",
+      "css": "d9916fe300e8f1344560b15d25bb1310c31d684654cbf6e6cbad4776bf2ffb9d",
+      "dom": "3d4b431dda087b6904e5993b10f440efb30e95f147fb04d8d9d849f627d01770",
+      "geometry": "6a42bd394be99a41ae9f0b8dd85711d47bd001b708ef9902ead7b8cb67905df9",
+      "state": "44f1aa9d48c874eb065ffb626143bc3164787e90e00d933767702dff3ef70a43",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "agent-panel-closed",
+    "control": "#agentPanelCloseButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "0e444a4d9f4030876e5dd3bf0aaad0cd2c26250150911286f8dc73ab5f622ded",
+    "output": {
+      "assets": "dec123977f61df1c7057759911fd5849926ffbd39a5b311849ca50d76a4674cc",
+      "css": "6127f0bdb18f8b945ef9eb2e4ed33a655b2338bc189aae2d309f506929229b77",
+      "dom": "67d1cd071d3e23d2e401560f478e0e3b2304fdc9505c60bb108a382f8f727dff",
+      "geometry": "f922accca63aae5fac98b69434cf7fd42c44f74a98300dc377fab4a7ef30cc4d",
+      "state": "ec91e9a2a445bed7f0b4035bfabbadb76b0bd1606c2b4f541042d2315eced946",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  }
+]

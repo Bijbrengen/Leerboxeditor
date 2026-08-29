@@ -20,9 +20,8 @@
   const alreadyChecked = params.get("auth_checked") === "1";
 
   const cfg = window.LEERBOX_EDITOR_CONFIG || {};
-  let base = String(cfg.apiBase || "").replace(/\/+$/, "");
+  const base = window.LeerpretSDKApiBase;
   if (!base) return;
-  if (!/\/api$/.test(base)) base += "/api";
 
   if (embedded) {
     window.LeerboxEditorAuthReady = Promise.resolve({ action: "allow", reason: "embedded" });
@@ -43,16 +42,12 @@
 
   function loadAuthClient() {
     if (window.LeerpretLogin) return Promise.resolve(window.LeerpretLogin);
-    return new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = base + "/sdk/auth-client/client.js?v=" + Date.now();
-      script.crossOrigin = "anonymous";
-      script.onload = () => window.LeerpretLogin
-        ? resolve(window.LeerpretLogin)
-        : reject(new Error("LeerpretSDK auth-client is niet beschikbaar."));
-      script.onerror = () => reject(new Error("LeerpretSDK auth-client kon niet worden geladen."));
-      document.head.appendChild(script);
-    });
+    return window.LeerpretSDKLoaderReady
+      .then(loader => loader.load(["api-client", "auth-client"]))
+      .then(() => {
+        if (window.LeerpretLogin) return window.LeerpretLogin;
+        throw new Error("LeerpretSDK auth-client is niet beschikbaar.");
+      });
   }
 
   let centralSdkClient = null;

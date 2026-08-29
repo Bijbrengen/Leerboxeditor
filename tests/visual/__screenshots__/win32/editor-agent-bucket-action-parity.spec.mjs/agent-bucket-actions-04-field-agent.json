@@ -1,0 +1,119 @@
+[
+  {
+    "actionId": "field-agent-token-dialog-open",
+    "control": ".field-agent-button[data-agent-field-path=\"metadata.work_name\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox-agent/status",
+          "query": {
+            "probe": "true"
+          },
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox/captures/e2e-fixture",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/auth/editor-access",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/simulator/datasets",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "63441af342f73f66d2d0c136366f88096a6f4fb9071bbbb575e4f411d180e072",
+    "output": {
+      "assets": "e92e04868be554893b311a61d4c94adb25b8c2cf6a056ea07f2b748440bdfdce",
+      "css": "99049c6ba7651a569cc9dec589dfde292a503d4c72cc957a888983f65a2a113c",
+      "dom": "c2fd50636a05e153bad1c3983309cfd8e39ac764aa22a89c0630a0916875dfec",
+      "geometry": "1f87b7e3da4662e5963d80895f924f0266aa22499273658dd2fa014f68a96c81",
+      "state": "d9978c2feabac32893b28d456bd2a02f6e93cfcc19171d6ef92e7de26bb8c559",
+      "svg": "600e397dd779feb89a1ae4054a3e247629ebde265554672f1a8fbec8ec43b46b"
+    }
+  },
+  {
+    "actionId": "field-agent-result-dialog-open",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "2b2addad5dd6f7aa666d2f8544127b771391d8aea7ef5ef3be3f52468036ff5b",
+            "summary": {
+              "bucketSourceIds": [],
+              "captureSha256": "9a2711b8a4815ee2106bab8d0038e8c1e534e675e5a492255cb56ef7a7363505",
+              "leerboxId": null,
+              "messages": [
+                {
+                  "characters": 280,
+                  "role": "user",
+                  "sha256": "cf7a8d50f1dc7c670bbed9303d7a712786118893240ec7673c1a64fa66fdbf95"
+                }
+              ],
+              "mode": "fill_field",
+              "role": "architect",
+              "useProjectBucket": false
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "69e1de91d2a7a3e2cca9d0426744655fd7afe9da236c1bd247c6160c6d4daa57",
+    "output": {
+      "assets": "7637ada34a113557edaaa95ef95e6383c685db8ea8db32e22427fe1f3eb1af18",
+      "css": "55def9e6d156546152ebe79b941b85d8080adbf454a511d1578770690c5fad28",
+      "dom": "d3dc2285408ff16ca6fc15b442effd7c8f0dd1db94db92cf2322f525e5425140",
+      "geometry": "56546a7ad9e82b441f30f3672a7a36efc3237e0841eca84493482c22972cdb92",
+      "state": "91d28ce763f35fe61d802c2d9b1866e3099166550ea0f3bb9282ea023d81ac2f",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "field-agent-result-closed-and-applied",
+    "control": "#agentCallResultDialog button[value=\"close\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "13b8f74268cf2412f8e2338a11d859972e783b114afa19c911cf09d280d17fe7",
+    "output": {
+      "assets": "04505b45db0c857dbabb0e40cfa5043f404d8957adf8b2484048c455a815ccab",
+      "css": "09fa74f0734000e36e63c110f454b0774fd73427f5048c683bef1f71936b7267",
+      "dom": "cb8d94e541e7bf94b75fab727669758ff1df2506af110238bf50f86297965ea6",
+      "geometry": "e5ec65af0d8315fc3db5fb2baea243547490f17409573b0e82c0d05a0c70e128",
+      "state": "930a2863cf69da216bfc7f516a153b397318eef83bffaa73ae339ab4f19effe1",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  }
+]

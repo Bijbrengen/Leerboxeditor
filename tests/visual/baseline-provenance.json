@@ -1,0 +1,2355 @@
+{
+  "schemaVersion": 5,
+  "capturedAt": "2026-08-28T22:06:54.060Z",
+  "platform": "win32",
+  "editorCommit": "bcc4b886dac2b804c225bc3b1208e5d9e89f9ecb",
+  "playwrightVersion": "1.62.1",
+  "comparison": {
+    "screenMaxDiffPixels": 45,
+    "pixelThreshold": 0.065,
+    "normalizedTestFonts": true,
+    "actionFingerprints": true,
+    "actionScreenshotSnapshots": true
+  },
+  "suites": {
+    "editor-screen-parity.spec.mjs": {
+      "artifactExtensions": [
+        ".png"
+      ],
+      "requiredExtensions": [
+        ".png"
+      ]
+    },
+    "editor-action-parity.spec.mjs": {
+      "artifactExtensions": [
+        ".json",
+        ".png"
+      ],
+      "requiredExtensions": [
+        ".json",
+        ".png"
+      ]
+    },
+    "editor-agent-bucket-action-parity.spec.mjs": {
+      "artifactExtensions": [
+        ".json",
+        ".png"
+      ],
+      "requiredExtensions": [
+        ".json",
+        ".png"
+      ]
+    }
+  },
+  "contracts": {
+    "actionCatalog": {
+      "schemaVersion": 1,
+      "sha256": "3183249b3a37c806817928bc584d050749f24c3bb98b4bf93d5f4a6ed4122918",
+      "sourceSha256": "407f79830d6173a724c551a45b594441e49fb47c8e0f3c964ad45c8113ec6ab7",
+      "scenarios": 38,
+      "staticControls": 229,
+      "dynamicFamilies": 19,
+      "inboundMessages": 9,
+      "outboundMessages": 6
+    },
+    "outputFingerprint": {
+      "schemaVersion": 3,
+      "sha256": "560b6e881be9b860996a71182c7998b63c5d6d3439d40be99acb2053f59f97a3",
+      "sourceSha256": "f67c1d2266fa3e5e8d0d5febabc413cc602f2efa6f5682a097b3dfdbdcacc7cc",
+      "cssProperties": 98
+    },
+    "screenshotComparison": {
+      "schemaVersion": 1,
+      "algorithm": "playwright-pixelmatch",
+      "settings": {
+        "threshold": 0.065,
+        "maxDiffPixels": 45
+      },
+      "sourceSha256": "0c48f64f74e89686c633dea9166380dbaebe7add5c8db7c56b708727d87d252a"
+    }
+  },
+  "engineManifest": {
+    "url": "http://127.0.0.1:47111/api/sdk/manifest.json",
+    "version": "5.20.0",
+    "sha256": "b6b0841428424971403a2375ee54cafd36241c0da6be57d8d06f1ccb5ce0b7c2",
+    "components": {
+      "sdk-loader": {
+        "integrity": {
+          "graph.js": "sha384-SKkGjO26LST0r3prk33WT/iWthXZwBlQ8UMANI1boAFyKqA02+Y94NbSBYY83IMU",
+          "loader.js": "sha384-dk5UI6Vqfba0kEVqTu0ujTwrmlCPntiw0vsfRRuTeZelZathwSFYwFrwLUR3qa5A"
+        }
+      },
+      "api-client": {
+        "integrity": {
+          "client.js": "sha384-uOCxMq9uei+ygepJLbNwU9ve7SK5c69HeJfQF3wxAyZpu31TVTjGjXWli77+eq2E"
+        }
+      },
+      "auth-client": {
+        "integrity": {
+          "client.js": "sha384-rlTsC/s4pOS79V+NfmqI4SOuwJ2PbQbWFNpKbKpBwE6ELZ9NW0fJSrVF1SqP0P3Z"
+        }
+      },
+      "editor-shell": {
+        "integrity": {
+          "mount.js": "sha384-DZ57Y9oyqz0QaAUkecEHp9pME7OuS4vZvtqyQr36PHZLuKSUWN7SJvqlsz552caN",
+          "css": "sha384-/iF5u7FV0I+c3+xEB7Z4Z/vOj3bu949oWTRVVX4HqoCEDg+3KoGhjgZcbU9zBwl0",
+          "template.html": "sha384-QxuUnw5DRRsqMQCCp+m4V/ae8bl0YGn4W0/cw4R3CvJ21kb0Q+bsHrDu3VQwJ5wW",
+          "contract.json": "sha384-tstxU5SLnQueylHJ22UDSWxAev88B8hHOd/HcUXzGCzqkJbWjsnHrHfxkWZhS1pG"
+        }
+      },
+      "editor-chrome": {
+        "integrity": {
+          "chrome.js": "sha384-Q9q0QdVpms4kd00fSd6UV1XZe0k355tMao3dD6+B9QyaSuSaNShehn42wUEGBTkZ",
+          "css": "sha384-jfP5E+mvXwt9FuktAsMG8KIj9QmD7m4+D1YiDkow7RidJzYebrrvf+HxUBiXONwd",
+          "template.html": "sha384-VKI78EA/G5NJDNrqGD6vZ3dcbXUeIUw5/X7PdsHGjGbQSc26tozR+0o0c6zxQtTD"
+        }
+      },
+      "lego-flow-map": {
+        "integrity": {
+          "renderer.js": "sha384-YhIj0rAQnpCOQI7LbEzYpqVDI85oTxBlIJOgX8R1TLA72YOogu6LzmHMN/emYZnh",
+          "styles.css": "sha384-R5xV6JHrD4rUYA+Qp1kmSpBMix4LXjyicOq/lA0jpJaAp+L815MlcRNZUTyXikBI"
+        }
+      },
+      "lego-spatial": {
+        "integrity": {
+          "module.js": "sha384-ibGeUNd8YjvZzY+f6X1afW7LBCgLtsPM8KKWCzMJyR5TncCMfwn1kIty9fFxbPFH"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "editor-action-parity.spec.mjs/actions-01-navigation-panels.json": {
+      "extension": ".json",
+      "bytes": 33045,
+      "sha256": "36a124af77d744e333f84c98bbcf762bbb4c972fc50a2051e276d3cf797c310c",
+      "jsonKind": "array",
+      "records": 57
+    },
+    "editor-action-parity.spec.mjs/actions-02-all-capture-fields.json": {
+      "extension": ".json",
+      "bytes": 39675,
+      "sha256": "a4322b7a370261c5d7b764620d76fec78efa41a1469e54f3bffa62424e083d8c",
+      "jsonKind": "array",
+      "records": 67
+    },
+    "editor-action-parity.spec.mjs/actions-03-authoring-map-cables.json": {
+      "extension": ".json",
+      "bytes": 23964,
+      "sha256": "01806998bcce73391327ecb94f11fff1865dfc050d8a006889ecc7c22a32160c",
+      "jsonKind": "array",
+      "records": 42
+    },
+    "editor-action-parity.spec.mjs/actions-04-files-prompts-simulation.json": {
+      "extension": ".json",
+      "bytes": 59948,
+      "sha256": "996b6322096d3db2bc9b4bae999c27d3d0d611636de0b2b652c55faba57cbf98",
+      "jsonKind": "array",
+      "records": 40
+    },
+    "editor-action-parity.spec.mjs/actions-05-clock-and-iframe.json": {
+      "extension": ".json",
+      "bytes": 44402,
+      "sha256": "2f350a2b72219b9dca99607ea56f35cc350ee27b4f0bff938272d5a7786f02fb",
+      "jsonKind": "array",
+      "records": 22
+    },
+    "editor-action-parity.spec.mjs/actions-06-persistence-existing-data.json": {
+      "extension": ".json",
+      "bytes": 24188,
+      "sha256": "94aaeba0c88ee881fd78a453e0c680a23ca8b7c4db5f9219c38f4761ad04ee16",
+      "jsonKind": "array",
+      "records": 7
+    },
+    "editor-action-parity.spec.mjs/actions-07-preview-chrome-library-twins.json": {
+      "extension": ".json",
+      "bytes": 32564,
+      "sha256": "009ed4b0a927f9cffde298ebf4cbff741b8be6fd419e8e661438f56bfb288807",
+      "jsonKind": "array",
+      "records": 14
+    },
+    "editor-action-parity.spec.mjs/architecture-field-leerbox-design-path-role-requirements-entry-object-id.png": {
+      "extension": ".png",
+      "bytes": 504902,
+      "sha256": "72ab65469229807dfdea9dbbb09642bc312ef228fcd988ed25f475283d09ddc5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/architecture-field-leerbox-design-path-role-requirements-exit-object-id.png": {
+      "extension": ".png",
+      "bytes": 507214,
+      "sha256": "27eafe44dc69067109cd77c57d769ee2ca20793767438fd002a9dbdd802712a9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/architecture-field-leerbox-design-path-role-requirements-resistance-object-ids.png": {
+      "extension": ".png",
+      "bytes": 505326,
+      "sha256": "2aa5da316f28dbbd034c988891ff41ec5006bc2c6260c1d4ef4a38d9d0d59e15",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/architecture-field-leerbox-design-path-role-requirements-success-object-ids.png": {
+      "extension": ".png",
+      "bytes": 507003,
+      "sha256": "9ecaa369c4c98a8ff698b81e4a9a950cc5d74de25f7308b531f6ca4abc36ef4e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dependency-delete-from-cable.png": {
+      "extension": ".png",
+      "bytes": 766769,
+      "sha256": "ef6e6635e2abcf44a8f91c994919f0193f22305304257c1b89c73197a08d22d9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dependency-edit-save-from-cable.png": {
+      "extension": ".png",
+      "bytes": 773889,
+      "sha256": "ed9a2fb372f34518d975ec93f3138eaeec346b5f3671521d35779435b8429298",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dependency-open-new.png": {
+      "extension": ".png",
+      "bytes": 589822,
+      "sha256": "d161f87686675d8e7c0ecbbbfec898510781ac85fb767ee8ace851b0fc123081",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dependency-save-new.png": {
+      "extension": ".png",
+      "bytes": 686253,
+      "sha256": "2bf6557314cbc10146e793593df05154f702899a057c5b249162e32241ef673a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dialog-cancel.png": {
+      "extension": ".png",
+      "bytes": 753760,
+      "sha256": "00e4e8eb6c450e45f2f57bea0d71a129904b57f9700c0baf9698aa48a35745e9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-dialog-close-icon.png": {
+      "extension": ".png",
+      "bytes": 686253,
+      "sha256": "2bf6557314cbc10146e793593df05154f702899a057c5b249162e32241ef673a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-object-delete.png": {
+      "extension": ".png",
+      "bytes": 653080,
+      "sha256": "48e2557c531d2dcbe0f027e342782d195caff742d879ba1283c5e92ae60b73fd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-object-open-card.png": {
+      "extension": ".png",
+      "bytes": 546357,
+      "sha256": "cd3e3e74ea2f30256cd93accafef90746ea630cf1f140da8938aaa2fffad2ba6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-object-open-new.png": {
+      "extension": ".png",
+      "bytes": 589493,
+      "sha256": "b14a16190a57092c3fc788b8e248f5f8aa84347f39bc7f6ad9b74c1a41e752d2",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-object-save-new.png": {
+      "extension": ".png",
+      "bytes": 663652,
+      "sha256": "8367077fd8b32c7aceb416ec23848cba9ef51e8e4622d1f9732471e8a2efa858",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-step-delete-from-cable.png": {
+      "extension": ".png",
+      "bytes": 770022,
+      "sha256": "2ceba0063bd3ef19e2f7aa9f4d5849f9827a3003cc3c41e5ab42fef73b041b9c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-step-edit-save-from-cable.png": {
+      "extension": ".png",
+      "bytes": 776505,
+      "sha256": "cc27c804eb2811b9f38d5209e94073a7a763eda4b8c40d9aa3984cd56690f0d8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-step-open-new.png": {
+      "extension": ".png",
+      "bytes": 513659,
+      "sha256": "7f70f4f59d09cd49268b5f8ff427b17863b723b67e726c56a2ec6d8950dddfa4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/block-step-save-new.png": {
+      "extension": ".png",
+      "bytes": 686263,
+      "sha256": "bd3651f7a2afe4fcb41965e6a6209c4fecf1b5b22234f1bacd5b9d26410f22e5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/cable-edge-open-dialog.png": {
+      "extension": ".png",
+      "bytes": 511817,
+      "sha256": "7b6f55c4d82b164a9b55c7da51ea24edb6dfeb10919e01f1a4bd19250c7bff39",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-advisor-ai-disable.png": {
+      "extension": ".png",
+      "bytes": 642765,
+      "sha256": "be65cf22dd7ad0bc4690330560a8793ccb1929e1658be106f7757b304f699e8b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-advisor-ai-enable.png": {
+      "extension": ".png",
+      "bytes": 686406,
+      "sha256": "63cabc1d9b49b0427ec2192bd25004d3ad1cd711cb96463825f3a7b6500617c6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-advisor-collapse.png": {
+      "extension": ".png",
+      "bytes": 686406,
+      "sha256": "63cabc1d9b49b0427ec2192bd25004d3ad1cd711cb96463825f3a7b6500617c6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-advisor-expand.png": {
+      "extension": ".png",
+      "bytes": 686406,
+      "sha256": "63cabc1d9b49b0427ec2192bd25004d3ad1cd711cb96463825f3a7b6500617c6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-advisor-open-agent.png": {
+      "extension": ".png",
+      "bytes": 642765,
+      "sha256": "be65cf22dd7ad0bc4690330560a8793ccb1929e1658be106f7757b304f699e8b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-report-close.png": {
+      "extension": ".png",
+      "bytes": 642765,
+      "sha256": "be65cf22dd7ad0bc4690330560a8793ccb1929e1658be106f7757b304f699e8b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-report-open.png": {
+      "extension": ".png",
+      "bytes": 648342,
+      "sha256": "d10e51779eb4f9d4ce29d69a710ffb1db105c0f032468f0693ecaef5c727a381",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-toolbox-collapse.png": {
+      "extension": ".png",
+      "bytes": 686406,
+      "sha256": "63cabc1d9b49b0427ec2192bd25004d3ad1cd711cb96463825f3a7b6500617c6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/canvas-toolbox-expand.png": {
+      "extension": ".png",
+      "bytes": 686406,
+      "sha256": "63cabc1d9b49b0427ec2192bd25004d3ad1cd711cb96463825f3a7b6500617c6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-1-participants-primary-target-group.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-10-participants-social-setting.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-11-metadata-domain.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-12-metadata-summary.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-13-leerbox-design-attraction-type.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-14-leerbox-design-learning-modes.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-15-leerbox-design-leerbox-principles.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-16-leerbox-design-material-mix.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-17-leerbox-design-box-climates.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-18-leerbox-design-good-practice-tags.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-19-game-design-game-genres.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-2-pedagogical-core-central-learning-goal.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-20-game-design-player-goal.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-21-game-design-win-state.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-22-game-design-fail-state.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-23-game-design-rules-summary.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-24-game-design-mechanics.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-25-game-design-dynamics.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-26-game-design-aesthetics.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-27-game-design-levels-or-progression.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-28-game-design-core-loops.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-29-game-design-challenge-curve.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-3-pedagogical-core-success-definition.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-30-game-design-onboarding.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-31-play-characteristics-recognizable-play-form.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-32-play-characteristics-play-theme-or-story.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-33-play-characteristics-core-mechanics.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-34-play-characteristics-rules-or-constraints.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-35-play-characteristics-freedom-degrees.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-36-play-characteristics-direct-feedback-loop.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-37-entry-and-orientation-first-visible-action.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-38-entry-and-orientation-minimal-start-instruction.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-39-entry-and-orientation-self-starting-signal.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-4-barriers-and-recovery-main-barrier.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-40-entry-and-orientation-self-explaining-cues.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-41-entry-and-orientation-proactive-invitation.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-42-measurement-event-contract-example-action-types.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-43-measurement-event-contract-result-values.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-44-simulation-definition-not-visible-to-engine.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-45-simulation-definition-realism-notes-for-contact-generation.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-46-measurement-privacy-notes.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-47-freedom-and-sequence-route-model.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-48-freedom-and-sequence-freedom-principle.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-49-freedom-and-sequence-preferred-sequence.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-5-metadata-work-name.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-50-freedom-and-sequence-free-choice-zones.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-51-freedom-and-sequence-forced-path-risk.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-52-freedom-and-sequence-variation-opportunities.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-6-metadata-leerbox-id.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-7-capture-mode.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-8-metadata-type.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/capture-field-9-metadata-status.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-advice-historical-noop.png": {
+      "extension": ".png",
+      "bytes": 551062,
+      "sha256": "e73eacdbcc3019d2c980698801ca397c5379bafd9b016f73865f00d3cb1b4487",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-chat-historical-control.png": {
+      "extension": ".png",
+      "bytes": 551042,
+      "sha256": "0a47280b918c643d4737706f9738e88b78d5b0d8b7e5ccc357c09e05d9201563",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-close.png": {
+      "extension": ".png",
+      "bytes": 525830,
+      "sha256": "46ecc76de892218e650be1371bbe755e2a3dbb39e746ce36c6a364f803a0eb2f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-open.png": {
+      "extension": ".png",
+      "bytes": 551199,
+      "sha256": "18a5a0c26713503ff8c74016d8e5934aa023f09341d5e87215b52e9e7c947110",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-scan-historical-noop.png": {
+      "extension": ".png",
+      "bytes": 551014,
+      "sha256": "d2241a77bf6bacbb63c64a674635648a01fc6947e3fd1fc58039f941b3ca56a3",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-advisor-warnings-historical-noop.png": {
+      "extension": ".png",
+      "bytes": 551067,
+      "sha256": "a99f4b15be37162bc039e9d5ae8f7e68e753c14052c0d1ecd2f5ead811cb88ee",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-back-link-historical-hidden-contract.png": {
+      "extension": ".png",
+      "bytes": 687777,
+      "sha256": "8a1b84abbd717972b7953365cfadf6502f7f8574785da6886715a321f8549145",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-hud-new-accept.png": {
+      "extension": ".png",
+      "bytes": 687777,
+      "sha256": "8a1b84abbd717972b7953365cfadf6502f7f8574785da6886715a321f8549145",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-hud-new-dismiss.png": {
+      "extension": ".png",
+      "bytes": 718353,
+      "sha256": "f24ff342c3f1d336f74469456939ed5cd512c2b2adb91a32851a8f0e51d9a339",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-hud-report-open.png": {
+      "extension": ".png",
+      "bytes": 721241,
+      "sha256": "e72fb6d221d3b9366447178c34d2968ec7aab14b56d93572a87875f9a445c58a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-menu-collapse.png": {
+      "extension": ".png",
+      "bytes": 523066,
+      "sha256": "884a7e318a6839f6d5d44f878615742d4591f8c59a5f8703e61f33fc5a9abe65",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-menu-expand.png": {
+      "extension": ".png",
+      "bytes": 525831,
+      "sha256": "0724b895843121c1cd8bec9d6c36062d767dfd702b5fd208fc4ee1d4cf181a48",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-preset-entry.png": {
+      "extension": ".png",
+      "bytes": 717282,
+      "sha256": "910683c6166343b36e52d6e5ebfcfb59886f1ff0634c013233171ceaf6d3591c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-preset-normal.png": {
+      "extension": ".png",
+      "bytes": 774954,
+      "sha256": "bc6f096c8789be4ce6b69ca76b10725660f5ca13260488068fbcdb91bfad963a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-preset-resistance.png": {
+      "extension": ".png",
+      "bytes": 781242,
+      "sha256": "8fa1df1f97de2b0e17b408fda0dd2df7568165d9249abdd588be147e5c9ad380",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-preset-success.png": {
+      "extension": ".png",
+      "bytes": 752472,
+      "sha256": "f0fc5975b9a6c89dd80ac2e8b5abb433732687f00b48dae8b3c602070082fe78",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-tool-flyout-close.png": {
+      "extension": ".png",
+      "bytes": 525830,
+      "sha256": "46ecc76de892218e650be1371bbe755e2a3dbb39e746ce36c6a364f803a0eb2f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-twin-popover-open.png": {
+      "extension": ".png",
+      "bytes": 693263,
+      "sha256": "453abad688829df31299deb8464c1d5c991e8fb3bea9ece20e22322044489fd4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-twin-switch-navigation.png": {
+      "extension": ".png",
+      "bytes": 680922,
+      "sha256": "088cf17dc51403ee7c1d1bc92915f568be71ffde4ed5ff9fc7f1ab0c8b7e97ad",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-1-description-none-none-beschrijving-bekijken.png": {
+      "extension": ".png",
+      "bytes": 567959,
+      "sha256": "8fb8b21d76781c05582a3056f4beda3b87f4fc28f057c59186f5c15545542e35",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-10-intake-entry-none-start-onboarding-en-eerste-actie.png": {
+      "extension": ".png",
+      "bytes": 242738,
+      "sha256": "8c69c550e681506c237f7a82122c0b2359a308a905a753f13ac09d50017afaff",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-11-description-resistance-none-weerstand-de-belangrijkste-barrie-re.png": {
+      "extension": ".png",
+      "bytes": 544346,
+      "sha256": "2491c393f8342289ea8b2cf9588f51d384665354c5ae57c052cf88dcea156f1a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-12-description-success-none-succes-de-succesdefinitie.png": {
+      "extension": ".png",
+      "bytes": 544277,
+      "sha256": "1f93eb2f704651d2fb30760033f8fd6fcd12924d591791bd179e662598c8aae3",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-13-build-none-architecture-leerarchitectuur.png": {
+      "extension": ".png",
+      "bytes": 502923,
+      "sha256": "693a3a08a4f39dffabfa10e078e249e8fb17bd8306f58960162ab5d050b1b592",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-14-build-none-statements-computertaal-statements.png": {
+      "extension": ".png",
+      "bytes": 499156,
+      "sha256": "dbcc849166eef32c26ea18699389a2c92122c5a5ba3f3f1c5c9263badaebc20d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-15-validation-none-none-controle-en-audit.png": {
+      "extension": ".png",
+      "bytes": 661533,
+      "sha256": "9d94bc20f896d098623a8f93f21ce34b0a409c55758690a8aec3e85462431fdd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-16-intake-measurement-none-sensoren-en-leerpret-meting.png": {
+      "extension": ".png",
+      "bytes": 526934,
+      "sha256": "b565c2ad86f210168fad1c4a9ef701007ece4ed230dc28e9f8e815c61d52864a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-2-sources-none-none-bronnen-importeren-en-downloaden.png": {
+      "extension": ".png",
+      "bytes": 675254,
+      "sha256": "9fe6769f6e810cae561d0ec3813238dc96539d60f53e25499351a3e7cf0b2935",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-3-build-none-latex-ontwerpplan.png": {
+      "extension": ".png",
+      "bytes": 544779,
+      "sha256": "3dfbc47247c4f5a7037d080e0a2210ad84bddd99425b270b3ce44c4de96fae36",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-4-intake-overview-none-infobox-type-leerbox-en-sociale-setting.png": {
+      "extension": ".png",
+      "bytes": 248642,
+      "sha256": "6f253d08047d1006375a1f14c0a5362a5c157aa43b1c7158d03ee79d8063fc34",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-5-description-mission-none-missie.png": {
+      "extension": ".png",
+      "bytes": 542734,
+      "sha256": "8f1207910f0585a48be4b6c78d634e731a7cf0cdf8fff4d341276ab1dcb22f36",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-6-description-vision-none-visie-gewenste-situatie-en-onderwijskundige-opvattingen.png": {
+      "extension": ".png",
+      "bytes": 544416,
+      "sha256": "7641c79d6e85540c7ca9cbd16337180261783e70cab38bc9a02e687e7f052b57",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-7-description-strategy-none-strategie-aanpak-en-ontwerp.png": {
+      "extension": ".png",
+      "bytes": 538827,
+      "sha256": "682979ebb1683c4ccfb22ece02a181e9652ecad639ba28f425cda2bd82b85029",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-8-description-goals-none-doelen-leerdoelen-en-leerdoelhie-rarchie.png": {
+      "extension": ".png",
+      "bytes": 543339,
+      "sha256": "67220de58b2ec0fa8cb53e40ba3bcc68b782198ae7a5d3b3dda41226f6a42a10",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/chrome-view-9-intake-game-none-game-spelregels-en-speelruimte.png": {
+      "extension": ".png",
+      "bytes": 253768,
+      "sha256": "66cda9c76abebede7c093036c0c283c1ede5317f9b2237c1468728c6c8a53a6f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-actions-keyboard-arrowdown.png": {
+      "extension": ".png",
+      "bytes": 687175,
+      "sha256": "0be573ce8f1b8bda29f27035c7ad16a045292d4d151ebdc083ebe148b4e6d28a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-actions-keyboard-arrowleft.png": {
+      "extension": ".png",
+      "bytes": 687061,
+      "sha256": "27ff713b725709ee1322bb1b03a844d9629534d94ff6ac55945b9f512314f5bb",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-actions-keyboard-arrowright.png": {
+      "extension": ".png",
+      "bytes": 686774,
+      "sha256": "adffed88689b1206a1ff1de5c209c4237d7851f913e22a44393c3142bc0bbc6d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-actions-keyboard-arrowup.png": {
+      "extension": ".png",
+      "bytes": 687175,
+      "sha256": "0be573ce8f1b8bda29f27035c7ad16a045292d4d151ebdc083ebe148b4e6d28a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-actions-pointer.png": {
+      "extension": ".png",
+      "bytes": 686815,
+      "sha256": "62c58ec098c06c523769af2423f3535b738dec2de63d8c05b3f84c0a14f0d5b5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-duration-keyboard-arrowdown.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "e4f8921a1b6b526984ce8090f4b0b04addff0d0af543f617c6ed2c4bfb3edcbe",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-duration-keyboard-arrowleft.png": {
+      "extension": ".png",
+      "bytes": 685863,
+      "sha256": "c9d9cfc878b65386eedbdd7381b9a1fef01669b8fc8cbbc31ab2e971b23c5e22",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-duration-keyboard-arrowright.png": {
+      "extension": ".png",
+      "bytes": 686962,
+      "sha256": "4b86ad31cea0cf9b4da17a8f4e9eb770f249902885a804b75a4f8e12082a2a26",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-duration-keyboard-arrowup.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "e4f8921a1b6b526984ce8090f4b0b04addff0d0af543f617c6ed2c4bfb3edcbe",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-duration-pointer.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-number-change.png": {
+      "extension": ".png",
+      "bytes": 687749,
+      "sha256": "a7284a41b6621b5e1ed8bbd80ca250b0bb29144ff1c15908e11258cbe8b78b11",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/clock-play-without-data.png": {
+      "extension": ".png",
+      "bytes": 580024,
+      "sha256": "893a93a66af72b16aff368b52593725c1e75439e708cf70c6e388bdc55568f7a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/download-ai-prompt.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/download-export-json.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/existing-data-run-and-complete.png": {
+      "extension": ".png",
+      "bytes": 577858,
+      "sha256": "f2fd91390e516feb00c66052c25beb5094b259c3312d5633ea7d926f754d2d87",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/existing-data-use-file.png": {
+      "extension": ".png",
+      "bytes": 570606,
+      "sha256": "9a2350ce4569789c01f13a0a7260c58521fa348b99fd1b48dc9af30c60d7dabe",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/existing-data-use-preview-events.png": {
+      "extension": ".png",
+      "bytes": 570307,
+      "sha256": "228eb33fc6949e8953cb7a28af9c6230366a8dabc03d35aee93c13b9babfd348",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/file-import-capture-capture-wrapper.png": {
+      "extension": ".png",
+      "bytes": 600335,
+      "sha256": "84f65a042f394283c7e04893d9870e2451e0443def9cc319ab7608509892c632",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/file-import-capture-direct.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/file-import-capture-leerbox-capture-wrapper.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/file-import-description-markdown.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/file-import-invalid-alert-dit-json-bestand-kon-niet-als-leerbox-capture-worden-gelezen.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/history-close.png": {
+      "extension": ".png",
+      "bytes": 500362,
+      "sha256": "0dfd131a0beb6c2cf77a57d10380a1f9c374398098752463a23fcc11a21660b8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/history-open-loaded.png": {
+      "extension": ".png",
+      "bytes": 508321,
+      "sha256": "141fe11042aeeb7c7381faa878e4ce8acc251e89ecb22b48b42a7dcd1a320554",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/history-restore-version.png": {
+      "extension": ".png",
+      "bytes": 501823,
+      "sha256": "d85b4e9c3d3bd722813d2642dd2486ea33797ff78ec5c86a3e21d5d829f182c5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-add-library-item-default.png": {
+      "extension": ".png",
+      "bytes": 554588,
+      "sha256": "580e8b46d8a53333418eaad9e98cf935f7994a1aee9e8c76fdd5ecb70485dad9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-add-object-preset-entry.png": {
+      "extension": ".png",
+      "bytes": 532089,
+      "sha256": "f7558dc85145bf6c219e7983ad5ff8d058f3f4e1230d60d17cf249695eb5b42f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-click-control-promptbutton.png": {
+      "extension": ".png",
+      "bytes": 440541,
+      "sha256": "efb19f40a547dd2088a7a3f8dbe0493c9e65bda4f23b92c1b29da5207b446b74",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-close-overlays-default.png": {
+      "extension": ".png",
+      "bytes": 526845,
+      "sha256": "a07c6ba61ae1a617544d49cc62c852b0e6831bcee09a100338cd1a85f27596e8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-connection-mode-conditional.png": {
+      "extension": ".png",
+      "bytes": 560147,
+      "sha256": "58211b28775153cd30cb9827ac6451f5383b6df382045fc42db1cd65672c2452",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-generate-preview-default.png": {
+      "extension": ".png",
+      "bytes": 560147,
+      "sha256": "58211b28775153cd30cb9827ac6451f5383b6df382045fc42db1cd65672c2452",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-simulation-control-pause.png": {
+      "extension": ".png",
+      "bytes": 560147,
+      "sha256": "58211b28775153cd30cb9827ac6451f5383b6df382045fc42db1cd65672c2452",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-start-cable-default.png": {
+      "extension": ".png",
+      "bytes": 560147,
+      "sha256": "58211b28775153cd30cb9827ac6451f5383b6df382045fc42db1cd65672c2452",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-in-leerpret-editor-view-default.png": {
+      "extension": ".png",
+      "bytes": 526841,
+      "sha256": "65b2da285d7631ee9ea92fa2b18cab7e613b8c7c8bf4daaebf23c35c4f939ac8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/iframe-reject-unknown-click-control.png": {
+      "extension": ".png",
+      "bytes": 560147,
+      "sha256": "58211b28775153cd30cb9827ac6451f5383b6df382045fc42db1cd65672c2452",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/inspector-drawer-1-toggle.png": {
+      "extension": ".png",
+      "bytes": 766769,
+      "sha256": "ef6e6635e2abcf44a8f91c994919f0193f22305304257c1b89c73197a08d22d9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/inspector-drawer-2-toggle.png": {
+      "extension": ".png",
+      "bytes": 766769,
+      "sha256": "ef6e6635e2abcf44a8f91c994919f0193f22305304257c1b89c73197a08d22d9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/intake-panel-design.png": {
+      "extension": ".png",
+      "bytes": 536260,
+      "sha256": "a3328262929746ddab21e06d92e8f5fb10c9fab899099edf4208d1fb9f9eeb64",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/intake-panel-entry.png": {
+      "extension": ".png",
+      "bytes": 581913,
+      "sha256": "a8c5c95208eb607311dde6777b17a70d302f83a7007978a703894f3337e28352",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/intake-panel-game.png": {
+      "extension": ".png",
+      "bytes": 525233,
+      "sha256": "3736635420bfc69d52fe71d0446a9c86a4872d84f9ae790694b987547e880a39",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/intake-panel-measurement.png": {
+      "extension": ".png",
+      "bytes": 525831,
+      "sha256": "0724b895843121c1cd8bec9d6c36062d767dfd702b5fd208fc4ee1d4cf181a48",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/intake-panel-overview.png": {
+      "extension": ".png",
+      "bytes": 588104,
+      "sha256": "1ebc3ce680aa150c4e7772407cf41ad11822c6091c5a24bae4c6a91b939da55f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/json-output-copy.png": {
+      "extension": ".png",
+      "bytes": 362008,
+      "sha256": "772ab6ac43f4a6df56ccd55e2f5af517ce31902eb612d1fdae3c448f0d400488",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/json-output-download-blueprint.png": {
+      "extension": ".png",
+      "bytes": 362008,
+      "sha256": "772ab6ac43f4a6df56ccd55e2f5af517ce31902eb612d1fdae3c448f0d400488",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/language-nl-change.png": {
+      "extension": ".png",
+      "bytes": 642771,
+      "sha256": "65ae96e8a1eaeead3061d46e2c9d047a2724996d37ef8f46f28e0b8ccf49388c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/library-category-archetypes-open.png": {
+      "extension": ".png",
+      "bytes": 690202,
+      "sha256": "1fadcc606c0f83bc30b41f7325a34e261609524a1d3e8e36f668c09700f4f7d7",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/library-category-elements-open.png": {
+      "extension": ".png",
+      "bytes": 685034,
+      "sha256": "1dde2dea2ceb3b1ce74d12765a19ddb116485005aeca690c86b4844446e88931",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/library-category-learning-open.png": {
+      "extension": ".png",
+      "bytes": 719043,
+      "sha256": "c5e9ff23202195f9d7220feb2d8dcf68d9b57fadd89dee79da9df275e6dcab02",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/library-item-add-from-visible-palette.png": {
+      "extension": ".png",
+      "bytes": 717209,
+      "sha256": "6154e636c4335fc8c0432bd63234175e1651819dbd5fabab4db947e1bb80acdd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-conditional-node-to-node.png": {
+      "extension": ".png",
+      "bytes": 740355,
+      "sha256": "5163cd7c854c42bec2eb6aebcad2a130d6ff62541e3b0e01c9dcfd28cd3df439",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-conditional-stud-cancel-escape.png": {
+      "extension": ".png",
+      "bytes": 739993,
+      "sha256": "530a8b26861b3fc9fdd28743b4b89905289dd1d65099c73c9fe16f1552b9d6b0",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-conditional-stud-live-preview.png": {
+      "extension": ".png",
+      "bytes": 740439,
+      "sha256": "131aa77dffee91c11fa54c6e03d8227b71ddab568150ad03a82de3cb7622e4ba",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-conditional-stud-to-stud.png": {
+      "extension": ".png",
+      "bytes": 740030,
+      "sha256": "0228411c40020f242eaeabd7e65a31bd9ee1273e767abb62951865017d056e09",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-cancel-canvas.png": {
+      "extension": ".png",
+      "bytes": 744061,
+      "sha256": "b693832890a36c325cae2ae038b19628ff5747f8e810ad79ac87585c59483e32",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-cancel-escape.png": {
+      "extension": ".png",
+      "bytes": 744061,
+      "sha256": "b693832890a36c325cae2ae038b19628ff5747f8e810ad79ac87585c59483e32",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-cancel-same-node.png": {
+      "extension": ".png",
+      "bytes": 744061,
+      "sha256": "b693832890a36c325cae2ae038b19628ff5747f8e810ad79ac87585c59483e32",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-live-rubberband.png": {
+      "extension": ".png",
+      "bytes": 740390,
+      "sha256": "cb912b1951b2db2e3b43defca1c7e0781d30f4ba1140650bbc34f7ac0adb41c5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-node-to-node.png": {
+      "extension": ".png",
+      "bytes": 738107,
+      "sha256": "854093c6c65073155fba458ea1cef0a4b7db8c540d430fdf556c2b6d640f97b8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-stud-live-preview.png": {
+      "extension": ".png",
+      "bytes": 740200,
+      "sha256": "4fb45e7b7986559a1b8e271dfd5767d5d6e7e96a9a2c6775eaa3ac7495b81099",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/link-route-stud-to-stud.png": {
+      "extension": ".png",
+      "bytes": 740186,
+      "sha256": "3c18d47d567d7fa33d81c7dc78d48f623a4726fceb34c243a3794b5aa54083fe",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/navigation-initial.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/new-capture-confirm-accept.png": {
+      "extension": ".png",
+      "bytes": 596762,
+      "sha256": "de1d4b26e3319e0f373d7d7da72318d26d5eb167364693eec298665847d546b7",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/new-capture-confirm-dismiss.png": {
+      "extension": ".png",
+      "bytes": 567682,
+      "sha256": "3d28960ee070f74ae3863ed26fabaf7b50c67a2fd3737d5010d2511478491e90",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/node-doubleclick-edit-dialog.png": {
+      "extension": ".png",
+      "bytes": 593056,
+      "sha256": "87676e4cf2e236bfb1771387782eecb5582643a400b22c187cc6b78241693c17",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/node-drag-over-threshold.png": {
+      "extension": ".png",
+      "bytes": 753781,
+      "sha256": "9531abbe087ab773127359a361352abd640cf7cf775256a61710f3a46853cb82",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/palette-panel-close-and-publish.png": {
+      "extension": ".png",
+      "bytes": 717209,
+      "sha256": "6154e636c4335fc8c0432bd63234175e1651819dbd5fabab4db947e1bb80acdd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/persistence-autosave-field-edit.png": {
+      "extension": ".png",
+      "bytes": 587641,
+      "sha256": "c936a94818c337659d42087c743fb94f3605f061053c3c0073b3f7224c302660",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-download-json.png": {
+      "extension": ".png",
+      "bytes": 535300,
+      "sha256": "9d2fa45109afb87c8958f7d4956cc047bc530e6a38e7c40d1f37551b4a1a3784",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-download-pdf.png": {
+      "extension": ".png",
+      "bytes": 461639,
+      "sha256": "c053f0b986d79b428a92aab61e63d5321cc65ba43252663fd17f35d7720b644b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-download-source.png": {
+      "extension": ".png",
+      "bytes": 481523,
+      "sha256": "ff9d9b6bb05516272bc7550641fe853ba7a6e8c0584969ac2cfb0d2b8f7a3b06",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-view-json.png": {
+      "extension": ".png",
+      "bytes": 535242,
+      "sha256": "c2ddaf43ff65b45ca0b6663398e9ec7bc429a4bfe7ebfc8c41505c3c72aef15b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-view-pdf.png": {
+      "extension": ".png",
+      "bytes": 461589,
+      "sha256": "4e668ca6e03719e421331649ca510ed64ac42a309881c41e49c63b189a3452f8",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/plan-view-source.png": {
+      "extension": ".png",
+      "bytes": 481484,
+      "sha256": "de91669272b9ecd7d076f70f73665472f6741f2937af9dc97e2f5ce42ee275fa",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/preview-from-hud.png": {
+      "extension": ".png",
+      "bytes": 718082,
+      "sha256": "435f5aca7bd6df3b7a8924a8fdf9bc89ba8cd1d629c853ff4335d9a5d2995040",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/preview-from-inbound-contract.png": {
+      "extension": ".png",
+      "bytes": 718082,
+      "sha256": "435f5aca7bd6df3b7a8924a8fdf9bc89ba8cd1d629c853ff4335d9a5d2995040",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/prompt-dialog-copy.png": {
+      "extension": ".png",
+      "bytes": 448484,
+      "sha256": "9451ed6fda08966f85a07c1bf8bef8c6feb84ec79babca272e69adfd411a1b46",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/prompt-dialog-done-close.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "ac5ef4d69b7e64ba8e881bf249fb1d3ca40835d237878fd79a154b7bcba42d2c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/prompt-dialog-icon-close.png": {
+      "extension": ".png",
+      "bytes": 600337,
+      "sha256": "678d5dcd181b1fd7e8f140e68552bd986967c367c252407a5ebfda7d4646df77",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/prompt-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 449066,
+      "sha256": "0dfa654e4b9e3c197d357802a420869803a287744889ca2fb2f28ccbd6e4c63a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/report-close-after-route.png": {
+      "extension": ".png",
+      "bytes": 766769,
+      "sha256": "ef6e6635e2abcf44a8f91c994919f0193f22305304257c1b89c73197a08d22d9",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/report-route-1-highlight.png": {
+      "extension": ".png",
+      "bytes": 739373,
+      "sha256": "8c41c07d89fb42131cf4e42bcb3306155e6689c6a74621f70712ff121f0bb349",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/report-route-2-highlight.png": {
+      "extension": ".png",
+      "bytes": 739335,
+      "sha256": "fccc765b502426c9a1a74a1ebb8e3c66515c110500cf919e4fda5660ec0f4602",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-archetype-verkenner.png": {
+      "extension": ".png",
+      "bytes": 563266,
+      "sha256": "780b4a87bafd3c321913be695da9efcd573f10237322132c952338e4e359eb5e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-archetype-verlater.png": {
+      "extension": ".png",
+      "bytes": 563317,
+      "sha256": "55f2d15ec837817b100e984481ebb62cac6988c759f4e99760ed4dd82b2691fc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-archetype-veroveraar.png": {
+      "extension": ".png",
+      "bytes": 563021,
+      "sha256": "97baf7538ddf2642ed9d60698d366ace03709622ee49eb4a023382e2deb05227",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-archetype-verwerver.png": {
+      "extension": ".png",
+      "bytes": 563193,
+      "sha256": "24dff99b4b97f79fa36e168d2e3bade30bee7a88deef7f2f0ea36b7f2668d368",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-archetype-volger.png": {
+      "extension": ".png",
+      "bytes": 563493,
+      "sha256": "a48ca2c87a26255030d7f6f8e3127b0a630dca2539e6d045ffbcc141295d1b99",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-parameters-cancel.png": {
+      "extension": ".png",
+      "bytes": 570945,
+      "sha256": "625e23684855a56493977e355b6cb867fd84ba2e195c67596bdb54b69bd478b5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-parameters-icon-close.png": {
+      "extension": ".png",
+      "bytes": 567682,
+      "sha256": "3d28960ee070f74ae3863ed26fabaf7b50c67a2fd3737d5010d2511478491e90",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-parameters-open.png": {
+      "extension": ".png",
+      "bytes": 463445,
+      "sha256": "e63758ab2450498f6012298242af6b0daa3a4f925b2c1c3c8fcaec9e380300f4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-profile-group.png": {
+      "extension": ".png",
+      "bytes": 562818,
+      "sha256": "08918027f5f44b66cf48f9e59096aee460eb55b8199bd99234e5427c8bffa21b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-profile-individual.png": {
+      "extension": ".png",
+      "bytes": 562887,
+      "sha256": "e1e3e39eb8cad1b2ef1e80a70e456d39569af0baa5e692cd0c194d8d26c18f1d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-prompt-copy.png": {
+      "extension": ".png",
+      "bytes": 386457,
+      "sha256": "06a4f490ccd9d4ff8ca9770c6610ae898098926e5e046e8aa1a1aa91255fe660",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-prompt-created.png": {
+      "extension": ".png",
+      "bytes": 386453,
+      "sha256": "126a8079602489a0b9c1a106c851c5ca788adc1250a7651fd1341bbe2ba4b18f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-prompt-done-close.png": {
+      "extension": ".png",
+      "bytes": 567681,
+      "sha256": "c3b4a19cc176a09488207248a0e6d6d0d539a00038eee97766e2aaf108e50fd5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-prompt-icon-close.png": {
+      "extension": ".png",
+      "bytes": 567682,
+      "sha256": "3d28960ee070f74ae3863ed26fabaf7b50c67a2fd3737d5010d2511478491e90",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/simulation-run-report.png": {
+      "extension": ".png",
+      "bytes": 568251,
+      "sha256": "360574f996e4546c98f3fc824ab3b5681d0ca728217ee0863229411f0e437f50",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/standalone-toolbox-native-drag-to-grid.png": {
+      "extension": ".png",
+      "bytes": 671081,
+      "sha256": "a5547a26dd88763c4bb2cd767ca618a981093579a9011152610cfaf7a4368b54",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-discoveryinput.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-rawdescriptiontext.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicgoals.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicgoalsactions.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicmission.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicmissionactions.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicstrategy.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicstrategyactions.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicvision.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-field-strategicvisionactions.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/strategic-phase.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/testdata-file-valid.png": {
+      "extension": ".png",
+      "bytes": 562923,
+      "sha256": "31b3a83ba0eff638e7d7cf4d4136f470f399565f4a7d77f97237e312d559b041",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/testdata-text-invalid-fields.png": {
+      "extension": ".png",
+      "bytes": 551443,
+      "sha256": "eba58c37d71d3f9ad4bc4b63fb7f96cae1d5bbd8c590f2a2dee92a692692d60f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/testdata-text-invalid-json.png": {
+      "extension": ".png",
+      "bytes": 548500,
+      "sha256": "78587d735a4fba43d8b0e88a46e2d1c81bd24e612202539e9919c96751c7d6cc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/testdata-text-valid.png": {
+      "extension": ".png",
+      "bytes": 562923,
+      "sha256": "31b3a83ba0eff638e7d7cf4d4136f470f399565f4a7d77f97237e312d559b041",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/toolbox-doubleclick-entry.png": {
+      "extension": ".png",
+      "bytes": 761542,
+      "sha256": "01473702b340e52796d588ffc7794db93a4ca2315754f8878d473b149d058312",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/toolbox-doubleclick-normal.png": {
+      "extension": ".png",
+      "bytes": 708064,
+      "sha256": "a5d42f98939a0ba625399aae181269c54ca3fd0f42efc6079b00dd377576e42c",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/toolbox-doubleclick-resistance.png": {
+      "extension": ".png",
+      "bytes": 732998,
+      "sha256": "fbd126a4c71cc7ec54a92028f437985cb7940fcd6ba77399abef8dea50bdef83",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/toolbox-doubleclick-success.png": {
+      "extension": ".png",
+      "bytes": 745552,
+      "sha256": "b7b43dc119c3f3f7201190919b6313621d44cd90387121e42c226e7b62fbec24",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/validation-close.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-agent.png": {
+      "extension": ".png",
+      "bytes": 642770,
+      "sha256": "6fe733b6d0aad97977ad1bf3738713c4c6d4ae272012eab40d0781d13828bb0d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-build.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-description.png": {
+      "extension": ".png",
+      "bytes": 563732,
+      "sha256": "7605d1714d0573405ee00b29883e6b8ee33e7484d3ea4772916543b5aa36c3f5",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-intake.png": {
+      "extension": ".png",
+      "bytes": 588104,
+      "sha256": "1ebc3ce680aa150c4e7772407cf41ad11822c6091c5a24bae4c6a91b939da55f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-json.png": {
+      "extension": ".png",
+      "bytes": 599390,
+      "sha256": "a2445d6ddd5b259ba7f3a1a42bd51c9c6e0ee6e92f9905d2c56b81a9f6693218",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-simulation.png": {
+      "extension": ".png",
+      "bytes": 579128,
+      "sha256": "2685dfc6489eab25bf68fcbe045dc7765e79fb8cbb9c2e21a750128a5ea97170",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-sources.png": {
+      "extension": ".png",
+      "bytes": 673961,
+      "sha256": "6dae64c8255442c0cf91abe009349b1280d1873a688c76853d2758d2adf9aa2e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workbench-validation.png": {
+      "extension": ".png",
+      "bytes": 660401,
+      "sha256": "e4bbfe24842460f7d98bc28d2f644d49bbde7d96565cbfd3a6ab10ecd86fc1b4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workflow-panel-close-and-publish.png": {
+      "extension": ".png",
+      "bytes": 717209,
+      "sha256": "6154e636c4335fc8c0432bd63234175e1651819dbd5fabab4db947e1bb80acdd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-architecture.png": {
+      "extension": ".png",
+      "bytes": 501824,
+      "sha256": "88c8bfecc3a4e40811c2bed5f81f889d3b70ea31578d02f04e36b614cc68ff69",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-close-1.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-close-2.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-close-3.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-latex.png": {
+      "extension": ".png",
+      "bytes": 543728,
+      "sha256": "b31715738c45ab1d1b7b1f9dafa7532cb7e53c70dd8dab977abebe5dbb2bce2f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-statements.png": {
+      "extension": ".png",
+      "bytes": 498035,
+      "sha256": "5d88299286cad0b095575847198a09c483c95988cd8c0a8909927d33cfc31b15",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-action-parity.spec.mjs/workspace-vat.png": {
+      "extension": ".png",
+      "bytes": 686411,
+      "sha256": "40c283ae8b1d97b77ab941b57205fa221c3b7d72208dea6e26176189b068e5e4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-bucket-actions-01-import-download.json": {
+      "extension": ".json",
+      "bytes": 22352,
+      "sha256": "6b0bac7005cf56b8632fd0be2bb8508b52cbf979a00c3dd0c4d7f61d5dbc1f8e",
+      "jsonKind": "array",
+      "records": 12
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-bucket-actions-02-conversation-apply.json": {
+      "extension": ".json",
+      "bytes": 19793,
+      "sha256": "8869b39911f3a5942cb92d5a4d79a893080254d551962ee11af7fc8f6e662ea0",
+      "jsonKind": "array",
+      "records": 16
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-bucket-actions-03-technologist-trace.json": {
+      "extension": ".json",
+      "bytes": 4516,
+      "sha256": "e75e22ca3899c46194fa667971cd6d403532148c2b927e661da99a5691a17be6",
+      "jsonKind": "array",
+      "records": 3
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-bucket-actions-04-field-agent.json": {
+      "extension": ".json",
+      "bytes": 4238,
+      "sha256": "41c8e9020b7db7794965d333eab6cb7c5371261afea201e3f1933c8b6f03b004",
+      "jsonKind": "array",
+      "records": 3
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-bucket-actions-05-source-fill.json": {
+      "extension": ".json",
+      "bytes": 16653,
+      "sha256": "7da5433e51cd3ac95f2e8aad19f159c79261e4c3cf7f9b5d0550be7c01017c67",
+      "jsonKind": "array",
+      "records": 12
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-capture-applied.png": {
+      "extension": ".png",
+      "bytes": 309364,
+      "sha256": "065240a375f88d838393c7d8b5553636156e4d4ee1a83f175a9cf18442aaec0b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-capture-mode-free-input.png": {
+      "extension": ".png",
+      "bytes": 351716,
+      "sha256": "133e8b8d310fb3979a13cdc948b24e2f28b6c6cce12974537a3881df80877593",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-capture-send-confirmed.png": {
+      "extension": ".png",
+      "bytes": 319330,
+      "sha256": "5d372661182d544ab0eda6e903197608ada4d93ca5b6ddba9a1be625df1cc1b1",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-conversation-reset.png": {
+      "extension": ".png",
+      "bytes": 352300,
+      "sha256": "b576d5229f2775ad8dc5f4703edafd43d48aea9b80295112a8354d657e75c16a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-document-drawer-closed.png": {
+      "extension": ".png",
+      "bytes": 357077,
+      "sha256": "8a5dc51374b14149c4f5127f51ab88e7bd475c2dc0f9e75cf987f56d522f725d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-document-drawer-open.png": {
+      "extension": ".png",
+      "bytes": 357083,
+      "sha256": "2a82f6060232babb5b6586eb83b9f46b89607eae88e2db26045368052dda8453",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-panel-closed.png": {
+      "extension": ".png",
+      "bytes": 675773,
+      "sha256": "2ec53d5998d9e72fd789c8fc686127d221bfc792bb517b58bc0c85ab21782582",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-source-consent-disabled.png": {
+      "extension": ".png",
+      "bytes": 357196,
+      "sha256": "2d5015f8f2cb0b0874cddeba38bc2edf2bb055f590f24eda8a1464cea0d7349d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-source-consent-enabled.png": {
+      "extension": ".png",
+      "bytes": 357077,
+      "sha256": "8a5dc51374b14149c4f5127f51ab88e7bd475c2dc0f9e75cf987f56d522f725d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-template-field-filled.png": {
+      "extension": ".png",
+      "bytes": 342121,
+      "sha256": "ed8011029dc5c42cd30afe08fec37cf7a2963af2c648b4d7b3389fb09d01940d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-template-mode-selected.png": {
+      "extension": ".png",
+      "bytes": 342146,
+      "sha256": "322706673d91f386562e4dc80ed915944366b40423a7b3b191124b9a020f6dd6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-template-send-token-cancelled.png": {
+      "extension": ".png",
+      "bytes": 329572,
+      "sha256": "cff9611cc1f50161f1f575d10de98fa5348fa2eb16b9f2f1f6beffcd42c792c4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-testdata-applied.png": {
+      "extension": ".png",
+      "bytes": 299837,
+      "sha256": "f53ce5fd3511593e3abbd0249d7b25f0b1aba408982c23630715a5d696efa56f",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-testdata-mode-free-input.png": {
+      "extension": ".png",
+      "bytes": 261125,
+      "sha256": "eb65f0b16d81cd530037385dee1e1b7186ebf0101a962e32feae8edcef48be11",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-testdata-send-confirmed.png": {
+      "extension": ".png",
+      "bytes": 294605,
+      "sha256": "a4f731fee7307dd7d33b01502b13cb471dca12545d117d42bb6c2cdbe53bef05",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/agent-view-loaded.png": {
+      "extension": ".png",
+      "bytes": 352018,
+      "sha256": "60ea8dffb43c6755e88870e6057f0e4fe10e90aba665ba6f49535a945d97f2a1",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-agent-view-loaded.png": {
+      "extension": ".png",
+      "bytes": 642764,
+      "sha256": "49951d4cafe4ca985bbbcddc0a7aa47f12505108cfa730c351aec785c1cbd685",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-document-filechooser-import.png": {
+      "extension": ".png",
+      "bytes": 604714,
+      "sha256": "a32992d466275f8c5a00b5b53ae9ae445a2d85437786c2fcc0a7ed9bc1b81745",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-drawer-close.png": {
+      "extension": ".png",
+      "bytes": 647839,
+      "sha256": "20c25dd85fa1e1dcdbf1697058ae80650928b98d3d9f903875848ec8d39788b3",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-drawer-open.png": {
+      "extension": ".png",
+      "bytes": 603725,
+      "sha256": "ac2e837c642a93411205f3633b0c9b5c8894f38c45fdc31e80e479d1dfee7b92",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-legacy-source-controls-unreachable.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-panel-close.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-repository-prompt-import.png": {
+      "extension": ".png",
+      "bytes": 612024,
+      "sha256": "e19d08ad03af65d01e6a3bb7ec13d2a0ae9284b8e01c2f43d821d37a6ce644bb",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-source-checkbox-checked.png": {
+      "extension": ".png",
+      "bytes": 603752,
+      "sha256": "05363708002f5789bc90c40f714d992d4621af635e9b4ae6dcf1c32e6c16cbbc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-source-checkbox-unchecked.png": {
+      "extension": ".png",
+      "bytes": 601214,
+      "sha256": "5ca85fed33a6952e8f0ec24eaf7624adf29ffbcf4c73fd09491e2a22eb2babe4",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-source-download.png": {
+      "extension": ".png",
+      "bytes": 603768,
+      "sha256": "18f90e48412caa28b43f79a1c3d9d6f6a95f9fb6f9afb8d0a5d2f2a553725786",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-website-prompt-import.png": {
+      "extension": ".png",
+      "bytes": 617191,
+      "sha256": "fe55efe9e95d9a8733edaa7f171b4821dd8717c304f4a4f7a8814e49e4664fdc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/bucket-zip-filechooser-import.png": {
+      "extension": ".png",
+      "bytes": 611814,
+      "sha256": "fd0b5dfbf50b78578b73c0d563b9bc28a32fdbfa5b5b4e18c93ea0d9593786f0",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/field-agent-result-closed-and-applied.png": {
+      "extension": ".png",
+      "bytes": 308539,
+      "sha256": "288c121e031b12b31b6f7f650173da912a394e67323f6af90430e8b268207787",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/field-agent-result-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 267708,
+      "sha256": "b525de902f202d80b86aec4a81a21b824ec2a0ac00d8f3f9b13c13067d036ca6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/field-agent-token-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 254108,
+      "sha256": "d1d8280d765743d8df5116765ecacc29e0fbc39b6141683708b87634ab84ea5a",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-apply-proposal-open.png": {
+      "extension": ".png",
+      "bytes": 232406,
+      "sha256": "6f02ddb86abbded5c9b9f9e15540da7f25e0af4f1c936a04fcfa12214e317510",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-apply-result-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 311218,
+      "sha256": "a2f1e835f8692edf5adf0b088582b11e16880ac0787a8c7107b6d7348eb7befc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-apply-token-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 287445,
+      "sha256": "f318a9001b5aede357c1e94f2dc23363cda039c99cc60a71844b829d9341b1df",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-approved-mutation-applied.png": {
+      "extension": ".png",
+      "bytes": 326124,
+      "sha256": "6cf351ec1330a91debc794542ff7176740ad39a6b96af38d42d999cc447b49b7",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-continue-proposal-open.png": {
+      "extension": ".png",
+      "bytes": 237672,
+      "sha256": "9a8b280d28cb7f6652d7b4d53690b6d78cdefa01a9bf0aa1332265e86e2a42e6",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-continue-result-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 311213,
+      "sha256": "67173dec1f3dfb98f938e446bb828cabda38fa62d7afa4b4ddbebafdf50a8f86",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-continue-selected.png": {
+      "extension": ".png",
+      "bytes": 281276,
+      "sha256": "be994bd63205795d5a8eb53f24a4aefa1b009a0f07f9bf4825b5a7ad8fc1d688",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-continue-token-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 287747,
+      "sha256": "61b61834e33de41be45073bd01bc8ea07202502049beb6fdca1ea11e09f23bdc",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-mutation-selected.png": {
+      "extension": ".png",
+      "bytes": 232667,
+      "sha256": "7a9815b18face6c6d09b5749f52d7b9bd3aa374a4b528bbdce57798cb7c4eb84",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-next-round-cancelled.png": {
+      "extension": ".png",
+      "bytes": 325412,
+      "sha256": "a57a20201d385bff32a2038c7da9e85dd6b7a39e79e42f9215cddae2002539a3",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-next-round-proposal-open.png": {
+      "extension": ".png",
+      "bytes": 229362,
+      "sha256": "e8e246653bfba81ed9717c7bc2297b2363d7077102f488598eec741df3408fb2",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/source-fill-next-round-result-dialog-open.png": {
+      "extension": ".png",
+      "bytes": 311214,
+      "sha256": "aace89806fd12e57823d59fa84d03734ba180814028ff983c3a28f4a41647e7d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/technologist-agent-send-confirmed.png": {
+      "extension": ".png",
+      "bytes": 335667,
+      "sha256": "220ab973c5e78327cfe76801c5cec320f2d0230a84f9ef9d04bc0fe6e1185f53",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/technologist-trace-close.png": {
+      "extension": ".png",
+      "bytes": 335654,
+      "sha256": "ed5ddb3c4ac2450f14933fcda4cb62bda6bec57577c0afca2d5b46a91b5508d1",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-agent-bucket-action-parity.spec.mjs/technologist-trace-open.png": {
+      "extension": ".png",
+      "bytes": 341410,
+      "sha256": "2b740c2d16bd25611700dca712698d5e0b059e8e66329bd00c55d6f68003b00d",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/01-lege-editor.png": {
+      "extension": ".png",
+      "bytes": 686419,
+      "sha256": "6e162e284a9637eaa3a90ced14b37731cf7748f7eee5e5d41515aed50ba2030e",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/02-vier-objecten.png": {
+      "extension": ".png",
+      "bytes": 774958,
+      "sha256": "81e77019198352fc98beac12b622df05327cea46ed24fff3f381e1d889459fb0",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/02a-vier-objecten-na-herladen.png": {
+      "extension": ".png",
+      "bytes": 799733,
+      "sha256": "78edcdeb551d9f474fbcbc8591897cad8f76b86fc4b23736277fc62d4d4c3535",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/03-gesleepte-node-met-kabel.png": {
+      "extension": ".png",
+      "bytes": 773816,
+      "sha256": "46dd4cd15ced2f7cc0aecb30d8338107505c34011d13aaa24f60b92f83bff6cd",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/03a-live-rubberband.png": {
+      "extension": ".png",
+      "bytes": 754272,
+      "sha256": "0a093925c586193027e7dce10a0e0053abe0779531e5766c9343defea575fa14",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/03b-palette-drop.png": {
+      "extension": ".png",
+      "bytes": 803832,
+      "sha256": "3040c698e413cd1e1410596dbe9c561bc48561b1c745ee0936967dbaebaa17ba",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/03c-kabel-na-herladen.png": {
+      "extension": ".png",
+      "bytes": 785377,
+      "sha256": "189674e5d4da110f96bfc0cbb1ad7b3e7ea08c38bd572204bbcf8c53b47d7c36",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/04-opnieuw-gecentreerd.png": {
+      "extension": ".png",
+      "bytes": 779866,
+      "sha256": "8dacab0a88d273865bad54942d56c543e7fb623e0fc2f652bf8ad1e716d86e6b",
+      "width": 1440,
+      "height": 1000
+    },
+    "editor-screen-parity.spec.mjs/04a-compact-scherm.png": {
+      "extension": ".png",
+      "bytes": 568516,
+      "sha256": "978117f13bf2e8ac992a3550acd0f4e5c928cce9a6e8813fe7459329ed1e4c42",
+      "width": 1280,
+      "height": 800
+    },
+    "editor-screen-parity.spec.mjs/05-simulatieradar.png": {
+      "extension": ".png",
+      "bytes": 110479,
+      "sha256": "f706a48fd2dccdaa9127856d5df0adf541f4f2f77b2798c89b4245dfa7d932d1",
+      "width": 455,
+      "height": 1034
+    },
+    "editor-screen-parity.spec.mjs/05a-radardiagram.png": {
+      "extension": ".png",
+      "bytes": 15668,
+      "sha256": "5ccc4dff799123e93fab93f8554f5ad93d56cf393bc7d7f077ffb16f5ac0d6ca",
+      "width": 220,
+      "height": 221
+    },
+    "editor-screen-parity.spec.mjs/06-dashboard-iframe.png": {
+      "extension": ".png",
+      "bytes": 751326,
+      "sha256": "72b4961befd07ad132eda1030b81b241816be48013abcf86d57928fbb55c382e",
+      "width": 1440,
+      "height": 1000
+    }
+  }
+}

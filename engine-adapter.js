@@ -1,17 +1,10 @@
 (function () {
   "use strict";
 
-  const parameters = new URLSearchParams(window.location.search);
-  const configuredApiBase = String(
-    parameters.get("api")
-      || window.LEERBOX_EDITOR_CONFIG?.apiBase
-      || localStorage.getItem("leerbox-editor.apiBase")
-      || ""
-  ).trim();
-  if (!configuredApiBase) {
+  const apiBase = window.LeerpretSDKApiBase;
+  if (!apiBase) {
     throw new Error("LEERPRET_API_URL ontbreekt in runtime-config.js.");
   }
-  const apiBase = configuredApiBase.replace(/\/$/, "");
 
   function resolveUrl(input) {
     if (input instanceof Request) return input;

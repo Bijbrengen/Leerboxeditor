@@ -1,0 +1,446 @@
+[
+  {
+    "actionId": "source-fill-apply-token-dialog-open",
+    "control": "#fillFromSourcesButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 0,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "e61b64d33af40bf1d15ec07703527c2073b865e35f5a34b3d15e512ffce0eeae",
+          "type": "leerpret-source-count"
+        },
+        {
+          "fromEditor": true,
+          "fromSelf": false,
+          "origin": "<editor-origin>",
+          "semantic": {
+            "count": 1,
+            "previewUrl": "",
+            "type": "leerpret-source-count"
+          },
+          "sha256": "6ba0bf7f26d3680f7e22f5e3e4c091c865024dfd62cad0abb1c62c7a164ede99",
+          "type": "leerpret-source-count"
+        }
+      ],
+      "requests": [
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox-agent/status",
+          "query": {
+            "probe": "true"
+          },
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/leerbox/captures/e2e-fixture",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/auth/editor-access",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/simulator/datasets",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": null,
+          "method": "GET",
+          "pathname": "/api/project-buckets/e2e-fixture",
+          "query": {
+            "role": "architect"
+          },
+          "roleHeader": "architect"
+        }
+      ]
+    },
+    "fingerprintSha256": "fa97d304bf442da1762636e5449ea6fc8e4e329b961e61a51b1ab855651794ae",
+    "output": {
+      "assets": "cad9a338046896cc7ce161a920a8f42f8ed50fa74a520dd047cd2e5b3d02c224",
+      "css": "c1138f3ab8e8d3b6018640d701b4c7d5e2dce46db7fa77a90a47c6f40f0de293",
+      "dom": "39b068b16f5ea5cb029e545654a6622c4947d88c5ac351b0fe52f4b0e8725893",
+      "geometry": "0adc58c1bc160e8b2a092cfa793452f4207f3be3aaf1fdfa9d53366076665043",
+      "state": "931f4e84f28bb39e59b238f7683a7815d8be110cbb94d6ff6af498e6d1351cd2",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-apply-result-dialog-open",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "d45097e8bb03b43a2d2d56ebde0964a5b6fce688bb21325547daa1fad6841068",
+            "summary": {
+              "bucketSourceIds": [
+                "bron-een"
+              ],
+              "captureSha256": "0d9ae128245adc0c96fd657a138a53693209dc92f13307c8ab8e1f8ca468a369",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 475,
+                  "role": "user",
+                  "sha256": "eaff8b05eee42087de7f56916634c9c4267535d9d4db9b494997a210c7d15b3b"
+                }
+              ],
+              "mode": "fill_from_sources",
+              "role": "architect",
+              "useProjectBucket": true
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "eac08e33415dc22e04789228143236354b641c25e3defb7ba528ce9e5edd6fc6",
+    "output": {
+      "assets": "556866dc4ae44aa3480d5312eb5a25567809f08ab9171d95f0ae7c6758d21d6e",
+      "css": "24fc94a986ff93ffdae363f81ca68ae49fa38e5f9b7c817425a102cbed82e024",
+      "dom": "6b07c95f1fc8d48b2b4058a00763bd18f203933066ba7fe5dab28b4c571e7f17",
+      "geometry": "7f09b890ca95429af28a4501c906e78844a8b1c1c9eff7ad4b457a2a3b03ccbb",
+      "state": "2986a83514f0493b65603628f486b141d0e999853dcc86c0333fd6350a68c33d",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-apply-proposal-open",
+    "control": "#agentCallResultDialog button[value=\"close\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "5a0e6e33ed883cfe2d168a34c6b3d6d62ad965cdde0980babba96c4cfb444ae3",
+    "output": {
+      "assets": "f2a43106cb9a66a1d04749fb7d4d2579369251433b7987d5482a66fd9b948d20",
+      "css": "4d8d9b567e4ad7d2003c6c738d820446bc8e85e92a4ac8ead9aee61186942359",
+      "dom": "f077a781acc2531b4c500954f81e2299de92bf102ed8d6e635151062177a1dfd",
+      "geometry": "3d3b5465c6b75683caadec28c453aa25894919dfae85b9cb1f5c527bb3d41641",
+      "state": "7dbcf3daae006e6cf452288e79dd94e844291ea4bf192bea2c74135614f270bb",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-mutation-selected",
+    "control": "[data-mutation-index=\"0\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "589f958ec76ab1b98edabacc9258afd094773611e5f66be8dbd5038ead9dbfca",
+            "summary": {
+              "captureSha256": "c2638eb8afe6e2d48d5b1594034fcad5cd3a36cd5a16ab231b71ce94d637bdad"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox/e2e-fixture/autosave",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "67f1d3e74793885e4b893b2c5ab4cc932ebfc2737fc8f5b14629f66970fe4812",
+    "output": {
+      "assets": "7f0f8d5bbe901f9209255860bd0ce0110dc8fb66f478c0a0341e07a63dcf03bd",
+      "css": "4d8d9b567e4ad7d2003c6c738d820446bc8e85e92a4ac8ead9aee61186942359",
+      "dom": "529dbfd75d1a4e01b7c37f41fdcfdc652d6d3be897dc729d4999559331303f42",
+      "geometry": "3d3b5465c6b75683caadec28c453aa25894919dfae85b9cb1f5c527bb3d41641",
+      "state": "ef8ec4b78a70ae8e57655589451464a7007c25eeddf26f1f4c0b52ea35ca93a2",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-approved-mutation-applied",
+    "control": "#sourceFillApplyButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "0fa7875d8b34544186cd0c65e5c770809c2f3bbe99e9546541e1b1e9109ad91e",
+    "output": {
+      "assets": "53a5bb2d30d417c1d0300d30305d304fe9796f6263266e6d0abf84e2a3e290a9",
+      "css": "249995eb96861e8835a4c058b293c84982bd9eb51490f0e20acea10f6e32ea4c",
+      "dom": "7e9873bda04cd41a634d8ab7551a01b3347ffec9c51dafb11da6958b596381f1",
+      "geometry": "0c4b2af7c47d2a2697146c93da006ad3af3563b9300643f2e13f2278198cf747",
+      "state": "ea7ac6d533dbccf5c60da9792e7d38b02e8b12586148971a7462a0707b34002a",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-continue-token-dialog-open",
+    "control": "#fillFromSourcesButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "f368fcf736bb6c7719327b49dd021450cab2ddd58f34859cdaf082ba062094d0",
+            "summary": {
+              "captureSha256": "b697bed458ff99966847bb405b6781f95db9ae139fbc042bb2ba28d0164afb18"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox/e2e-fixture/autosave",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "6e8d49740595968e92deea3dc7fdcf06bb7ff3ce22a34de10f55cd5774046b53",
+    "output": {
+      "assets": "e0de335e02e6215336994601ca985b64a3a4fb5168987976092c9a552ea22280",
+      "css": "21ee9d4f1f70f280005153724ef93709d42af8dd9afcc0d0b1467d7abbf84835",
+      "dom": "18509558e7401c65ea54f7a3fc8160cb0c028c18ca083f7ab61dc0bf666efd5d",
+      "geometry": "55b6be83154ac47c416c6697928fcd9b934a0dae16ad8715fb52de97a409d3e8",
+      "state": "28004df8e0fea1420fc197a759cbb4e93eab09ece263702863f1ac877e1c2e5a",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-continue-result-dialog-open",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "842d5b5977819628419b006eb475f07421b5e7dc587b55db95575378c0575c0e",
+            "summary": {
+              "bucketSourceIds": [
+                "bron-een"
+              ],
+              "captureSha256": "b697bed458ff99966847bb405b6781f95db9ae139fbc042bb2ba28d0164afb18",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 475,
+                  "role": "user",
+                  "sha256": "eaff8b05eee42087de7f56916634c9c4267535d9d4db9b494997a210c7d15b3b"
+                }
+              ],
+              "mode": "fill_from_sources",
+              "role": "architect",
+              "useProjectBucket": true
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "cc86e9617319129a39beedbd3898e64b14eb6968ae3f4f3f7212621fccae0459",
+    "output": {
+      "assets": "2f249cc3615e84551b9678ee54ec28b2c4576538228b844cc766908827236e45",
+      "css": "3a7a51150cd8ca802ddfea2970bf22209d854145613e5f7303149a6ece546d10",
+      "dom": "2a7bc40a2bc10e4efb3ada87d02559657db74002e761964fc49a9d54104c5a97",
+      "geometry": "30dc3a757c8ac75942358fbe52f3c4ded5efbf3d5367035808291cd8e62e3614",
+      "state": "0526ca490b2d4bb133ede5ef4d3aa062f56d46b59cc65c473adf488b32242e9f",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-continue-proposal-open",
+    "control": "#agentCallResultDialog button[value=\"close\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "d7211f8c079c216af5c47eb63995a3c2189495fa3507a078bbf5533c5ce5eb5f",
+    "output": {
+      "assets": "c814da57b4d1f109dfcbfecbf7dbba553df4bf3b1d0fa38321d0334816ff8462",
+      "css": "d3c4d18156ddb799f69515c535dc843b9b4b7fcdf0595533b41de107011971b9",
+      "dom": "12e79b1872b7d91c4ee33d28298178ba8786260c3d2aae01c2a02f3f52bc3091",
+      "geometry": "28657df6ff2acfe7a6f733999ed3a061fba8dff6d3b052ff07ad442c845a9f8a",
+      "state": "cde6ab3c763e2f13d4e1b6e338b4a2dbe9e271f5469cf88bbad8d68ceac52239",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-continue-selected",
+    "control": "#sourceFillContinueButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "d3220e4671060519d0ce57f8efb5e1938eca52d34bb01beb3393682c109cfa6c",
+            "summary": {
+              "captureSha256": "cf71b9a08a01479f0da5fcf0f8f44e134f85a9e6253c28230a3aa780db73c85d"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox/e2e-fixture/autosave",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "b10b370cf4399fbb55d747d29affbfecc1f7aae44d692f349ea836eef3264f84",
+    "output": {
+      "assets": "b18a25c53c2a23faa3f1cc7c89776015bbbb83549e343916f31abcc0bd565612",
+      "css": "6275b5fd5209d2ce6fb06321b6b719ac7f5de2fb708562deadc24898b59e98d2",
+      "dom": "5ddfa083def2322ec3d91f5fa391528bccb80ad312e5db1ad3b5895fd8638d8d",
+      "geometry": "f4edaf8fb034ddc6d97dd68c232c255691bfb4a46e5c10dbc88806c005a35c1c",
+      "state": "f9065a766acfe82518971f361b520de47129b2c508cf312c0b2de10e16c16320",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-next-round-result-dialog-open",
+    "control": "#agentTokenDialog button[value=\"confirm\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": [
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "b791b7a71be26388158592fa9fd1a6b5092ee356bf5b23f488a4a4926d758711",
+            "summary": {
+              "captureSha256": "339b2c231afb1b68ae0493983259a8636283944069769d18ef72197fafb96842"
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox/e2e-fixture/autosave",
+          "query": {},
+          "roleHeader": ""
+        },
+        {
+          "body": {
+            "kind": "json",
+            "sha256": "4431f90afc4281a067a7720252b95ba64066fce1432bf96d9d340f15ba4bf95d",
+            "summary": {
+              "bucketSourceIds": [
+                "bron-een"
+              ],
+              "captureSha256": "339b2c231afb1b68ae0493983259a8636283944069769d18ef72197fafb96842",
+              "leerboxId": "e2e-fixture",
+              "messages": [
+                {
+                  "characters": 475,
+                  "role": "user",
+                  "sha256": "eaff8b05eee42087de7f56916634c9c4267535d9d4db9b494997a210c7d15b3b"
+                }
+              ],
+              "mode": "fill_from_sources",
+              "role": "architect",
+              "useProjectBucket": true
+            }
+          },
+          "method": "POST",
+          "pathname": "/api/leerbox-agent/chat",
+          "query": {},
+          "roleHeader": ""
+        }
+      ]
+    },
+    "fingerprintSha256": "50ed3f68a97be53cb5079d85fd953b291d8cec36e324b1006727ce489a098600",
+    "output": {
+      "assets": "369ef14f10b2505094e505e65897d73b334895e60a26750d8a8f67302a10fd8a",
+      "css": "fbe82926fae7336828ba426a7137734e53234105fa8648f0f33a6021e12a6042",
+      "dom": "1801186911f440a0b8bb2e968df60e98cef217e68a9ad85764641a8104359386",
+      "geometry": "3568d19debc512f08a74778046bdde7198deb2245e5064504550191851e1e92b",
+      "state": "4a3c6bcfe746c8cb5b7ddfdca1cad47f43707afbc3f141e40a9bbf7a6533fdb7",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-next-round-proposal-open",
+    "control": "#agentCallResultDialog button[value=\"close\"]",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "cd4ed0c59e00b2ff198a16762831d1c53e8fbb076b4d6dac2c409df571004450",
+    "output": {
+      "assets": "f41254cdd73282d542d53756f1d7fb21b3ad48ac1c6b58c28216b0671959d9df",
+      "css": "3a4cbbc74c4e8a94312bd1f77b6d921a4c442490a3197b0755fdbaa59d3e08e8",
+      "dom": "c902f9f0847be6548746832b3576a2f3bd7806bc2ae8832ab73e73eafecefc89",
+      "geometry": "84c51d35baa8ba017836dfe34802537375f321333727d6bcdbd762014fd8ce56",
+      "state": "085635c3eae301c867a8eea6a7ed5662129021bbc028a07ef1acb91c12a0d2a7",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  },
+  {
+    "actionId": "source-fill-next-round-cancelled",
+    "control": "#sourceFillCancelButton",
+    "effects": {
+      "clipboard": [],
+      "downloads": [],
+      "errors": [],
+      "messages": [],
+      "requests": []
+    },
+    "fingerprintSha256": "c651de69a5662566a54d0ec74050688567c6e85d8221457dfe6e66e581924de2",
+    "output": {
+      "assets": "f41254cdd73282d542d53756f1d7fb21b3ad48ac1c6b58c28216b0671959d9df",
+      "css": "7a57826f267fa56eef0d9adaf33058cbdd8c4a1b2388fee1af05323b6f713a2d",
+      "dom": "2dd2c22dce01ca41e370c09562a710548760f8e9c738619652b2af0361388e6a",
+      "geometry": "9b179acb352a01596595853ba5f48454fbd4865da00c4070311a3b57d4cea7cd",
+      "state": "0868bd5bb7211026078b5fc6a09f912f05aa292ff4db8e4d551b92763cbd01ac",
+      "svg": "7b6babda2ad5d4df0f86b8e1314efd0fe1ed25b072c45bac33ab84e301b92006"
+    }
+  }
+]

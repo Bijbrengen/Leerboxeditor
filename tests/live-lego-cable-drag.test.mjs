@@ -10,9 +10,13 @@ test("de editor delegeert iedere drag-frame aan de LEGO flow-map SDK", () => {
   const dragSource = source.slice(dragStart, dragEnd);
 
   assert.match(dragSource, /legoFlowMap\.updateDragFrame\(\{/);
+  assert.match(dragSource, /legoFlowMap\.dragScreenPositionV1\(\{/);
+  assert.match(dragSource, /if \(drag\.moved\) moved = true/);
   assert.match(dragSource, /edgesRoot:\s*elements\.networkEdges/);
   assert.match(dragSource, /objectId:\s*object\.object_id/);
   assert.doesNotMatch(dragSource, /node\.style\.(?:left|top)\s*=/);
+  assert.doesNotMatch(dragSource, /Math\.max\(62,\s*Math\.min\(/);
+  assert.doesNotMatch(dragSource, /Math\.abs\(dx\) \+ Math\.abs\(dy\)/);
 });
 
 test("de editor delegeert nop-naar-nopkabels aan de SDK en bewaart de ankers", () => {
@@ -32,4 +36,76 @@ test("de gekozen SDK-modus bepaalt route of voorwaarde", () => {
   assert.match(source, /editorCable:\s*step\.editor_cable/);
   assert.match(source, /fromStud:\s*step\.editorCable\?\.from_stud/);
   assert.match(source, /toStud:\s*step\.editorCable\?\.to_stud/);
+});
+
+test("de editor delegeert legacy schermlayout en rubberbandanker zonder lokale geometrie", () => {
+  const renderStart = source.indexOf("function renderNetworkCanvas(capture)");
+  const renderEnd = source.indexOf("function centerCanvasOnDrawing()", renderStart);
+  const renderSource = source.slice(renderStart, renderEnd);
+  const rubberStart = source.indexOf("function startRubberBand()");
+  const rubberEnd = source.indexOf("function cancelLinking()", rubberStart);
+  const rubberSource = source.slice(rubberStart, rubberEnd);
+
+  assert.match(renderSource, /legoFlowMap\.layoutScreenSceneV1\(\{/);
+  assert.ok(renderSource.indexOf("if (!legoFlowMap)") < renderSource.indexOf("legoFlowMap.layoutScreenSceneV1"));
+  assert.match(renderSource, /positions:\s*objects\.map\(\(object\) => object\.editor_position \|\| null\)/);
+  assert.match(renderSource, /const \{ width, height, drawnHeight \} = sceneLayout/);
+  assert.match(renderSource, /object\.editor_position\.x = position\.x/);
+  assert.match(renderSource, /object\.editor_position\.y = position\.y/);
+  assert.doesNotMatch(renderSource, /\b(?:bboxMinX|gridColumns|minGapX|gridRowHeight)\b/);
+  assert.doesNotMatch(renderSource, /const drawnHeight = Math\.max/);
+
+  assert.match(rubberSource, /legoFlowMap\.studConnectionPoint\(\{/);
+  assert.match(rubberSource, /legoFlowMap\.clientPointToLayerV1\(moveEvent, layerRect\)/);
+  assert.match(rubberSource, /legoFlowMap\.previewCablePath\(sourcePoint, \[pointer\.x, pointer\.y\]\)/);
+  assert.doesNotMatch(rubberSource, /editor_position\.y\s*-\s*27/);
+});
+
+test("pan en drop gebruiken dezelfde pure client-naar-laagwiskunde", () => {
+  const workbenchStart = source.indexOf("function initializeWorkbench()");
+  const workbenchEnd = source.indexOf("function addPresetObject", workbenchStart);
+  const workbenchSource = source.slice(workbenchStart, workbenchEnd);
+  assert.match(workbenchSource, /legoFlowMap\.panScrollOffsetV1\(/);
+  assert.match(workbenchSource, /legoFlowMap\.clientPointToLayerV1\(event, bounds\)/);
+  assert.doesNotMatch(workbenchSource, /panState\.left - \(event\.clientX - panState\.x\)/);
+  assert.doesNotMatch(workbenchSource, /event\.clientX - bounds\.left/);
+});
+
+test("de editor delegeert viewportcentrum en scrollwiskunde aan dezelfde pure SDK-laag", () => {
+  const visibleStart = source.indexOf("function visibleCanvasCenter()");
+  const visibleEnd = source.indexOf("function centerObjectInCanvas", visibleStart);
+  const centerStart = source.indexOf("function centerObjectsInCanvas(objectIds)");
+  const centerEnd = source.indexOf("function renderNetworkCanvas(capture)", centerStart);
+  const resetStart = source.indexOf("function centerCanvasOnDrawing()");
+  const resetEnd = source.indexOf("function objectIdByIndex", resetStart);
+  const visibleSource = source.slice(visibleStart, visibleEnd);
+  const centerSource = source.slice(centerStart, centerEnd);
+  const resetSource = source.slice(resetStart, resetEnd);
+
+  assert.match(visibleSource, /legoFlowMap\.visibleLayerCenterV1\(\{/);
+  assert.match(visibleSource, /if \(!legoFlowMap\) return null/);
+  assert.doesNotMatch(visibleSource, /Math\.max\(70|Math\.max\(80/);
+  assert.match(centerSource, /legoFlowMap\.centerDeltaV1\(rects, viewRect\)/);
+  assert.doesNotMatch(centerSource, /rects\.reduce/);
+  assert.match(resetSource, /legoFlowMap\.centeredScrollOffsetV1\(/);
+  assert.match(resetSource, /if \(!legoFlowMap\) return/);
+  assert.doesNotMatch(resetSource, /scrollWidth - layout\.clientWidth/);
+});
+
+test("startup publiceert de capture pas nadat de asynchrone SDK-layout is toegepast", () => {
+  const initialization = source.slice(
+    source.indexOf("const legoFlowMapReady = initializeLegoFlowMap()"),
+    source.indexOf("function initializeLegoFlowMap()")
+  );
+  const loaderStart = source.indexOf("function initializeLegoFlowMap()");
+  const loader = source.slice(loaderStart, source.indexOf("function statusEvidenceMap", loaderStart));
+  const selectedStart = source.indexOf("async function initializeSelectedCapture()");
+  const selected = source.slice(selectedStart, source.indexOf("function loadSimulationParameters", selectedStart));
+  assert.match(initialization, /const selectedCaptureReady = initializeSelectedCapture\(\)/);
+  assert.match(initialization, /Promise\.all\(\[legoFlowMapReady, selectedCaptureReady\]\)\.then\(\(\) => \{/);
+  assert.match(initialization, /render\(\);\s*publishCaptureUpdate\(\)/);
+  assert.match(loader, /return window\.LeerpretSDKLoaderReady/);
+  assert.match(loader, /render\(\);\s*return component/);
+  assert.doesNotMatch(loader, /publishCaptureUpdate/);
+  assert.doesNotMatch(selected, /publishCaptureUpdate/);
 });

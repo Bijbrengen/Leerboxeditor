@@ -11,6 +11,14 @@ De pagina bestaat uit een **buitenschil** (Astro, `frontend-astro/src/pages/edit
 `script.js` + `style.css` + `languages.js` + `engine-adapter.js`).
 Het iframe draait in "embedded workbench"-modus (`body.is-workbench-embedded`).
 
+De zelfstandige Editor laadt `api-client`, `auth-client`, `editor-shell` en
+`editor-chrome` uitsluitend via `LeerpretSDKLoaderReady` en het Engine-manifest.
+Ook het HTML-template van de chrome loopt via de manifest-gevalideerde
+`loader.fetchAsset()`-functie; er bestaan geen lokale of hard-gecodeerde
+componentassetpaden meer. `leerpret-sdk.js` resolveert `?api=`, runtimeconfig en
+lokale opslag één keer naar `window.LeerpretSDKApiBase`, waarna alle consumers
+exact dezelfde Engine-origin gebruiken.
+
 ## Buitenschil (editor.astro)
 
 ```
@@ -33,7 +41,7 @@ Het iframe draait in "embedded workbench"-modus (`body.is-workbench-embedded`).
 │       └── lock-melding #simulation-clock-lock (als leerbox niet "gevat" is)
 └── [ main .editor-page-content ]
     ├── status #editor-page-status ("Editor laden…")
-    └── iframe #editor-page-iframe  ← laadt /tools/architect-editor/?embedded=1&…
+    └── iframe #editor-page-iframe  ← laadt LEERBOX_EDITOR_URL/?embedded=1&…
 ```
 
 Communicatie buitenschil ↔ iframe: `postMessage` (types: `leerpret-editor-view`,
@@ -65,10 +73,18 @@ Communicatie buitenschil ↔ iframe: `postMessage` (types: `leerpret-editor-view
 
 ## Canvasmodel (SimCity/Civilization-principe)
 
-Berekend in `renderNetworkCanvas()` (script.js), toegepast via CSS-variabelen op `.strategy-canvas-layout`:
+Berekend door de publieke SDK-primitive `lego-flow-map.layoutScreenSceneV1()` en
+door `renderNetworkCanvas()` (script.js) toegepast via CSS-variabelen op
+`.strategy-canvas-layout`:
 
-- **Bounding box**: kleinste rechthoek om alle leerobjecten (`editor_position`) + marge voor
-  nodebreedte en relatiebogen (±90px horizontaal, ±70px verticaal).
+Ook zichtcentrum, scroll-delta en terugzetten naar het midden komen uit de
+pure SDK-functies `visibleLayerCenterV1`, `centerDeltaV1` en
+`centeredScrollOffsetV1`; `clientPointToLayerV1`, `panScrollOffsetV1` en
+`dragScreenPositionV1` verzorgen drop-, rubberband-, pan- en node-dragwiskunde.
+De editor leest alleen pointerevents en actuele DOM-rechthoeken.
+
+- **Bounding box**: de SDK berekent de kleinste rechthoek om alle leerobjecten
+  (`editor_position`) plus de legacy marge voor nodebreedte en relatiebogen.
 - **Canvasgrootte** (`--dynamic-canvas-width/height` → `.network-stage`):
   bbox + precies **één vensterbreedte links én rechts** + **één vensterhoogte boven én onder**
   (venster = zichtbare kaartdeel, `layout.clientWidth/Height`). Zo kun je elk object tot in elke
@@ -98,5 +114,6 @@ Berekend in `renderNetworkCanvas()` (script.js), toegepast via CSS-variabelen op
 | Buitenschil + linkerpaneel + simulatieklok | `frontend-astro/src/pages/editor.astro` |
 | Editor-markup (iframe) | `LeerboxEditor/index.html` |
 | Canvasmodel, pannen, centreren, HUD-anker | `LeerboxEditor/script.js` |
-| Embedded layout + HUD-fixed regels (onderaan) | `LeerboxEditor/style.css` |
+| Canonieke layout + HUD-regels | LeerpretSDK `editor-shell` en `editor-chrome` |
+| Bytegelijke offline stylesheetfallback | `LeerboxEditor/style.css` |
 | Serving | Eigen statische origin; dashboard gebruikt `embed_url` uit `/api/ui/surfaces` |
