@@ -37,7 +37,10 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: Bijbrengen/LeerpretEngine
-          ref: master
+          # De pixelgoldens zijn vastgelegd tegen dit Engine-manifest (SDK 5.20.0).
+          # Een nieuwere Engine hoort eerst via de expliciete baseline-updateflow
+          # te worden goedgekeurd, anders wordt CI afhankelijk van bewegende CSS.
+          ref: 18a113eb20c81d530711b6869da5fcc35116f5a0
           path: LeerpretEngine
           ssh-key: ${{ secrets.LEERPRET_ENGINE_SSH_KEY }}
           persist-credentials: false
