@@ -44,10 +44,10 @@
   "contracts": {
     "actionCatalog": {
       "schemaVersion": 1,
-      "sha256": "3183249b3a37c806817928bc584d050749f24c3bb98b4bf93d5f4a6ed4122918",
-      "sourceSha256": "407f79830d6173a724c551a45b594441e49fb47c8e0f3c964ad45c8113ec6ab7",
+      "sha256": "477770e35835b47a48ae469addcc271ae639538d97edd07c7c260c90662b6bb3",
+      "sourceSha256": "11c6d3db9f19de019e91231799fa5b53122a5ded5ae86e6c7ddde42591576d75",
       "scenarios": 38,
-      "staticControls": 229,
+      "staticControls": 230,
       "dynamicFamilies": 19,
       "inboundMessages": 9,
       "outboundMessages": 6

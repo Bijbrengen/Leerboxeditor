@@ -137,7 +137,7 @@ const captureTextareaNames = [
 
 const indexStatic = [
   ...indexTopLevel,
-  ...byId("index.html", ["workflowPanelCloseButton", "paletteCloseButton"], covered("workbench-navigation")),
+  ...byId("index.html", ["workflowPanelCloseButton", "paletteCloseButton", "simulationPanelCloseButton"], covered("workbench-navigation")),
   ...byId("index.html", descriptionIds, covered("description-edit")),
   ...byId("index.html", sourceIds, covered("bucket-import")),
   ...byId("index.html", agentIds, covered("agent-conversation", "bucket-drawer")),

@@ -117,7 +117,8 @@ test("goedgekeurde update vereist screen-PNG en JSON voor beide actionsuites", (
   assert.throws(() => assertRequiredBaselineArtifacts({
     "editor-screen-parity.spec.mjs/screen.png": { sha256: "a" },
     "editor-action-parity.spec.mjs/actions.json": { sha256: "b" },
-    "editor-agent-bucket-action-parity.spec.mjs/action.png": { sha256: "c" }
+    "editor-action-parity.spec.mjs/action.png": { sha256: "c" },
+    "editor-agent-bucket-action-parity.spec.mjs/action.png": { sha256: "d" }
   }), /editor-agent-bucket-action-parity\.spec\.mjs heeft geen verplichte \.json-golden/);
   assert.throws(() => assertRequiredBaselineArtifacts({
     "editor-screen-parity.spec.mjs/screen.png": { sha256: "a" },

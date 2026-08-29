@@ -1,0 +1,6 @@
+# De baselineprovenance hasht deze tekstbestanden byte-exact. Houd hun
+# checkoutrepresentatie daarom op ieder platform gelijk aan de Git-blob.
+tests/visual/action-catalog.mjs text eol=lf
+tests/visual/output-fingerprint.mjs text eol=lf
+tests/visual/screenshot-comparison.mjs text eol=lf
+tests/visual/__screenshots__/**/*.json text eol=lf
