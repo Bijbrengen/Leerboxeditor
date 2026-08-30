@@ -625,6 +625,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
     bucket_drawer_mode: "manage"
   };
   let networkCanvasCenteredSignature = "";
+  let networkCanvasSceneLayout = null;
+  let canvasZoom = 1;
   let legoFlowMap = null;
   let legoSpatial = null;
   let legoFlowMapError = "";
@@ -852,6 +854,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
           || !component?.clientPointToLayerV1
           || !component?.panScrollOffsetV1
           || !component?.dragScreenPositionV1
+          || !component?.zoomInputDirectionV1
+          || !component?.zoomViewportV1
+          || !component?.scaleScreenSceneV1
           || !spatial?.radarSeriesPoints) {
           throw new Error("lego-flow-map mist de screen-v1 compatibiliteits-API");
         }
@@ -3245,6 +3250,15 @@ HIER IS DE STRUCTUUR (SYNTAX):
     });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && linking.sourceId) cancelLinking();
+      if (event.target?.closest?.("input, textarea, select, [contenteditable='true']")) return;
+      if (!elements.networkCanvas?.offsetParent || !legoFlowMap?.zoomInputDirectionV1(event)) return;
+      const canvasScroller = elements.networkCanvas.closest(".strategy-canvas-layout");
+      if (!canvasScroller) return;
+      event.preventDefault();
+      zoomNetworkCanvas(event, {
+        x: canvasScroller.clientWidth / 2,
+        y: canvasScroller.clientHeight / 2
+      });
     });
     const canvasScroller = elements.networkCanvas.closest(".strategy-canvas-layout");
     if (canvasScroller) {
@@ -3287,6 +3301,16 @@ HIER IS DE STRUCTUUR (SYNTAX):
       canvasScroller.addEventListener("pointerup", stopPan);
       canvasScroller.addEventListener("pointercancel", stopPan);
       canvasScroller.addEventListener("lostpointercapture", stopPan);
+      canvasScroller.addEventListener("wheel", (event) => {
+        if (event.target?.closest?.("input, textarea, select")) return;
+        if (!legoFlowMap?.zoomInputDirectionV1(event)) return;
+        const rect = canvasScroller.getBoundingClientRect();
+        event.preventDefault();
+        zoomNetworkCanvas(event, {
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top
+        });
+      }, { passive: false });
       updateHudAnchor();
     }
     document.querySelectorAll("[data-object-preset]").forEach((button) => {
@@ -3308,10 +3332,49 @@ HIER IS DE STRUCTUUR (SYNTAX):
       const preset = event.dataTransfer.getData("text/leerpret-object");
       if (!preset) return;
       const bounds = elements.networkNodes?.getBoundingClientRect() || elements.networkCanvas.getBoundingClientRect();
-      const position = legoFlowMap.clientPointToLayerV1(event, bounds);
+      const position = legoFlowMap.clientPointToLayerV1(event, bounds, { scale: canvasZoom });
       addPresetObject(preset, position.x, position.y);
     });
     window.addEventListener("resize", () => renderNetworkCanvas(state.capture));
+  }
+
+  function applyNetworkCanvasScale(sceneLayout = networkCanvasSceneLayout) {
+    const layout = elements.networkCanvas?.closest(".strategy-canvas-layout");
+    if (!layout || !sceneLayout || !legoFlowMap) return;
+    const scaled = legoFlowMap.scaleScreenSceneV1(sceneLayout, canvasZoom);
+    layout.dataset.canvasZoom = String(scaled.scale);
+    layout.style.setProperty("--canvas-zoom", String(scaled.scale));
+    layout.style.setProperty("--dynamic-canvas-offset-x", `${scaled.offsetX}px`);
+    layout.style.setProperty("--dynamic-canvas-offset-y", `${scaled.offsetY}px`);
+    layout.style.setProperty("--dynamic-canvas-width", `${scaled.dynamicCanvasWidth}px`);
+    layout.style.setProperty("--dynamic-canvas-height", `${scaled.dynamicCanvasHeight}px`);
+    layout.style.setProperty("--dynamic-content-width", `${scaled.contentWidth}px`);
+    layout.style.setProperty("--dynamic-content-height", `${scaled.contentHeight}px`);
+    [elements.networkNodes, elements.networkEdges].forEach((layer) => {
+      if (!layer) return;
+      layer.style.transform = `scale(${scaled.scale})`;
+      layer.style.transformOrigin = "0 0";
+      layer.style.willChange = "transform";
+    });
+    elements.networkCanvas.setAttribute("aria-label", `Leerbox-netwerkcanvas, zoom ${Math.round(scaled.scale * 100)} procent; sleep bouwstenen hierheen`);
+  }
+
+  function zoomNetworkCanvas(input, focus) {
+    const layout = elements.networkCanvas?.closest(".strategy-canvas-layout");
+    if (!layout || !networkCanvasSceneLayout || !legoFlowMap) return false;
+    const result = legoFlowMap.zoomViewportV1({
+      scale: canvasZoom,
+      input,
+      scroll: { left: layout.scrollLeft, top: layout.scrollTop },
+      viewport: { width: layout.clientWidth, height: layout.clientHeight },
+      focus
+    });
+    if (!result.direction) return false;
+    canvasZoom = result.scale;
+    applyNetworkCanvasScale();
+    layout.scrollLeft = result.scroll.x;
+    layout.scrollTop = result.scroll.y;
+    return result.changed;
   }
 
   function addPresetObject(preset, x, y) {
@@ -3388,7 +3451,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
     return legoFlowMap.visibleLayerCenterV1({
       layerRect: nodesLayer && layout ? nodesLayer.getBoundingClientRect() : null,
       viewportRect: nodesLayer && layout ? layout.getBoundingClientRect() : null,
-      fallbackRect: nodesLayer?.getBoundingClientRect() || elements.networkCanvas?.getBoundingClientRect()
+      fallbackRect: nodesLayer?.getBoundingClientRect() || elements.networkCanvas?.getBoundingClientRect(),
+      scale: canvasZoom
     });
   }
 
@@ -3450,14 +3514,10 @@ HIER IS DE STRUCTUUR (SYNTAX):
       nodesHeight: elements.networkNodes.clientHeight,
       canvasHeight: elements.networkCanvas.clientHeight
     });
+    networkCanvasSceneLayout = sceneLayout;
     const { width, height, drawnHeight } = sceneLayout;
     if (embeddedWorkbench && layout) {
-      layout.style.setProperty("--dynamic-canvas-offset-x", `${sceneLayout.offsetX}px`);
-      layout.style.setProperty("--dynamic-canvas-offset-y", `${sceneLayout.offsetY}px`);
-      layout.style.setProperty("--dynamic-canvas-width", `${sceneLayout.dynamicCanvasWidth}px`);
-      layout.style.setProperty("--dynamic-canvas-height", `${sceneLayout.dynamicCanvasHeight}px`);
-      layout.style.setProperty("--dynamic-content-width", `${width}px`);
-      layout.style.setProperty("--dynamic-content-height", `${height}px`);
+      applyNetworkCanvasScale(sceneLayout);
     }
     objects.forEach((object, index) => {
       const position = sceneLayout.positions[index];
@@ -3537,6 +3597,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     cableController = legoFlowMap.wireStudConnections({
       nodesRoot: elements.networkNodes,
       edgesRoot: elements.networkEdges,
+      getScale: () => canvasZoom,
       connectionMode,
       onConnect: ({ fromObjectId, fromStud, toObjectId, toStud, edgeType }) => {
         createConnection(fromObjectId, toObjectId, edgeType, { from_stud: fromStud, to_stud: toStud });
@@ -3625,7 +3686,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     }
     const move = (moveEvent) => {
       const layerRect = elements.networkNodes.getBoundingClientRect();
-      const pointer = legoFlowMap.clientPointToLayerV1(moveEvent, layerRect);
+      const pointer = legoFlowMap.clientPointToLayerV1(moveEvent, layerRect, { scale: canvasZoom });
       const sourcePoint = legoFlowMap.studConnectionPoint({
         x: source.editor_position.x,
         y: source.editor_position.y
@@ -3703,7 +3764,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     const node = event.currentTarget;
     const index = Number(node.dataset.objectIndex);
     const object = state.capture.objects[index];
-    const canvasBounds = (elements.networkNodes || elements.networkCanvas).getBoundingClientRect();
+    const canvasLayer = elements.networkNodes || elements.networkCanvas;
     const start = { x: event.clientX, y: event.clientY, left: object.editor_position.x, top: object.editor_position.y };
     let moved = false;
     node.setPointerCapture(event.pointerId);
@@ -3712,7 +3773,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
         pointerStart: { x: start.x, y: start.y },
         pointerCurrent: moveEvent,
         positionStart: { left: start.left, top: start.top },
-        bounds: { width: canvasBounds.width, height: canvasBounds.height },
+        bounds: { width: canvasLayer.clientWidth, height: canvasLayer.clientHeight },
+        scale: canvasZoom,
         threshold: 5
       });
       if (drag.moved) moved = true;

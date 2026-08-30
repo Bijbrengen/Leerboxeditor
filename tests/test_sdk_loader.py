@@ -16,7 +16,7 @@ class SdkLoaderWiringTests(unittest.TestCase):
         }
 
         self.assertIn('loader.load("editor-shell")', sources["index.html"])
-        self.assertIn('src="script.js?v=sdk-spatial-flow-2"', sources["index.html"])
+        self.assertIn('src="script.js?v=sdk-spatial-flow-3"', sources["index.html"])
         self.assertIn('loader.load(["api-client", "auth-client"])', sources["editor-auth.js"])
         self.assertIn('loader.load("editor-chrome")', sources["editor-chrome-boot.js"])
         self.assertIn('loader.load(["lego-flow-map", "lego-spatial"])', sources["script.js"])
@@ -40,7 +40,7 @@ class SdkLoaderWiringTests(unittest.TestCase):
         stylesheet = (ROOT / "style.css").read_bytes()
         self.assertEqual(
             hashlib.sha256(stylesheet).hexdigest(),
-            "f231223d85be766eb63ee5726a43cd0d6c6943dd031f77e75bf3e067a22b2867",
+            "d27061e5648b56e2f4a24e4017ed40bd054c14b1d39e9ac7afbb031fc95efe59",
         )
 
     def test_lego_flow_visuals_stay_in_the_sdk_component(self) -> None:
@@ -59,6 +59,9 @@ class SdkLoaderWiringTests(unittest.TestCase):
         self.assertIn("legoFlowMap.clientPointToLayerV1", script)
         self.assertIn("legoFlowMap.panScrollOffsetV1", script)
         self.assertIn("legoFlowMap.dragScreenPositionV1", script)
+        self.assertIn("legoFlowMap?.zoomInputDirectionV1", script)
+        self.assertIn("legoFlowMap.zoomViewportV1", script)
+        self.assertIn("legoFlowMap.scaleScreenSceneV1", script)
         self.assertIn("legoSpatial.radarSeriesPoints", script)
         self.assertNotIn("Math.cos(angle) * radius", script)
         self.assertNotIn("source.editor_position.y - 27", script)

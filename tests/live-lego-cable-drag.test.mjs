@@ -56,7 +56,7 @@ test("de editor delegeert legacy schermlayout en rubberbandanker zonder lokale g
   assert.doesNotMatch(renderSource, /const drawnHeight = Math\.max/);
 
   assert.match(rubberSource, /legoFlowMap\.studConnectionPoint\(\{/);
-  assert.match(rubberSource, /legoFlowMap\.clientPointToLayerV1\(moveEvent, layerRect\)/);
+  assert.match(rubberSource, /legoFlowMap\.clientPointToLayerV1\(moveEvent, layerRect, \{ scale: canvasZoom \}\)/);
   assert.match(rubberSource, /legoFlowMap\.previewCablePath\(sourcePoint, \[pointer\.x, pointer\.y\]\)/);
   assert.doesNotMatch(rubberSource, /editor_position\.y\s*-\s*27/);
 });
@@ -66,9 +66,35 @@ test("pan en drop gebruiken dezelfde pure client-naar-laagwiskunde", () => {
   const workbenchEnd = source.indexOf("function addPresetObject", workbenchStart);
   const workbenchSource = source.slice(workbenchStart, workbenchEnd);
   assert.match(workbenchSource, /legoFlowMap\.panScrollOffsetV1\(/);
-  assert.match(workbenchSource, /legoFlowMap\.clientPointToLayerV1\(event, bounds\)/);
+  assert.match(workbenchSource, /legoFlowMap\.clientPointToLayerV1\(event, bounds, \{ scale: canvasZoom \}\)/);
   assert.doesNotMatch(workbenchSource, /panState\.left - \(event\.clientX - panState\.x\)/);
   assert.doesNotMatch(workbenchSource, /event\.clientX - bounds\.left/);
+});
+
+test("muiswiel en gewone of numerieke plus/min delegeren dezelfde zoomoptie aan de SDK", () => {
+  const bindStart = source.indexOf("function bindNetworkCanvas()");
+  const bindEnd = source.indexOf("function addPresetObject", bindStart);
+  const bindSource = source.slice(bindStart, bindEnd);
+  const applyStart = source.indexOf("function applyNetworkCanvasScale");
+  const zoomStart = source.indexOf("function zoomNetworkCanvas(input, focus)");
+  const zoomEnd = source.indexOf("function addPresetObject", zoomStart);
+  const applySource = source.slice(applyStart, zoomStart);
+  const zoomSource = source.slice(zoomStart, zoomEnd);
+
+  assert.match(bindSource, /addEventListener\("wheel",/);
+  assert.match(bindSource, /\{ passive: false \}/);
+  assert.match(bindSource, /zoomInputDirectionV1\(event\)/);
+  assert.match(bindSource, /zoomNetworkCanvas\(event,/);
+  assert.match(zoomSource, /legoFlowMap\.zoomViewportV1\(\{/);
+  assert.match(applySource, /legoFlowMap\.scaleScreenSceneV1\(sceneLayout, canvasZoom\)/);
+  assert.match(applySource, /layer\.style\.transform = `scale\(\$\{scaled\.scale\}\)`/);
+  assert.match(applySource, /layer\.style\.transformOrigin = "0 0"/);
+  assert.match(source, /getScale: \(\) => canvasZoom/);
+  assert.match(source, /scale: canvasZoom/);
+  assert.match(zoomSource, /layout\.scrollLeft = result\.scroll\.x/);
+  assert.match(zoomSource, /layout\.scrollTop = result\.scroll\.y/);
+  assert.doesNotMatch(zoomSource, /requestAnimationFrame/);
+  assert.doesNotMatch(zoomSource, /Math\.(?:min|max|pow)/);
 });
 
 test("de editor delegeert viewportcentrum en scrollwiskunde aan dezelfde pure SDK-laag", () => {

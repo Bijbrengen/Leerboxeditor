@@ -82,6 +82,10 @@ pure SDK-functies `visibleLayerCenterV1`, `centerDeltaV1` en
 `centeredScrollOffsetV1`; `clientPointToLayerV1`, `panScrollOffsetV1` en
 `dragScreenPositionV1` verzorgen drop-, rubberband-, pan- en node-dragwiskunde.
 De editor leest alleen pointerevents en actuele DOM-rechthoeken.
+Dezelfde SDK-laag levert met `zoomInputDirectionV1`, `zoomViewportV1` en
+`scaleScreenSceneV1` de optionele, focusvaste viewportzoom. Het muiswiel en de
+gewone of numerieke `+`/`-`-toetsen kiezen alleen een richting; schaalfactor,
+grenzen, canvasmaat en gecorrigeerde scrollpositie worden door de SDK berekend.
 
 - **Bounding box**: de SDK berekent de kleinste rechthoek om alle leerobjecten
   (`editor_position`) plus de legacy marge voor nodebreedte en relatiebogen.
@@ -104,6 +108,9 @@ De editor leest alleen pointerevents en actuele DOM-rechthoeken.
   `scrollLeft = (scrollWidth − clientWidth) / 2` (idem verticaal).
 - **Pannen**: pointerdown op de kaart (niet op knoppen/nodes/HUD) → handje sleept de scroller
   (`bindNetworkCanvas()`); scrollbars blijven als tweede weg beschikbaar. Windowscroll is uit.
+- **Zoomen**: het muiswiel zoomt rond de aanwijzer; `+`, `=`, `-`, `_` en de
+  overeenkomstige numpadtoetsen zoomen rond het zichtcentrum. De schaal loopt
+  multiplicatief van 50% tot 250%; slepen en kabels blijven in wereldcoördinaten.
 - **HUD-verankering**: `updateHudAnchor()` meet de bovenkant van het kaartvenster en zet
   `--hud-top` op `body`; alle HUD-panelen staan `position:fixed` t.o.v. het venster.
 
