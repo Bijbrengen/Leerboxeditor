@@ -16,7 +16,7 @@ class SdkLoaderWiringTests(unittest.TestCase):
         }
 
         self.assertIn('loader.load("editor-shell")', sources["index.html"])
-        self.assertIn('src="script.js?v=sdk-learning-box-2"', sources["index.html"])
+        self.assertIn('src="script.js?v=sdk-learning-box-3"', sources["index.html"])
         self.assertIn('loader.load(["api-client", "auth-client"])', sources["editor-auth.js"])
         self.assertIn('loader.load("editor-chrome")', sources["editor-chrome-boot.js"])
         self.assertIn('loader.load(["lego-flow-map", "lego-spatial"])', sources["script.js"])

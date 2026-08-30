@@ -3788,7 +3788,9 @@ HIER IS DE STRUCTUUR (SYNTAX):
         threshold: 5
       });
       const fixed = networkLearningBoxProfile
-        ? legoFlowMap.learningBoxStudPositionV1(drag.position, networkLearningBoxProfile)
+        ? legoFlowMap.learningBoxStudPositionV1(drag.position, networkLearningBoxProfile, {
+            libraryId: object.library_id
+          })
         : drag.position;
       if (drag.moved) moved = true;
       object.editor_position.x = fixed.x;

@@ -71,6 +71,11 @@ test("pan en drop gebruiken dezelfde pure client-naar-laagwiskunde", () => {
   assert.doesNotMatch(workbenchSource, /event\.clientX - bounds\.left/);
 });
 
+test("bibliotheekobjecten laten hun footprint tijdens slepen door de SDK bepalen", () => {
+  assert.match(source, /learningBoxStudPositionV1\(drag\.position, networkLearningBoxProfile, \{\s*libraryId: object\.library_id\s*\}\)/);
+  assert.doesNotMatch(source, /learningBoxStudPositionV1\(drag\.position, networkLearningBoxProfile\)\s*\n\s*: drag\.position/);
+});
+
 test("muiswiel en gewone of numerieke plus/min delegeren dezelfde zoomoptie aan de SDK", () => {
   const bindStart = source.indexOf("function bindNetworkCanvas()");
   const bindEnd = source.indexOf("function addPresetObject", bindStart);
