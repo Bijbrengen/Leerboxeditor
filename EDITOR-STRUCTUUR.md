@@ -65,7 +65,7 @@ Communicatie buitenschil ↔ iframe: `postMessage` (types: `leerpret-editor-view
         │   ├── [ .canvas-resource-bar: HUD fixed rechtsboven — tellers objecten/route/voorwaarden ]
         │   ├── [ .canvas-report-toggle + .canvas-report-drawer: HUD fixed rechts — wereldrapport ]
         │   ├── [ .advisor-panel: HUD fixed rechts — adviseur ]
-        │   ├── svg #networkEdges: SDK-isometrisch raster en LEGO-kabels (route/voorwaarden)
+        │   ├── svg #networkEdges: SDK-Leerboxschil, grote grondplaat en LEGO-kabels (route/voorwaarden)
         │   ├── div #networkNodes: SDK-LEGO-blokken (.network-node, absolute op editor_position x/y)
         │   └── [ #canvasEmptyState: fixed gecentreerd — "Lege spelwereld" ]
         └── [ aside .canvas-inspector: HUD fixed rechts — eigenschappenvenster (alleen .is-open) ]
@@ -99,10 +99,16 @@ grenzen, canvasmaat en gecorrigeerde scrollpositie worden door de SDK berekend.
   het bbox-midden exact op het canvasmidden ligt. Gevolg: **sliders in het midden = midden van de
   tekening in beeld** — er is geen aparte "zoek het centrum"-berekening nodig.
 - **LEGO-weergave**: `script.js` levert objecten, rollen, labels, posities en
-  relaties aan de publieke LeerpretSDK-component `lego-flow-map`. Raster,
-  blokgeometrie, noppen, kwalificatiekleuren, tekstprojectie, paint-order en
-  kabelmarkup blijven volledig in LeerpretEngine; de dashboardbuitenschil
-  bevat geen renderintelligentie.
+  relaties aan de publieke LeerpretSDK-component `lego-flow-map` en kiest alleen
+  `environment: "learning-box-v1"`. De SDK deelt daarmee exact de Leerboxschil
+  en leerobjectsteen van het tabblad Leerboxen in Lego en past de standaard
+  32×32-nops grondplaat gecentreerd in het canvas. Wand-, plaat-, blok-,
+  projectie-, paint-order- en kabelgeometrie blijven volledig in
+  LeerpretEngine; de editor en dashboardbuitenschil bevatten geen
+  renderintelligentie.
+  De editor kopieert uitsluitend de door de SDK teruggegeven nopposities naar
+  `editor_position`; vastklikken, begrenzen, vrij inpakken en eventuele
+  plaatvergroting zijn algemene SDK-functionaliteit zonder Editor- of Lego-ID.
 - **Reset**: bij leerboxwissel of paginarefresh (signature = `metadata.leerbox_id`,
   `networkCanvasCenteredSignature`) worden de sliders naar het midden van hun bereik gezet:
   `scrollLeft = (scrollWidth − clientWidth) / 2` (idem verticaal).

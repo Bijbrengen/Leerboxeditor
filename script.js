@@ -626,6 +626,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
   };
   let networkCanvasCenteredSignature = "";
   let networkCanvasSceneLayout = null;
+  let networkLearningBoxProfile = null;
   let canvasZoom = 1;
   let legoFlowMap = null;
   let legoSpatial = null;
@@ -3565,6 +3566,7 @@ HIER IS DE STRUCTUUR (SYNTAX):
     const scene = legoFlowMap.renderScene({
       width,
       height: drawnHeight,
+      environment: "learning-box-v1",
       objects: objects.map((object) => ({
         id: object.object_id,
         label: object.label || object.object_id,
@@ -3576,6 +3578,14 @@ HIER IS DE STRUCTUUR (SYNTAX):
       })),
       edges
     });
+    networkLearningBoxProfile = scene.environment;
+    let snappedToGroundPlate = false;
+    scene.positions.forEach((position, index) => {
+      const stored = objects[index].editor_position;
+      if (!stored || stored.x !== position.x || stored.y !== position.y) snappedToGroundPlate = true;
+      objects[index].editor_position = { x: position.x, y: position.y };
+    });
+    if (snappedToGroundPlate) localStorage.setItem(storageKey, JSON.stringify(state.capture));
     elements.networkNodes.innerHTML = scene.nodesMarkup;
     elements.networkEdges.innerHTML = scene.edgesMarkup;
     elements.canvasEmptyState.hidden = objects.length > 0;
@@ -3777,9 +3787,12 @@ HIER IS DE STRUCTUUR (SYNTAX):
         scale: canvasZoom,
         threshold: 5
       });
+      const fixed = networkLearningBoxProfile
+        ? legoFlowMap.learningBoxStudPositionV1(drag.position, networkLearningBoxProfile)
+        : drag.position;
       if (drag.moved) moved = true;
-      object.editor_position.x = drag.position.x;
-      object.editor_position.y = drag.position.y;
+      object.editor_position.x = fixed.x;
+      object.editor_position.y = fixed.y;
       legoFlowMap.updateDragFrame({
         node,
         nodesRoot: elements.networkNodes,

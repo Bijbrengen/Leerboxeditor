@@ -16,7 +16,7 @@ class SdkLoaderWiringTests(unittest.TestCase):
         }
 
         self.assertIn('loader.load("editor-shell")', sources["index.html"])
-        self.assertIn('src="script.js?v=sdk-spatial-flow-3"', sources["index.html"])
+        self.assertIn('src="script.js?v=sdk-learning-box-2"', sources["index.html"])
         self.assertIn('loader.load(["api-client", "auth-client"])', sources["editor-auth.js"])
         self.assertIn('loader.load("editor-chrome")', sources["editor-chrome-boot.js"])
         self.assertIn('loader.load(["lego-flow-map", "lego-spatial"])', sources["script.js"])
@@ -62,6 +62,10 @@ class SdkLoaderWiringTests(unittest.TestCase):
         self.assertIn("legoFlowMap?.zoomInputDirectionV1", script)
         self.assertIn("legoFlowMap.zoomViewportV1", script)
         self.assertIn("legoFlowMap.scaleScreenSceneV1", script)
+        self.assertIn('environment: "learning-box-v1"', script)
+        self.assertIn("legoFlowMap.learningBoxStudPositionV1", script)
+        self.assertNotIn("learningBoxSceneLayers", script)
+        self.assertNotIn("learningBoxBackgroundMarkup", script)
         self.assertIn("legoSpatial.radarSeriesPoints", script)
         self.assertNotIn("Math.cos(angle) * radius", script)
         self.assertNotIn("source.editor_position.y - 27", script)
