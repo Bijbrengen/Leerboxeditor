@@ -71,6 +71,11 @@ test("pan en drop gebruiken dezelfde pure client-naar-laagwiskunde", () => {
   assert.doesNotMatch(workbenchSource, /event\.clientX - bounds\.left/);
 });
 
+test("de Leerboxvloer schakelt alleen via SDK-policy de oude schermafstandsregel uit", () => {
+  assert.match(source, /layoutScreenSceneV1\(\{[\s\S]*?collisionPolicy: "preserve"[\s\S]*?\}\)/);
+  assert.doesNotMatch(source, /collisionGapX|collisionGapY|gridRowHeight/);
+});
+
 test("bibliotheekobjecten laten hun footprint tijdens slepen door de SDK bepalen", () => {
   assert.match(source, /learningBoxStudPositionV1\(drag\.position, networkLearningBoxProfile, \{\s*libraryId: object\.library_id\s*\}\)/);
   assert.doesNotMatch(source, /learningBoxStudPositionV1\(drag\.position, networkLearningBoxProfile\)\s*\n\s*: drag\.position/);

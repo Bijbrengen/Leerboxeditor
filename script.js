@@ -3513,7 +3513,8 @@ HIER IS DE STRUCTUUR (SYNTAX):
       nodesWidth: elements.networkNodes.clientWidth,
       canvasWidth: elements.networkCanvas.clientWidth,
       nodesHeight: elements.networkNodes.clientHeight,
-      canvasHeight: elements.networkCanvas.clientHeight
+      canvasHeight: elements.networkCanvas.clientHeight,
+      collisionPolicy: "preserve"
     });
     networkCanvasSceneLayout = sceneLayout;
     const { width, height, drawnHeight } = sceneLayout;
